@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner signature="Workspace" version="15.3.0.3248"?>
+<!-- Veuillez ne pas modifier ce fichier -->
+
+<Workspace>
+	<Local Expanded="Yes">
+		<Model Expanded="Yes" ID="{04442263-B05C-42B5-86C1-446E224FE8BC}" Name="FestivalDeCannes" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="FestivalDeCannes.prj"/>
+	</Local>
+	<BrowserModule Name="Référentiel"/>
+</Workspace>
