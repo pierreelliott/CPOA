@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="152" y="56" width="1057" height="753" text="Browser&#xA;http://..." measuredWidth="1057" measuredHeight="753">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="9" x="320" y="278" width="108" height="43" text="Nouveau VIP" measuredWidth="108" measuredHeight="43">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="10" x="520" y="279" width="108" height="41" text="Modifier VIP" measuredWidth="108" measuredHeight="41">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="11" x="744" y="280" width="108" height="39" text="Supprimer VIP" measuredWidth="108" measuredHeight="39">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="12" x="232" y="174" text="Gestion des VIP" measuredWidth="283" measuredHeight="62">
+    <font size="40px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="13" x="232" y="432" text="Gestion relations client" measuredWidth="411" measuredHeight="62">
+    <font size="40px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="14" x="304" y="519" width="169" height="43" text="Nouvel échange VIP" measuredWidth="169" measuredHeight="43">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="15" x="560" y="520" width="185" height="41" text="Modifier échange VIP" measuredWidth="185" measuredHeight="41">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="16" x="224" y="657" width="244" height="39" text="Nouvelle action entreprise" measuredWidth="244" measuredHeight="39">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="17" x="520" y="655" width="244" height="43" text="Modifier action entreprise" measuredWidth="244" measuredHeight="43">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="18" x="816" y="656" width="244" height="41" text="Supprimer action entreprise" measuredWidth="244" measuredHeight="41">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="20" x="288" y="600" width="537" measuredWidth="537" measuredHeight="6"/>
+  <widgets xsi:type="model:HSplitter" id="22" x="205" y="392" width="932" measuredWidth="932" measuredHeight="11"/>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
