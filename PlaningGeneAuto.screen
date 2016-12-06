@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Window" id="1" x="152" y="128" width="681" height="505" text="Planning " measuredWidth="681" measuredHeight="505"/>
+  <widgets xsi:type="model:Image" id="2" x="184" y="240" width="623" height="353" measuredWidth="623" measuredHeight="353" src="assets/PlanningAccueil_image(1).png"/>
+  <widgets xsi:type="model:Button" id="3" x="216" y="176" width="89" text="Ajouter" measuredWidth="89" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="4" x="344" y="176" width="89" text="Déplacer" measuredWidth="89" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="5" x="760" y="168" width="41" height="42" measuredWidth="41" measuredHeight="42" icon="trash (large)"/>
+  <widgets xsi:type="model:Button" id="6" x="584" y="176" text="Générer planning" measuredWidth="111" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="7" x="760" y="598" text="OK" measuredWidth="36" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="10" x="152" y="128" width="681" height="505" measuredWidth="681" measuredHeight="505" background="#000000" alpha="85"/>
+  <widgets xsi:type="model:WidgetGroup" id="50" x="216" y="144" measuredWidth="537" measuredHeight="474">
+    <widgets xsi:type="model:Window" id="9" width="537" height="474" text="Génération automatique du planning" measuredWidth="537" measuredHeight="474"/>
+    <widgets xsi:type="model:DateField" id="11" x="300" y="42" text="  /  /  " measuredWidth="58" measuredHeight="23"/>
+    <widgets xsi:type="model:Label" id="12" x="164" y="42" text="Date de début festival :" measuredWidth="126" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:TextField" id="15" x="134" y="123" width="52" text="                    " measuredWidth="52" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:TextField" id="17" x="134" y="299" width="52" text="                    " measuredWidth="52" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:HLine" id="20" x="50" y="248" width="429" measuredWidth="429" measuredHeight="6"/>
+    <widgets xsi:type="model:VLine" id="21" x="272" y="91" height="319" measuredWidth="6" measuredHeight="319"/>
+    <widgets xsi:type="model:Label" id="22" x="152" y="89" text="UCR" measuredWidth="34" measuredHeight="28" state="disabled">
+      <font size="15px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="23" x="392" y="89" text="LM" measuredWidth="26" measuredHeight="28" state="disabled">
+      <font size="15px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="24" x="152" y="259" text="CM" measuredWidth="28" measuredHeight="28" state="disabled">
+      <font size="15px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="25" x="392" y="259" text="HC" measuredWidth="26" measuredHeight="28" state="disabled">
+      <font size="15px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="26" x="50" y="122" text="Nombres :" measuredWidth="68" measuredHeight="25">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:TextField" id="29" x="376" y="123" width="52" text="                    " measuredWidth="52" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:TextField" id="30" x="376" y="299" width="52" text="                    " measuredWidth="52" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="31" x="40" y="298" text="Nombres :" measuredWidth="68" measuredHeight="25">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="32" x="293" y="122" text="Nombres :" measuredWidth="68" measuredHeight="25">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="33" x="293" y="298" text="Nombres :" measuredWidth="68" measuredHeight="25">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:Combo" id="36" x="128" y="201" text="Jury 1" measuredWidth="57" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="34" x="74" y="160" width="44" text="Salle :" measuredWidth="44" measuredHeight="25">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="35" x="74" y="197" width="41" text="Jury :" measuredWidth="41" measuredHeight="25">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:Combo" id="28" x="128" y="160" text="Debussy&#xD;&#xA;Buñuel&#xD;&#xA;..." measuredWidth="71" measuredHeight="65">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Combo" id="37" x="368" y="199" text="Jury 1&#xD;&#xA;Jury 2&#xD;&#xA;..." measuredWidth="57" measuredHeight="65">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="38" x="314" y="160" width="44" text="Salle :" measuredWidth="44" measuredHeight="25">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="39" x="314" y="197" width="41" text="Jury :" measuredWidth="41" measuredHeight="25">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:Combo" id="40" x="368" y="160" text="Buñuel" measuredWidth="64" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Combo" id="41" x="117" y="375" text="Jury 1" measuredWidth="57" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="42" x="63" y="335" width="44" text="Salle :" measuredWidth="44" measuredHeight="25">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="43" x="63" y="372" width="41" text="Jury :" measuredWidth="41" measuredHeight="25">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:Combo" id="44" x="117" y="335" text="Salle du soixantième" measuredWidth="134" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Combo" id="45" x="361" y="375" text="Jury 3" measuredWidth="57" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="46" x="307" y="335" width="44" text="Salle :" measuredWidth="44" measuredHeight="25">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="47" x="307" y="372" width="41" text="Jury :" measuredWidth="41" measuredHeight="25">
+      <font size="13px"/>
+    </widgets>
+    <widgets xsi:type="model:Combo" id="48" x="361" y="335" text="Debussy" measuredWidth="71" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:HLine" id="49" x="24" y="73" width="481" measuredWidth="481" measuredHeight="6"/>
+    <widgets xsi:type="model:Button" id="51" x="394" y="439" text="Générer planning" measuredWidth="111" measuredHeight="25" background="#93c47d" link="PlanningAccueil.screen">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="52" x="307" y="439" text="Annuler" measuredWidth="62" measuredHeight="25" background="#e06666" link="PlanningAccueil.screen">
+      <font/>
+    </widgets>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

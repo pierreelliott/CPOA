@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Window" id="1" x="56" y="128" width="681" height="505" text="Planning " measuredWidth="681" measuredHeight="505"/>
+  <widgets xsi:type="model:Image" id="2" x="88" y="240" width="623" height="353" measuredWidth="623" measuredHeight="353" src="assets/PlanningAccueil_image(1).png"/>
+  <widgets xsi:type="model:Icon" id="5" x="664" y="168" width="41" height="42" measuredWidth="41" measuredHeight="42" foreground="#ff0000" icon="trash (large)"/>
+  <widgets xsi:type="model:Button" id="7" x="664" y="598" text="OK" measuredWidth="36" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="8" x="560" y="598" text="Annuler" measuredWidth="62" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="16" x="352" y="437" measuredWidth="95" measuredHeight="23">
+    <widgets xsi:type="model:Panel" id="14" y="1" width="95" height="20" measuredWidth="95" measuredHeight="20" background="#76a5af" foreground="#0000ff"/>
+    <widgets xsi:type="model:Label" id="15" x="20" text="Projection" measuredWidth="60" measuredHeight="23" foreground="#ffffff">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="17" x="531" y="376" measuredWidth="95" measuredHeight="23">
+    <widgets xsi:type="model:Panel" id="18" y="1" width="95" height="20" measuredWidth="95" measuredHeight="20" background="#76a5af" foreground="#0000ff"/>
+    <widgets xsi:type="model:Label" id="19" x="20" text="Projection" measuredWidth="60" measuredHeight="23" foreground="#ffffff">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="20" x="264" y="496" measuredWidth="95" measuredHeight="23">
+    <widgets xsi:type="model:Panel" id="21" y="1" width="95" height="20" measuredWidth="95" measuredHeight="20" background="#76a5af" foreground="#0000ff"/>
+    <widgets xsi:type="model:Label" id="22" x="20" text="Projection" measuredWidth="60" measuredHeight="23" foreground="#ffffff">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Arrow" id="23" x="312" y="518" width="8" height="165" measuredWidth="8" measuredHeight="165"/>
+  <widgets xsi:type="model:Note" id="24" x="160" y="688" text="L'utilisateur a selectionné cette projection et les 2 autres" measuredWidth="310" measuredHeight="29">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="27" x="88" y="176" width="89" text="Ajouter" measuredWidth="89" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="28" x="200" y="176" width="89" text="Déplacer" measuredWidth="89" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="29" x="504" y="176" text="Générer planning" measuredWidth="111" measuredHeight="25" link="PlaningGeneAuto.screen">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:List" id="31" x="319" y="176" text="[x] Mode selection&#xA;" measuredWidth="111" measuredHeight="26" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="111" height="22" text="[x] Mode selection"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

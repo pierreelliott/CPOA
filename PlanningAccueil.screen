@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
   <widgets xsi:type="model:Window" id="4" x="152" y="128" width="681" height="505" text="Planning " measuredWidth="681" measuredHeight="505"/>
-  <widgets xsi:type="model:Image" id="13" x="168" y="240" width="647" height="369" measuredWidth="647" measuredHeight="369" src="assets/PlanningAccueil_image(1).png"/>
-  <widgets xsi:type="model:Button" id="15" x="216" y="176" width="89" text="Ajouter" measuredWidth="89" measuredHeight="25">
+  <widgets xsi:type="model:Image" id="13" x="184" y="240" width="623" height="353" measuredWidth="623" measuredHeight="353" src="assets/PlanningAccueil_image(1).png"/>
+  <widgets xsi:type="model:Button" id="15" x="184" y="176" width="89" text="Ajouter" measuredWidth="89" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="19" x="760" y="176" measuredWidth="32" measuredHeight="58" textAlignment="Center" icon="trash (large)" iconPosition="top">
+  <widgets xsi:type="model:Button" id="20" x="296" y="176" width="89" text="Déplacer" measuredWidth="89" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="20" x="344" y="176" width="89" text="Déplacer" measuredWidth="89" measuredHeight="25">
+  <widgets xsi:type="model:Note" id="21" x="152" text="Possibilité de selectionner une ou plusieures projections  directement sur le planning sans passer par &quot;déplacer&quot; ou sans cliquer sur &#xD;&#xA;la &quot;corbeille&quot; pour supprimer et  déplacer.&#xD;&#xA;Pour supprimer, clique sur corbeille  --> mode selection&#xD;&#xA;Rester appuyer sur une projection, mode selection&#xD;&#xA;Mettre aussi bouton mode selection&#xD;&#xA;Bouton déplacer :  mode selection  --> 2 choix : cliquer à l'endroit où on veut le mettre ou glisser déposer&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; en vert quand un élément selectionné sinon passe en grisé" measuredWidth="706" measuredHeight="119">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Note" id="21" x="264" text="Possibilité de selectionner une ou plusieures projections  directement sur le planning sans passer par &quot;déplacer&quot; ou sans cliquer sur &#xD;&#xA;la &quot;corbeille&quot; pour supprimer et  déplacer.&#xD;&#xA;Pour supprimer, clique sur corbeille puis selection des " measuredWidth="706" measuredHeight="59">
+  <widgets xsi:type="model:Icon" id="22" x="760" y="168" width="41" height="42" measuredWidth="41" measuredHeight="42" icon="trash (large)" link="PlanningSelection.screen"/>
+  <widgets xsi:type="model:Button" id="23" x="600" y="176" text="Générer planning" measuredWidth="111" measuredHeight="25" link="PlaningGeneAuto.screen">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Checkbox" id="28" x="416" y="177" text="Mode selection" measuredWidth="102" measuredHeight="23" link="PlanningSelection.screen">
     <font/>
   </widgets>
   <hRuler>
