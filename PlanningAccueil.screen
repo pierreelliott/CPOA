@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Window" id="4" x="152" y="128" width="681" height="505" text="Planning " measuredWidth="681" measuredHeight="505"/>
+  <widgets xsi:type="model:Image" id="13" x="168" y="240" width="647" height="369" measuredWidth="647" measuredHeight="369" src="assets/PlanningAccueil_image(1).png"/>
+  <widgets xsi:type="model:Button" id="15" x="216" y="176" width="89" text="Ajouter" measuredWidth="89" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="19" x="760" y="176" measuredWidth="32" measuredHeight="58" textAlignment="Center" icon="trash (large)" iconPosition="top">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="20" x="344" y="176" width="89" text="Déplacer" measuredWidth="89" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Note" id="21" x="264" text="Possibilité de selectionner une ou plusieures projections  directement sur le planning sans passer par &quot;déplacer&quot; ou sans cliquer sur &#xD;&#xA;la &quot;corbeille&quot; pour supprimer et  déplacer.&#xD;&#xA;Pour supprimer, clique sur corbeille puis selection des " measuredWidth="706" measuredHeight="59">
+    <font/>
+  </widgets>
+  <hRuler>
+    <guides position="164"/>
+  </hRuler>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
