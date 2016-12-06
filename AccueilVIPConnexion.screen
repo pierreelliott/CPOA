@@ -15,7 +15,7 @@
   <widgets xsi:type="model:Label" id="5" x="294" y="320" text="Mot de passe :" measuredWidth="105" measuredHeight="29">
     <font size="16px"/>
   </widgets>
-  <widgets xsi:type="model:Label" id="6" x="311" y="139" width="209" text="Connexion" measuredWidth="209" measuredHeight="67">
+  <widgets xsi:type="model:Label" id="6" x="135" y="136" width="554" text="Connexion - Gestion des VIP" measuredWidth="554" measuredHeight="67">
     <font size="43px"/>
   </widgets>
   <widgets xsi:type="model:Button" id="7" x="384" y="411" width="114" text="Se connecter" measuredWidth="114" measuredHeight="25" link="accueilGestionVIP.screen">
