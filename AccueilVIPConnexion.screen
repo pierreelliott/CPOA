@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="56" y="40" width="729" height="617" text="Chrome&#xD;&#xA;http://www.festivaldecannes.fr/gestionvip.html" measuredWidth="729" measuredHeight="617">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="2" x="336" y="236" width="114" measuredWidth="114" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="3" x="336" y="287" width="114" measuredWidth="114" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="4" x="255" y="233" text="Pseudo :" measuredWidth="64" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="5" x="214" y="284" text="Mot de passe :" measuredWidth="105" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="6" x="320" y="136" width="209" text="Connexion" measuredWidth="209" measuredHeight="67">
+    <font size="43px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="7" x="336" y="352" width="114" text="Se connecter" measuredWidth="114" measuredHeight="25">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="56" y="40" width="729" height="617" text="Chrome&#xD;&#xA;http://www.festivaldecannes.fr/gestionvip.html" measuredWidth="729" measuredHeight="617">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="2" x="244" y="212" width="157" measuredWidth="157" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="3" x="244" y="256" width="157" measuredWidth="157" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:DateField" id="10" x="244" y="464" width="157" text="  /  /  " measuredWidth="157" measuredHeight="23"/>
+  <widgets xsi:type="model:Label" id="11" x="184" y="209" width="49" text="Nom :" measuredWidth="49" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="12" x="168" y="253" width="65" text="Prénom :" measuredWidth="65" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="13" x="576" y="212" text="Nationalité...&#xD;&#xA;France&#xD;&#xA;England&#xD;&#xA;USA&#xD;&#xA;Deutschland&#xD;&#xA;..." measuredWidth="94" measuredHeight="128">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="14" x="464" y="209" width="95" text="Nationalité :" measuredWidth="95" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="15" x="576" y="352" width="94" text="Type VIP...&#xD;&#xA;Journaliste&#xD;&#xA;Acteur&#xD;&#xA;Réalisateur&#xD;&#xA;Photographe&#xD;&#xA;Rédacteur" measuredWidth="94" measuredHeight="128">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="16" x="480" y="352" text="Type VIP :" measuredWidth="73" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Spinner" id="17" x="244" y="416" width="157" text="0" measuredWidth="157" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="18" x="168" y="413" text="Priorité :" measuredWidth="64" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="20" x="96" y="461" text="Date de naissance :" measuredWidth="137" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="22" x="178" y="334" text="Photo :" measuredWidth="54" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="23" x="244" y="336" width="157" text="Parcourir" measuredWidth="157" measuredHeight="25" icon="open (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="25" x="264" y="560" width="129" text="Ajouter VIP" measuredWidth="129" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="26" x="488" y="560" width="129" text="Annuler" measuredWidth="129" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="27" x="344" y="120" text="Ajouter un VIP" measuredWidth="185" measuredHeight="46">
+    <font size="28px"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

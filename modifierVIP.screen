@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="56" y="40" width="729" height="601" text="Chrome&#xD;&#xA;http://www.festivaldecannes.fr/gestionvip.html" measuredWidth="729" measuredHeight="601">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:List" id="20" x="72" y="149" width="105" height="460" text="Listes des VIP&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;(bg:green)|nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;..." measuredWidth="105" measuredHeight="460">
+    <font/>
+    <items x="0" y="2" width="105" height="21" text="Listes des VIP"/>
+    <items x="0" y="23" width="105" height="21" text="nom"/>
+    <items x="0" y="44" width="105" height="21" text="nom"/>
+    <items x="0" y="65" width="105" height="21" text="nom"/>
+    <items x="0" y="86" width="105" height="21" text="nom"/>
+    <items x="0" y="107" width="105" height="21" text="nom"/>
+    <items x="0" y="128" width="105" height="21" text="nom"/>
+    <items x="0" y="149" width="105" height="21" text="nom"/>
+    <items x="0" y="170" width="105" height="21" text="nom"/>
+    <items x="0" y="191" width="105" height="21" text="nom"/>
+    <items x="0" y="212" width="105" height="21" text="nom"/>
+    <items x="0" y="233" width="105" height="21" text="nom"/>
+    <items x="0" y="254" width="105" height="21" text="nom"/>
+    <items x="0" y="275" width="105" height="21" text="nom"/>
+    <items x="0" y="296" width="105" height="21" text="(bg:green)|nom"/>
+    <items x="0" y="317" width="105" height="21" text="nom"/>
+    <items x="0" y="338" width="105" height="21" text="nom"/>
+    <items x="0" y="359" width="105" height="21" text="nom"/>
+    <items x="0" y="380" width="105" height="21" text="nom"/>
+    <items x="0" y="401" width="105" height="21" text="..."/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="25" x="72" y="125" width="105" text="Recherche" measuredWidth="105" measuredHeight="25" icon="find (small)">
+    <font italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="14" x="310" y="342" text="Photo :" measuredWidth="54" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Shape" id="27" x="168" y="408" width="89" height="97" measuredWidth="89" measuredHeight="97" shapeType="diamond">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="28" x="208" y="120" measuredWidth="567" measuredHeight="497">
+    <widgets xsi:type="model:Panel" id="26" width="567" height="497" measuredWidth="567" measuredHeight="497" border="solid-rounded"/>
+    <widgets xsi:type="model:TextField" id="2" x="168" y="100" width="157" measuredWidth="157" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:TextField" id="3" x="168" y="144" width="157" measuredWidth="157" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:DateField" id="4" x="168" y="352" width="157" text="  /  /  " measuredWidth="157" measuredHeight="23"/>
+    <widgets xsi:type="model:Label" id="5" x="108" y="97" width="49" text="Nom :" measuredWidth="49" measuredHeight="29">
+      <font size="16px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="6" x="92" y="141" width="65" text="Prénom :" measuredWidth="65" measuredHeight="29">
+      <font size="16px"/>
+    </widgets>
+    <widgets xsi:type="model:Combo" id="7" x="448" y="100" text="Nationalité...&#xD;&#xA;France&#xD;&#xA;England&#xD;&#xA;USA&#xD;&#xA;Deutschland&#xD;&#xA;..." measuredWidth="94" measuredHeight="128">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="8" x="344" y="97" width="95" text="Nationalité :" measuredWidth="95" measuredHeight="29">
+      <font size="16px"/>
+    </widgets>
+    <widgets xsi:type="model:Combo" id="9" x="448" y="240" width="94" text="Type VIP...&#xD;&#xA;Journaliste&#xD;&#xA;Acteur&#xD;&#xA;Réalisateur&#xD;&#xA;Photographe&#xD;&#xA;Rédacteur" measuredWidth="94" measuredHeight="128">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="10" x="365" y="237" text="Type VIP :" measuredWidth="73" measuredHeight="29">
+      <font size="16px"/>
+    </widgets>
+    <widgets xsi:type="model:Spinner" id="11" x="168" y="304" width="157" text="0" measuredWidth="157" measuredHeight="23">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="12" x="92" y="301" text="Priorité :" measuredWidth="64" measuredHeight="29">
+      <font size="16px"/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="13" x="20" y="349" text="Date de naissance :" measuredWidth="137" measuredHeight="29">
+      <font size="16px"/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="15" x="168" y="224" width="157" text="Parcourir" measuredWidth="157" measuredHeight="25" icon="open (small)">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="16" x="148" y="452" width="129" text="Modifier VIP" measuredWidth="129" measuredHeight="25">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="17" x="368" y="452" width="129" text="Annuler" measuredWidth="129" measuredHeight="25">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Label" id="18" x="200" text="Modifier un VIP" measuredWidth="199" measuredHeight="46">
+      <font size="28px"/>
+    </widgets>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
