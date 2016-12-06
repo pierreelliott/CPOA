@@ -37,12 +37,6 @@
   <widgets xsi:type="model:Label" id="20" x="96" y="461" text="Date de naissance :" measuredWidth="137" measuredHeight="29">
     <font size="16px"/>
   </widgets>
-  <widgets xsi:type="model:Label" id="22" x="178" y="334" text="Photo :" measuredWidth="54" measuredHeight="29">
-    <font size="16px"/>
-  </widgets>
-  <widgets xsi:type="model:Button" id="23" x="244" y="336" width="157" text="Parcourir" measuredWidth="157" measuredHeight="25" icon="open (small)">
-    <font/>
-  </widgets>
   <widgets xsi:type="model:Button" id="25" x="264" y="560" width="129" text="Ajouter VIP" measuredWidth="129" measuredHeight="25">
     <font/>
   </widgets>
@@ -52,6 +46,14 @@
   <widgets xsi:type="model:Label" id="27" x="344" y="120" text="Ajouter un VIP" measuredWidth="185" measuredHeight="46">
     <font size="28px"/>
   </widgets>
+  <widgets xsi:type="model:Panel" id="30" x="109" y="299" width="277" measuredWidth="277" measuredHeight="100" border="dashed-rounded"/>
+  <widgets xsi:type="model:Button" id="23" x="119" y="351" width="113" text="Parcourir" measuredWidth="113" measuredHeight="25" icon="open (small)">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="22" x="143" y="321" text="Photo :" measuredWidth="54" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="29" x="244" y="300" width="142" height="97" measuredWidth="142" measuredHeight="97" icon="user (large)"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>

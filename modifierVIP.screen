@@ -71,9 +71,6 @@
     <widgets xsi:type="model:Label" id="13" x="20" y="349" text="Date de naissance :" measuredWidth="137" measuredHeight="29">
       <font size="16px"/>
     </widgets>
-    <widgets xsi:type="model:Button" id="15" x="168" y="224" width="157" text="Parcourir" measuredWidth="157" measuredHeight="25" icon="open (small)">
-      <font/>
-    </widgets>
     <widgets xsi:type="model:Button" id="16" x="148" y="452" width="129" text="Modifier VIP" measuredWidth="129" measuredHeight="25">
       <font/>
     </widgets>
@@ -83,6 +80,11 @@
     <widgets xsi:type="model:Label" id="18" x="200" text="Modifier un VIP" measuredWidth="199" measuredHeight="46">
       <font size="28px"/>
     </widgets>
+    <widgets xsi:type="model:Panel" id="30" x="48" y="189" width="277" measuredWidth="277" measuredHeight="100" border="dashed-rounded"/>
+    <widgets xsi:type="model:Button" id="15" x="64" y="227" width="105" text="Parcourir" measuredWidth="105" measuredHeight="25" icon="open (small)">
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:Icon" id="29" x="180" y="190" width="142" height="97" measuredWidth="142" measuredHeight="97" icon="user (large)"/>
   </widgets>
   <hRuler/>
   <vRuler/>

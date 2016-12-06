@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="56" y="40" width="729" height="601" text="Chrome&#xD;&#xA;http://www.festivaldecannes.fr/gestionvip.html" measuredWidth="729" measuredHeight="601">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:List" id="2" x="192" y="200" width="209" height="361" text="(bg:gray)|Listes des VIP&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;(bg:green)|nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;..." measuredWidth="209" measuredHeight="361" rowHeight="20" horizontalLines="true" header="true">
+    <font size="15px"/>
+    <items x="0" y="2" width="209" height="28" text="(bg:gray)|Listes des VIP"/>
+    <items x="0" y="30" width="209" height="28" text="nom"/>
+    <items x="0" y="58" width="209" height="28" text="nom"/>
+    <items x="0" y="86" width="209" height="28" text="nom"/>
+    <items x="0" y="114" width="209" height="28" text="nom"/>
+    <items x="0" y="142" width="209" height="28" text="nom"/>
+    <items x="0" y="170" width="209" height="28" text="nom"/>
+    <items x="0" y="198" width="209" height="28" text="nom"/>
+    <items x="0" y="226" width="209" height="28" text="(bg:green)|nom"/>
+    <items x="0" y="254" width="209" height="28" text="nom"/>
+    <items x="0" y="282" width="209" height="28" text="nom"/>
+    <items x="0" y="310" width="209" height="28" text="nom"/>
+    <items x="0" y="338" width="209" height="28" text="nom"/>
+    <items x="0" y="366" width="209" height="28" text="..."/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="3" x="192" y="176" width="209" text="Recherche" measuredWidth="209" measuredHeight="25" icon="find (small)">
+    <font italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="25" x="512" y="272" width="102" height="39" text="Supprimer" measuredWidth="102" measuredHeight="39" background="#e06666">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="26" x="520" y="336" width="81" height="41" text="Annuler" measuredWidth="81" measuredHeight="41" background="#6fa8dc">
+    <font size="16px"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
