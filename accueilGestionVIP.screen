@@ -9,14 +9,14 @@
   <widgets xsi:type="model:Button" id="3" x="160" y="360" width="153" height="49" text="Modifier VIP" measuredWidth="153" measuredHeight="49" link="modifierVIP.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="4" x="160" y="448" width="153" height="49" text="Supprimer VIP" measuredWidth="153" measuredHeight="49" link="supprimerVIPAvertissement.screen">
+  <widgets xsi:type="model:Button" id="4" x="160" y="448" width="153" height="49" text="Supprimer VIP" measuredWidth="153" measuredHeight="49" link="supprimerVIP.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:Label" id="6" x="296" y="120" width="233" text="Gestion des VIP" measuredWidth="233" measuredHeight="53">
     <font size="32px"/>
   </widgets>
   <widgets xsi:type="model:VLine" id="7" x="416" y="208" height="385" measuredWidth="6" measuredHeight="385"/>
-  <widgets xsi:type="model:Button" id="8" x="520" y="272" width="153" height="49" text="Ajouter Echange VIP" measuredWidth="153" measuredHeight="49">
+  <widgets xsi:type="model:Button" id="8" x="520" y="272" width="153" height="49" text="Ajouter Echange VIP" measuredWidth="153" measuredHeight="49" link="selectionVIPPourAjoutEchange.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="9" x="520" y="360" width="153" height="49" text="Modifier Echange VIP" measuredWidth="153" measuredHeight="49">

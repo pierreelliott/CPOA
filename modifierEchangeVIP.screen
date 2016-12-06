@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="56" y="40" width="729" height="617" text="Chrome&#xD;&#xA;http://www.festivaldecannes.fr/gestionvip.html" measuredWidth="729" measuredHeight="617">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="4" x="210" y="584" height="41" text="Annuler" measuredWidth="81" measuredHeight="41" background="#6fa8dc" link="accueilGestionVIP.screen">
+    <font size="16px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="5" x="330" y="584" height="41" text="Modifier échange" measuredWidth="155" measuredHeight="41" background="#6aa84f" link="accueilGestionVIP.screen">
+    <font size="16px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="6" x="376" y="161" width="168" text="Menvu" measuredWidth="168" measuredHeight="23" background="#cccccc">
+    <font italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:TextField" id="7" x="376" y="207" width="168" text="Gérard" measuredWidth="168" measuredHeight="23" background="#cccccc">
+    <font italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="8" x="312" y="158" width="52" text="Nom :" measuredWidth="52" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="9" x="294" y="204" width="69" text="Prénom :" measuredWidth="69" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="10" x="96" y="147" width="169" height="126" measuredWidth="169" measuredHeight="126" icon="user (large)"/>
+  <widgets xsi:type="model:TextField" id="11" x="376" y="250" width="168" text="Français" measuredWidth="168" measuredHeight="23" background="#cccccc">
+    <font italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="12" x="272" y="247" width="91" text="Nationalité :" measuredWidth="91" measuredHeight="29">
+    <font size="16px"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="13" x="128" y="291" width="385" measuredWidth="385" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="14" x="280" y="102" text="VIP" measuredWidth="51" measuredHeight="46">
+    <font size="28px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:DateField" id="15" x="104" y="320" width="126" text="   21  /  03  /  2016" measuredWidth="126" measuredHeight="23" background="#cccccc"/>
+  <widgets xsi:type="model:VButtonBar" id="17" x="624" y="147" width="129" height="446" text="Echange 1&#xD;&#xA;Echange 2&#xD;&#xA;Echange 3" measuredWidth="129" measuredHeight="446" textAlignment="Center">
+    <font size="20px"/>
+    <items x="0" y="0" width="129" height="147" text="Echange 1"/>
+    <items x="0" y="147" width="129" height="146" text="Echange 2"/>
+    <items x="0" y="293" width="129" height="153" text="Echange 3"/>
+  </widgets>
+  <widgets xsi:type="model:VLine" id="18" x="596" y="112" height="529" measuredWidth="6" measuredHeight="529"/>
+  <widgets xsi:type="model:VScrollbar" id="19" x="752" y="147" height="446" measuredWidth="17" measuredHeight="446" value="100"/>
+  <widgets xsi:type="model:TextArea" id="20" x="128" y="408" width="416" height="145" text="Le mouvement pour les droits des personnes autistes, également connu sous le nom de mouvement pour la culture autiste, est un mouvement social né à la fin des années 1980 à l’initiative de personnes autistes revendiquant leur droit à l'expression de la diversité humaine, tout en luttant contre l'exclusion. Les idées centrales de ce mouvement d′empowerment sont de participer à l'auto-support des personnes autistes et de défendre la neurodiversité, en refusant les politiques eugénistes et les représentations négatives en matière d'autisme. " measuredWidth="416" measuredHeight="145">
+    <font size="15px" italic="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="21" x="128" y="376" text="Commentaire :" measuredWidth="118" measuredHeight="29">
+    <font size="16px" bold="true" italic="false" underline="false"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

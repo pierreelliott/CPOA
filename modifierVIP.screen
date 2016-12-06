@@ -74,7 +74,7 @@
     <widgets xsi:type="model:Button" id="16" x="148" y="452" width="129" text="Modifier VIP" measuredWidth="129" measuredHeight="25">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Button" id="17" x="368" y="452" width="129" text="Annuler" measuredWidth="129" measuredHeight="25">
+    <widgets xsi:type="model:Button" id="17" x="368" y="452" width="129" text="Annuler" measuredWidth="129" measuredHeight="25" link="accueilGestionVIP.screen">
       <font/>
     </widgets>
     <widgets xsi:type="model:Label" id="18" x="200" text="Modifier un VIP" measuredWidth="199" measuredHeight="46">
