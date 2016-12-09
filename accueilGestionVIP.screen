@@ -19,7 +19,7 @@
   <widgets xsi:type="model:Button" id="8" x="520" y="272" width="153" height="49" text="Ajouter Echange VIP" measuredWidth="153" measuredHeight="49" link="selectionVIPPourAjoutEchange.screen">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Button" id="9" x="520" y="360" width="153" height="49" text="Modifier Echange VIP" measuredWidth="153" measuredHeight="49">
+  <widgets xsi:type="model:Button" id="9" x="520" y="360" width="153" height="49" text="Modifier Echange VIP" measuredWidth="153" measuredHeight="49" link="modifierEchangeVIP.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="10" x="520" y="448" width="153" height="49" text="Consulter Echange VIP" measuredWidth="153" measuredHeight="49">
