@@ -1,17 +1,46 @@
-html,body
-{
 
-	margin:auto;
-	padding:auto;
-    width: 600px;
-	
-
-	background-attachment: fixed;
-}
 #couleurform{
   width: auto;
   padding: 10px;
   margin-top: 20px;
   background: #dddddd;
   border-radius: 10px;
+
+  }
+
+h1{
+	text-align:center;
+}
+
+#contenant{
+	margin:auto;
+	margin-top:10vh;
+	padding:auto;
+    
+	
+  width: 600px;	
+	background-attachment: fixed;
+	
+}
+
+.inline{
+	display: inline-block;
+}
+/*Bouton*/
+.bouton a {
+    background-color: #433c30;
+    padding: 5px;
+    border-radius: 2px;
+    color: white;
+}
+
+.bouton a:hover {
+    background-color: #f16529;
+    border-radius: 2px;
+    color: #efd9bb;
+}
+
+a {
+    color: #e44d26;
+    text-decoration: none;
 }
