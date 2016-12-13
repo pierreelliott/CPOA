@@ -1,48 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-       <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="css.css" />
-		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-        <title>Gestion VIP</title>
-		<meta name="description" content="Page de connexion VIP" />
-		<meta name="author" content="2BT">
-		<link rel="stylesheet" href="Vue/css.css">
-     
-    </head>
-	
-<body> 
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Gestion VIP</title>
 
-		<div id="contenant">
-				<h1>Ajouter un VIP</h1>
-			
-				<form method="post" action="Vue/acceuil.php" id="formulaire">
-					<div class"inline">	
-						<p><label for = "nom">Nom : </label><input type="text" name="nom" id="nom"> </p>
-						<p><label for = "prenom">Prenom : </label><input type="text" name="prenom" id="prenom"> </p>
-						<p> Photo :</p>
-						<p><label for = "priorite">Priorité : </label> <input type="number" name="priorite" min="0" max="10" id="priorite"></p>
-						<p><label for = "datenaissance">Date de naissance : </label> <input type="date" name="datenaissance" id="datenaissance"></p>
-					
-						
-					</div>
-					
-					<div class"inline">	
-						<p><label for = "nationalite">Nationalité : </label><input type="text" name="nationalie" id="nationalie"> </p>
-						<p><label for = "typevip">Type VIP : </label><input type="text" name="typevip" id="typevip"> </p>
-					</div>
-					
-					<p><span class="bouton"> <a href="acceuil.php">Ajouter VIP</a></span></p>
-				</form>
-				
-				
-				
-				
-				
-				
+		<!-- Bootstrap -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="css.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+    <body>
+    
+
+		<div class="container-fluid">	
+			<div class="row">
+				<h1 class="col-lg-12 center-block">
+					Ajouter un VIP
+				</h1>
+			</div>
+			<div class="row">
+				<div class="col-lg-offset-2 col-lg-8">
+					<form method="post" action="Vue/acceuil.php" class="form-horizontal">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="form-group">
+									<label for = "nom" class="col-lg-4 control-label">Nom</label>
+									<div class="col-lg-8">
+										<input type="text" name="nom" id="nom" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for = "prenom" class="col-lg-4 control-label">Prenom</label>
+									<div class="col-lg-8">
+										<input type="text" name="prenom" id="prenom" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row pointille">
+										<div class="col-lg-8">
+											<label for="photo" class="col-lg-4 control-label">Photo</label>
+											<input type="file" name="photo" id="photo">
+										</div>
+										<div class="col-lg-4">
+											<img src="../images/avatar.png" alt="avatar">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for = "priorite" class="col-lg-4 control-label">Priorité</label>
+									<div class="col-lg-8">
+										<input type="number" name="priorite" min="0" max="10" id="priorite" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for = "datenaissance" class="col-lg-4 control-label">Date de naissance</label>
+									<div class="col-lg-8">
+										<input type="date" name="datenaissance" id="datenaissance">
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="form-group marge-bas">
+									<label for = "nationalite" class="col-lg-4 control-label">Nationalité</label>
+									<div class="col-lg-8">
+										<select name="nationalite" id="nationalite">
+											<option>France</option>
+											<option>England</option>
+											<option>Deutschland</option>
+											<option>Spain</option>
+											<option>...</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group marge-bas">
+									<label for = "typeVIP" class="col-lg-4 control-label">Type VIP</label>
+									<div class="col-lg-8">
+										<select name="typeVIP" id="typeVIP">
+											<option>Journaliste</option>
+											<option>Comédien</option>
+											<option>Réalisateur</option>
+											<option>Scénariste</option>
+											<option>Photographe</option>
+											<option>...</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button class="btn btn-lg btn-primary">Ajouter VIP</button>
+					</form>
+				</div>
+			</div>
 		</div>
 	
-</body>
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>

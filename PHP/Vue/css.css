@@ -27,7 +27,7 @@ h1{
 	display: inline-block;
 }
 /*Bouton*/
-.bouton a {
+.bouton {
     background-color: #433c30;
     padding: 5px;
     border-radius: 2px;
@@ -41,6 +41,28 @@ h1{
 }
 
 a {
-    color: #e44d26;
-    text-decoration: none;
+    margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.bordered-left
+{
+	border-left: 1px solid;
+}
+
+.bordered-top
+{
+	border-top: 3px solid;
+	padding-top: 50px;
+}
+
+.pointille
+{
+	border: 1px dashed;
+	border-radius: 15px;
+}
+
+.marge-bas
+{
+	margin-bottom: 25%;
 }
