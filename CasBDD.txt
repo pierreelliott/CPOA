@@ -1,0 +1,21 @@
+PageConnexion ; 
+Nouvelle table : pseudo (PK), mdp
+
+AjoutVIP : Ajout dans table VIP
+
+ModifierVIP : modifier table VIP
+
+SupprimerVIP :
+-Récupérer id VIP, afficher seulement nom et prénom
+-Récupérer infos du VIP (par l'id), supprimer id après validation
+
+SelectionVIPavantAjoutEchange : 
+Récupérer id VIP, afficher seulement nom et prénom
+
+AjoutEchangeVIP :
+-Récupérer id VIP, afficher nom, prénom, nationalité
+-Récupérer EchangeVIP précédents avec l'idVIP, afficher début du contenu + date, par ordre décroissant
+## Need new screen, ajouter l'échangeVIP dans la table pour clefs étrangères ActionEnt
+## Bouton "AjoutEchange" revient sur screen actuel avec possibilité ajouter les Actions
+(-AjoutAction (Sorte de boite dialogue) : ajout libelle, etat)
+-Récupérer ActionVIP ajoutés (si existants)

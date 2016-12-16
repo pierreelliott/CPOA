@@ -29,7 +29,11 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-offset-2 col-lg-8">
+<<<<<<< HEAD
+					<form method="post" action="Vue/accueil.php" class="form-horizontal">
+=======
 					<form method="post" action="Vue/acceuil.php" class="form-horizontal">
+>>>>>>> b2838fcc28db1d4a1565eb2a2889eb28ce5b5573
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form-group">
@@ -96,7 +100,18 @@
 								</div>
 							</div>
 						</div>
+<<<<<<< HEAD
+						<div class="row">
+							<div class="col-lg-offset-2 col-lg-3">
+								<button type="submit" class="btn btn-lg btn-primary btn-block">Ajouter VIP</button>
+							</div>
+							<div class="col-lg-offset-2 col-lg-3">
+								<button type="reset" class="btn btn-lg btn-primary btn-block">Annuler</button>
+							</div>
+						</div>
+=======
 						<button class="btn btn-lg btn-primary">Ajouter VIP</button>
+>>>>>>> b2838fcc28db1d4a1565eb2a2889eb28ce5b5573
 					</form>
 				</div>
 			</div>
