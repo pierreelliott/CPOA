@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* Nom de SGBD :  MySQL 5.0                                     */
-/* Date de création :  13/12/2016 09:22:05                      */
+/* Date de crÃ©ation :  13/12/2016 09:22:05                      */
 /*==============================================================*/
 
 
@@ -31,12 +31,12 @@ drop table if exists EquipeFilm;
 /*==============================================================*/
 create table ActionEntreprise
 (
-   numAction            int primary key,
+   numAction            int AUTO_INCREMENT,
    libelle              varchar(254),
    etat                 varchar(30),
    dateRealisation      datetime,
    numEchange			int,
-   FOREIGN KEY (numEchange) REFERENCES EchangeVip(numEchange) ON DELETE CASCADE
+   CONSTRAINT PK_ActionEntreprise PRIMARY KEY (numAction)
 );
 
 /*==============================================================*/
@@ -44,11 +44,11 @@ create table ActionEntreprise
 /*==============================================================*/
 create table EchangeVip
 (
-   numEchange           int primary key,
+   numEchange           int AUTO_INCREMENT,
    dateEchange          datetime,
    contenuEchange       varchar(254),
    numVIP				int,
-   FOREIGN KEY (numVIP) REFERENCES VIP(numVIP) ON DELETE CASCADE
+   CONSTRAINT PK_EchangeVip PRIMARY KEY (numEchange)
 );
 
 /*==============================================================*/
@@ -56,10 +56,11 @@ create table EchangeVip
 /*==============================================================*/
 create table Film
 (
-   numFilm              int primary key,
+   numFilm              int AUTO_INCREMENT,
    typeFilm             varchar(50),
    titreFilm            varchar(254),
-   duree                datetime
+   duree                int,
+   CONSTRAINT PK_Film PRIMARY KEY (numFilm)
 );
 
 /*==============================================================*/
@@ -69,20 +70,18 @@ create table Invitation
 (
 	numVIP int,
 	numProjection int,
-	CONSTRAINT PK_Invitation PRIMARY KEY (numVIP,numProjection),
-	FOREIGN KEY (numVIP) REFERENCES VIP(numVIP) ON DELETE CASCADE,
-	FOREIGN KEY (numProjection) REFERENCES Projection(numProjection) ON DELETE CASCADE
+	CONSTRAINT PK_Invitation PRIMARY KEY (numVIP,numProjection)
 );
 
 /*==============================================================*/
-/* Table : Jury                                          */
+/* Table : Jury                                          		*/
 /*==============================================================*/
 create table Jury
 (
-   numJury              int primary key,
+   numJury              int AUTO_INCREMENT,
    typeJury             varchar(50),
    numPresident         int,
-   FOREIGN KEY (numPresident) REFERENCES VIP(numVIP) ON DELETE CASCADE
+   CONSTRAINT PK_Jury PRIMARY KEY (numJury)
 );
 
 /*==============================================================*/
@@ -93,8 +92,7 @@ create table Palmares
    typePalmares         varchar(254) not null,
    numVIP				int,
    numFilm				int,
-   FOREIGN KEY (numVIP) REFERENCES VIP(numVIP) ON DELETE CASCADE,
-   FOREIGN KEY (numFilm) REFERENCES Film(numFilm) ON DELETE CASCADE,
+   CONSTRAINT PK_Palmares PRIMARY KEY (typePalmares)
 );
 
 /*==============================================================*/
@@ -102,12 +100,11 @@ create table Palmares
 /*==============================================================*/
 create table Projection
 (
-   numProjection		int primary key,
+   numProjection		int AUTO_INCREMENT,
    numFilm 				int,
    numSalle				int,
    dateProjection	    datetime,
-   FOREIGN KEY (numFilm) REFERENCES Film(numFilm) ON DELETE CASCADE,
-   FOREIGN KEY (numSalle) REFERENCES Salle_Festival(numSalle) ON DELETE CASCADE
+   CONSTRAINT PK_Projection PRIMARY KEY (numProjection)
 );
 
 /*==============================================================*/
@@ -115,9 +112,10 @@ create table Projection
 /*==============================================================*/
 create table Salle_Festival
 (
-   numSalle             int primary key,
+   numSalle             int AUTO_INCREMENT,
    nomSalle             varchar(254),
-   nbPlaces             int
+   nbPlaces             int,
+   CONSTRAINT PK_Salle_Festival PRIMARY KEY (numSalle)
 );
 
 /*==============================================================*/
@@ -125,16 +123,18 @@ create table Salle_Festival
 /*==============================================================*/
 create table VIP
 (
-   numVIP               int primary key,
+   numVIP               int AUTO_INCREMENT,
    nom                  varchar(60),
    prenom               varchar(60),
    nationalite          varchar(60),
    photo                varchar(150),
    typeVIP              varchar(254),
    priorite             int,
-   dateNaissance        datetime,
+   dateNaissance        date,
    numCompagnon         int,
-   FOREIGN KEY (numCompagnon) REFERENCES VIP(numCompagnon) ON DELETE CASCADE
+   numJury				int,
+   numFilm				int,
+   CONSTRAINT PK_VIP PRIMARY KEY (numVIP)
 );
 
 /*==============================================================*/
@@ -144,69 +144,34 @@ create table VisionnageCompetition
 (
 	numJury int,
 	numProjection int,
-	constraint PK_VisionnageCompetition primary key (numJury, numProjection),
-	FOREIGN KEY (numJury) REFERENCES Jury(numJury) ON DELETE CASCADE,
-	FOREIGN KEY (numProjection) REFERENCES Projection(numProjection) ON DELETE CASCADE
+	CONSTRAINT PK_VisionnageCompetition PRIMARY KEY (numJury, numProjection)
 );
 
-/*==============================================================*/
-/* Table : EquipeFilm                                     		*/
-/*==============================================================*/
-create table EquipeFilm
-(
-	numVIP int,
-	numFilm int
-);
-alter table EquipeFilm add constraint PK_EquipeFilm primary key (numVIP, numFilm);
 
-/*##############################################################*/
 
-/*==============================================================*/
-/* Ajout des contraintes de clefs étrangères             		*/
-/*==============================================================*/
 
-alter table ActionEntreprise add constraint FK_association2 foreign key ()
-      references EchangeVip on delete restrict on update restrict;
+/* ############################################################ */
+/* Clefs Ã©tangÃ¨res												*/
+/* ############################################################ */
 
-alter table EchangeVip add constraint FK_VisionnageCompetition foreign key ()
-      references VIP on delete restrict on update restrict;
+ALTER TABLE ActionEntreprise ADD CONSTRAINT FK_ActionEntreprise_Echange FOREIGN KEY (numEchange) REFERENCES EchangeVip(numEchange) ON DELETE CASCADE;
 
-alter table Film add constraint FK_association5 foreign key ()
-      references Jury on delete restrict on update restrict;
+ALTER TABLE EchangeVip ADD CONSTRAINT FK_EchangeVip_VIP FOREIGN KEY (numVIP) REFERENCES VIP(numVIP) ON DELETE CASCADE;
 
-alter table Invitation add constraint FK_association2 foreign key ()
-      references Projection on delete restrict on update restrict;
+ALTER TABLE Invitation ADD CONSTRAINT FK_Invitation_VIP FOREIGN KEY (numVIP) REFERENCES VIP(numVIP) ON DELETE CASCADE;
+ALTER TABLE Invitation ADD CONSTRAINT FK_Invitation_Projection FOREIGN KEY (numProjection) REFERENCES Projection(numProjection) ON DELETE CASCADE;
 
-alter table Invitation add constraint FK_association2 foreign key ()
-      references VIP on delete restrict on update restrict;
+ALTER TABLE Jury ADD CONSTRAINT FK_Jury_President FOREIGN KEY (numPresident) REFERENCES VIP(numVIP) ON DELETE CASCADE;
 
-alter table Palmares add constraint FK_association6 foreign key ()
-      references VIP on delete restrict on update restrict;
+ALTER TABLE Palmares ADD CONSTRAINT FK_Palmares_VIP FOREIGN KEY (numVIP) REFERENCES VIP(numVIP) ON DELETE CASCADE;
+ALTER TABLE Palmares ADD CONSTRAINT FK_Palmares_Film FOREIGN KEY (numFilm) REFERENCES Film(numFilm) ON DELETE CASCADE;
 
-alter table Palmares add constraint FK_association7 foreign key ()
-      references Film on delete restrict on update restrict;
+ALTER TABLE Projection ADD CONSTRAINT FK_Projection_Film FOREIGN KEY (numFilm) REFERENCES Film(numFilm) ON DELETE CASCADE;
+ALTER TABLE Projection ADD CONSTRAINT FK_Projection_Salle FOREIGN KEY (numSalle) REFERENCES Salle_Festival(numSalle) ON DELETE CASCADE;
 
-alter table Projection add constraint FK_association1 foreign key (numFilm)
-      references Film on delete restrict on update restrict;
+ALTER TABLE VIP ADD CONSTRAINT FK_VIP_Compagnon FOREIGN KEY (numCompagnon) REFERENCES VIP(numVIP) ON DELETE CASCADE;
+ALTER TABLE VIP ADD CONSTRAINT FK_VIP_Jury FOREIGN KEY (numJury) REFERENCES Jury(numJury) ON DELETE CASCADE;
+ALTER TABLE VIP ADD CONSTRAINT FK_VIP_Film FOREIGN KEY (numFilm) REFERENCES Film(numFilm) ON DELETE CASCADE;
 
-alter table Projection add constraint FK_association1 foreign key ()
-      references Salle_Festival on delete restrict on update restrict;
-
-alter table VIP add constraint FK_aPourCompagnon_compagne foreign key ()
-      references VIP on delete restrict on update restrict;
-
-alter table VIP add constraint FK_association4 foreign key ()
-      references Jury on delete restrict on update restrict;
-
-alter table VisionnageCompetition add constraint FK_VisionnageCompetition foreign key ()
-      references Jury on delete restrict on update restrict;
-
-alter table VisionnageCompetition add constraint FK_VisionnageCompetition foreign key ()
-      references Projection on delete restrict on update restrict;
-
-alter table EquipeFilm add constraint FK_EquipeFilm foreign key ()
-      references Film on delete restrict on update restrict;
-
-alter table EquipeFilm add constraint FK_EquipeFilm foreign key ()
-      references VIP on delete restrict on update restrict;
-
+ALTER TABLE VisionnageCompetition ADD CONSTRAINT FK_VisionnageCompetition_Jury FOREIGN KEY (numJury) REFERENCES Jury(numJury) ON DELETE CASCADE;
+ALTER TABLE VisionnageCompetition ADD CONSTRAINT FK_VisionnageCompetition_Projection FOREIGN KEY (numProjection) REFERENCES Projection(numProjection) ON DELETE CASCADE;
