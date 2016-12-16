@@ -3,7 +3,7 @@
   <widgets xsi:type="model:Browser" id="1" x="56" y="40" width="729" height="601" text="Chrome&#xD;&#xA;http://www.festivaldecannes.fr/gestionvip.html" measuredWidth="729" measuredHeight="601">
     <font/>
   </widgets>
-  <widgets xsi:type="model:List" id="20" x="72" y="149" width="105" height="460" text="Listes des VIP&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;(bg:green)|nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;..." measuredWidth="105" measuredHeight="460">
+  <widgets xsi:type="model:List" id="20" x="72" y="149" width="105" height="428" text="Listes des VIP&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;(bg:green)|nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;nom&#xD;&#xA;..." measuredWidth="105" measuredHeight="428">
     <font/>
     <items x="0" y="2" width="105" height="21" text="Listes des VIP"/>
     <items x="0" y="23" width="105" height="21" text="nom"/>
@@ -71,10 +71,10 @@
     <widgets xsi:type="model:Label" id="13" x="20" y="349" text="Date de naissance :" measuredWidth="137" measuredHeight="29">
       <font size="16px"/>
     </widgets>
-    <widgets xsi:type="model:Button" id="16" x="148" y="452" width="129" text="Modifier VIP" measuredWidth="129" measuredHeight="25">
+    <widgets xsi:type="model:Button" id="16" x="148" y="452" width="129" text="Modifier VIP" measuredWidth="129" measuredHeight="25" link="">
       <font/>
     </widgets>
-    <widgets xsi:type="model:Button" id="17" x="368" y="452" width="129" text="Annuler" measuredWidth="129" measuredHeight="25" link="accueilGestionVIP.screen">
+    <widgets xsi:type="model:Button" id="17" x="368" y="452" width="129" text="Retour" measuredWidth="129" measuredHeight="25" link="accueilGestionVIP.screen">
       <font/>
     </widgets>
     <widgets xsi:type="model:Label" id="18" x="200" text="Modifier un VIP" measuredWidth="199" measuredHeight="46">
@@ -85,6 +85,9 @@
       <font/>
     </widgets>
     <widgets xsi:type="model:Icon" id="29" x="180" y="190" width="142" height="97" measuredWidth="142" measuredHeight="97" icon="user (large)"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="31" x="75" y="592" width="102" height="39" text="Ajouter VIP" measuredWidth="102" measuredHeight="39" background="#6aa84f" link="ajouterVIP.screen">
+    <font size="16px" bold="true"/>
   </widgets>
   <hRuler/>
   <vRuler/>

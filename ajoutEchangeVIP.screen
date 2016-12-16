@@ -35,7 +35,7 @@
     </widgets>
     <widgets xsi:type="model:VScrollbar" id="24" x="128" height="193" measuredWidth="17" measuredHeight="193" value="100"/>
   </widgets>
-  <widgets xsi:type="model:Button" id="25" x="86" y="352" height="41" text="Ajout action" measuredWidth="114" measuredHeight="41" background="#6aa84f" link="accueilGestionVIP.screen">
+  <widgets xsi:type="model:Button" id="25" x="88" y="318" height="33" text="Ajout action" measuredWidth="114" measuredHeight="33" background="#6aa84f">
     <font size="16px" bold="true"/>
   </widgets>
   <widgets xsi:type="model:VLine" id="26" x="248" y="333" height="292" measuredWidth="6" measuredHeight="292"/>
@@ -61,6 +61,9 @@
   </widgets>
   <widgets xsi:type="model:Label" id="14" x="280" y="102" text="VIP" measuredWidth="51" measuredHeight="46">
     <font size="28px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="31" x="73" y="356" height="33" text="Supprimer action" measuredWidth="152" measuredHeight="33" background="#e06666">
+    <font size="16px" bold="true"/>
   </widgets>
   <hRuler/>
   <vRuler/>

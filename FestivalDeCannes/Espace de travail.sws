@@ -5,7 +5,7 @@
 <Workspace>
 	<Local Expanded="Yes">
 		<Model Expanded="Yes" ID="{04442263-B05C-42B5-86C1-446E224FE8BC}" Name="FestivalDeCannes" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="FestivalDeCannes.prj"/>
-		<Model Expanded="Yes" ID="{2DB0FFE4-0E08-412D-9A2D-C5AE8D2C90DD}" Name="CONCEPTION_Diagramme de packages" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Diagramme de packages_conception.moo"/>
+		<Model Expanded="Yes" ID="{2DB0FFE4-0E08-412D-9A2D-C5AE8D2C90DD}" Name="ANALYSE_Diagramme de packages" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Diagramme de packages.moo"/>
 	</Local>
 	<BrowserModule Name="Référentiel"/>
 </Workspace>

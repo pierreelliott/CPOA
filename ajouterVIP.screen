@@ -37,7 +37,7 @@
   <widgets xsi:type="model:Label" id="20" x="96" y="461" text="Date de naissance :" measuredWidth="137" measuredHeight="29">
     <font size="16px"/>
   </widgets>
-  <widgets xsi:type="model:Button" id="25" x="264" y="560" width="129" text="Ajouter VIP" measuredWidth="129" measuredHeight="25">
+  <widgets xsi:type="model:Button" id="25" x="264" y="560" width="129" text="Ajouter VIP" measuredWidth="129" measuredHeight="25" link="modifierVIP.screen">
     <font/>
   </widgets>
   <widgets xsi:type="model:Button" id="26" x="488" y="560" width="129" text="Annuler" measuredWidth="129" measuredHeight="25" link="accueilGestionVIP.screen">
