@@ -24,7 +24,7 @@ drop table if exists VIP;
 
 drop table if exists VisionnageCompetition;
 
-drop table if exists EquipeFilm;
+drop table if exists Utilisateurs;
 
 /*==============================================================*/
 /* Table : ActionEntreprise                                     */
@@ -142,12 +142,20 @@ create table VIP
 /*==============================================================*/
 create table VisionnageCompetition
 (
-	numJury int,
-	numProjection int,
+	numJury 			int,
+	numProjection 		int,
 	CONSTRAINT PK_VisionnageCompetition PRIMARY KEY (numJury, numProjection)
 );
 
-
+/*==============================================================*/
+/* Table : Utilisateurs     		                  			*/
+/*==============================================================*/
+create table Utilisateurs
+(
+	login 				varchar(100),
+	mdp			 		varchar(100),
+	CONSTRAINT PK_Utilisateurs PRIMARY KEY (numUser)
+);
 
 
 /* ############################################################ */
