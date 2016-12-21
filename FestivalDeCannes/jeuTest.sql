@@ -88,17 +88,17 @@ insert into Salle_Festival (nomSalle, nbPlaces) VALUES
 /*==============================================================*/
 insert into VIP (nom, prenom, nationalite, photo, typeVIP,
 priorite, dateNaissance, numCompagnon, numJury, numFilm) VALUES
-("Scorecese","Martin","Américain","img/martinscorcese.png","Réalisateur",9,"1943-01-03",10,null,4),
+("Scorecese","Martin","Américain","img/martinscorcese.png","Réalisateur",9,"1943-01-03",null,null,4),
 ("Tarantino","Quentin","Américain","img/quentintarantino.png","Réalisateur",8,"1967-08-15",null,null,23),
 ("Spielberg","Steven","Américain","img/stevenspielberg.png","Réalisateur",10,"1939-04-02",null,null,6),
 ("Thiboud","Pierre-Elliott","Français","img/pierreelliottthiboud.png","Journaliste",3,"1996-07-23",null,null,32),
-("Borel","Maxime","Stéphanois","img/maximeborel.png","Acteur",5,"1993-10-01",8,null,31),
+("Borel","Maxime","Stéphanois","img/maximeborel.png","Acteur",5,"1993-10-01",null,null,31),
 
-("Pietrac","Nicolas","INSAis","img/nicolaspietrac.png","Producteur",1,"2002-01-01",9,null,29),
+("Pietrac","Nicolas","INSAis","img/nicolaspietrac.png","Producteur",1,"2002-01-01",null,null,29),
 ("Cotillard","Marion","Française","img/marioncotillard.png","Actrice",2,"1978-05-25",null,null,45),
-("Roumanov","Natasha","Russe","img/natasharoumanov.png","Actrice",7,"1973-06-22",5,null,18),
-("Cumberbatch","Benedict","Anglais","img/benedictcumberbatch.png","Acteur",4,"1972-04-16",6,null,42),
-("Ropert","Axelle","Française","img/axelleropert","Réalisatrice",6,"1983-03-28",1,null,49);
+("Roumanov","Natasha","Russe","img/natasharoumanov.png","Actrice",7,"1973-06-22",null,null,18),
+("Cumberbatch","Benedict","Anglais","img/benedictcumberbatch.png","Acteur",4,"1972-04-16",null,null,42),
+("Ropert","Axelle","Française","img/axelleropert","Réalisatrice",6,"1983-03-28",null,null,49);
 
 /* Quand il y aura le courage...
 ("","","","","",,"",null,null,null),
@@ -112,9 +112,9 @@ priorite, dateNaissance, numCompagnon, numJury, numFilm) VALUES
 /* Table : Jury                                          		*/
 /*==============================================================*/
 insert into Jury (typeJury, numPresident) VALUES
-("LM",4),
-("CM",3),
-("UCR",6);
+("LM",54),
+("CM",53),
+("UCR",56);
 
 
 /*==============================================================*/
@@ -164,11 +164,17 @@ insert into Utilisateurs (login, mdp) VALUES
 /*===================================================================*/
 /* Update de la table : VIP (pour respecter les clefs étrangères)    */
 /*===================================================================*/
-update VIP set numJury = 2 where numVIP = 2;
-update VIP set numJury = 2 where numVIP = 3;
+update VIP set numCompagnon = 60 where numVIP = 51;
 
-update VIP set numJury = 1 where numVIP = 4;
-update VIP set numJury = 1 where numVIP = 5;
+update VIP set numJury = 5 where numVIP = 52;
+update VIP set numJury = 5 where numVIP = 53;
 
-update VIP set numJury = 3 where numVIP = 6;
-update VIP set numJury = 3 where numVIP = 7;
+update VIP set numJury = 4 where numVIP = 54;
+update VIP set numJury = 4, numCompagnon = 58 where numVIP = 55;
+
+update VIP set numJury = 6, numCompagnon = 59 where numVIP = 56;
+update VIP set numJury = 6 where numVIP = 57;
+
+update VIP set numCompagnon = 55 where numVIP = 58;
+update VIP set numCompagnon = 56 where numVIP = 59;
+update VIP set numCompagnon = 51 where numVIP = 60;

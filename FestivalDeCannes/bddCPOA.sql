@@ -154,7 +154,7 @@ create table Utilisateurs
 (
 	login 				varchar(100),
 	mdp			 		varchar(100),
-	CONSTRAINT PK_Utilisateurs PRIMARY KEY (numUser)
+	CONSTRAINT PK_Utilisateurs PRIMARY KEY (login)
 );
 
 
