@@ -27,7 +27,7 @@ public class VIP {
    /** @pdOid e4983287-9298-478a-ac65-66850fe1d258 */
    private int priorite;
    /** @pdOid c58551ef-634d-4d0c-943b-8572b2940ecd */
-   private java.util.Date dateNaissance;
+   private Date dateNaissance;
    
    /** @pdOid 2892d0b3-b8c0-412b-be25-153f4ea276f7 */
    protected void finalize() {
