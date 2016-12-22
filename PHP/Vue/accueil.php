@@ -31,13 +31,13 @@
 				<div class="col-lg-6">
 					<div class="row">
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="../Controleur/controleurAjoutVIP.php" class="btn btn-lg btn-primary btn-block">Ajouter VIP</a>
+							<a href="../Controleur/controleurAjoutVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Ajouter VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="" class="btn btn-lg btn-primary btn-block">Modifier VIP</a>
+							<a href="../Vue/modificationVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Modifier VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="" class="btn btn-lg btn-primary btn-block">Supprimer VIP</a>
+							<a href="" class="btn btn-lg btn-primary btn-block marge-bouton">Supprimer VIP</a>
 						</div>
 					<!--<span class="bouton"> <a href="">Modifier VIP</a></span>
 					<span class="bouton"> <a href="">Supprimer VIP</a></span>-->
@@ -46,13 +46,13 @@
 				<div class="col-lg-6 bordered-left">
 					<div class="row">
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="" class="btn btn-lg btn-primary btn-block">Ajouter échange VIP</a>
+							<a href="" class="btn btn-lg btn-primary btn-block marge-bouton">Ajouter échange VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="" class="btn btn-lg btn-primary btn-block">Modifier échange VIP</a>
+							<a href="" class="btn btn-lg btn-primary btn-block marge-bouton">Modifier échange VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="" class="btn btn-lg btn-primary btn-block">Supprimer échange VIP</a>
+							<a href="" class="btn btn-lg btn-primary btn-block marge-bouton">Supprimer échange VIP</a>
 						</div>
 					<!--<span class="bouton"> <a href="">Modifier VIP</a></span>
 					<span class="bouton"> <a href="">Supprimer VIP</a></span>-->

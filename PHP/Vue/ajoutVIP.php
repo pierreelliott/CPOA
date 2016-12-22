@@ -29,7 +29,7 @@
 			</div>
 			<div class="row marge-haut">
 				<div class="col-lg-offset-2 col-lg-8">
-					<form method="post" action="Vue/accueil.php" class="form-horizontal">
+					<form method="post" action="../Controleur/controleurAjoutVIP.php" class="form-horizontal">
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form-group">
@@ -101,7 +101,7 @@
 								<button type="submit" class="btn btn-lg btn-primary btn-block">Ajouter VIP</button>
 							</div>
 							<div class="col-lg-offset-2 col-lg-3">
-								<a href="../Vue/accueil.php" class="btn btn-lg btn-primary btn-block non-marge-haut">Annuler</a>
+								<a href="../Vue/accueil.php" class="btn btn-lg btn-primary btn-block">Retour</a>
 							</div>
 						</div>
 					</form>
