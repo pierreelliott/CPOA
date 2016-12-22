@@ -31,7 +31,7 @@
 				<div class="col-lg-6">
 					<div class="row">
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="ajoutVIP.php" class="btn btn-lg btn-primary btn-block">Ajouter VIP</a>
+							<a href="../Controleur/controleurAjoutVIP.php" class="btn btn-lg btn-primary btn-block">Ajouter VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
 							<a href="" class="btn btn-lg btn-primary btn-block">Modifier VIP</a>

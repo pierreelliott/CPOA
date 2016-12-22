@@ -30,3 +30,5 @@
 		
 		ajouterVIP($vip);
 	}
+	
+	include("../Vue/ajoutVIP.php");
