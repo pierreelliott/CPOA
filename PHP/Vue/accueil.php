@@ -37,7 +37,7 @@
 							<a href="../Vue/modificationVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Modifier VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="" class="btn btn-lg btn-primary btn-block marge-bouton">Supprimer VIP</a>
+							<a href="../Vue/suppressionVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Supprimer VIP</a>
 						</div>
 					<!--<span class="bouton"> <a href="">Modifier VIP</a></span>
 					<span class="bouton"> <a href="">Supprimer VIP</a></span>-->
@@ -65,7 +65,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
   </body>
 </html>
 
