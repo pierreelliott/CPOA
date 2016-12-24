@@ -91,7 +91,7 @@
 										<div class="form-group marge-bas">
 											<label for="nationalite" class="col-xs-4 control-label">Nationalité</label>
 											<div class="col-xs-8">
-												<select name="nationalite" id="nationalite">
+												<select name="nationalite" id="nationalite" class="form-control">
 													<option value="france" selected>France</option>
 													<option value="england">England</option>
 													<option value="deutschland">Deutschland</option>
@@ -102,7 +102,7 @@
 										<div class="form-group marge-bas">
 											<label for="typeVIP" class="col-xs-4 control-label">Type VIP</label>
 											<div class="col-xs-8">
-												<select name="typeVIP" id="typeVIP">
+												<select name="typeVIP" id="typeVIP" class="form-control">
 													<option value="journaliste" selected>Journaliste</option>
 													<option value="comédien">Comédien</option>
 													<option value="réalisateur">Réalisateur</option>

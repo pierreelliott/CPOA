@@ -41,16 +41,85 @@
 					</div>
 					<div class="row">
 						<div class="col-xs-6">
+							<!-- Bouton d'activation de la fenêtre modale -->
 							<button href="#modalevip" class="btn btn-danger btn-block">Supprimer</button>
+							<!-- Fenêtre modale -->
 							<div class="modal fade" id="modalevip">
-								<div class="modal-dialog">
+								<div class="modal-dialog modal-lg">
 									<div class="modal-content">
 										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal">x</button>
-											<h4 class="modal-title">Plus d'informations</h4>
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">Voulez-vous suppimer ce VIP ?</h4>
 										</div>
 										<div class="modal-body">
-											Le Tigre (Panthera tigris) est un mammifère carnivore de la famille des félidés...
+											<form method="post" action="../Controleur/controleurSuppressionVIP.php" class="form-horizontal">
+												<div class="row">
+													<div class="col-xs-6">
+														<div class="form-group">
+															<label for="nom" class="col-xs-4 control-label">Nom</label>
+															<div class="col-xs-8">
+																<input type="text" name="nom" id="nom" value="bertrand" class="form-control" readonly>
+															</div>
+														</div>
+														<div class="form-group">
+															<label for="prenom" class="col-xs-4 control-label">Prenom</label>
+															<div class="col-xs-8">
+																<input type="text" name="prenom" id="prenom" value="axel" class="form-control" readonly>
+															</div>
+														</div>
+														<div class="form-group">
+															<div class="col-xs-offset-8 col-xs-4">
+																<img src="../images/avatar.png" alt="avatar">
+															</div>
+														</div>
+														<div class="form-group">
+															<label for="priorite" class="col-xs-4 control-label">Priorité</label>
+															<div class="col-xs-8">
+																<input type="number" name="priorite" min="0" max="10" id="priorite" value="1" class="form-control" readonly>
+															</div>
+														</div>
+														<div class="form-group">
+															<label for="datenaissance" class="col-xs-4 control-label">Date de naissance</label>
+															<div class="col-xs-8">
+																<input type="date" name="datenaissance" id="datenaissance" value="1998-02-22" class="form-control" readonly>
+															</div>
+														</div>
+													</div>
+													<div class="col-xs-6">
+														<div class="form-group marge-bas">
+															<label for="nationalite" class="col-xs-4 control-label">Nationalité</label>
+															<div class="col-xs-8">
+																<select name="nationalite" id="nationalite" class="form-control" disabled>
+																	<option value="france" selected>France</option>
+																	<option value="england">England</option>
+																	<option value="deutschland">Deutschland</option>
+																	<option value="spain">Spain</option>
+																</select>
+															</div>
+														</div>
+														<div class="form-group marge-bas">
+															<label for="typeVIP" class="col-xs-4 control-label">Type VIP</label>
+															<div class="col-xs-8">
+																<select name="typeVIP" id="typeVIP" class="form-control" disabled>
+																	<option value="journaliste" selected>Journaliste</option>
+																	<option value="comédien">Comédien</option>
+																	<option value="réalisateur">Réalisateur</option>
+																	<option value="scénariste">Scénariste</option>
+																	<option value="photographe">Photographe</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-xs-offset-2 col-xs-3">
+														<button type="submit" class="btn btn-lg btn-danger btn-block">Supprimer VIP</button>
+													</div>
+													<div class="col-xs-offset-2 col-xs-3">
+														<button data-dismiss="modal" class="btn btn-lg btn-primary btn-block">Retour</a>
+													</div>
+												</div>
+											</form>
 										</div>
 									</div>
 								</div>

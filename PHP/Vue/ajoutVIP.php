@@ -72,7 +72,7 @@
 								<div class="form-group marge-bas">
 									<label for = "nationalite" class="col-lg-4 control-label">Nationalité</label>
 									<div class="col-lg-8">
-										<select name="nationalite" id="nationalite">
+										<select name="nationalite" id="nationalite" class="form-control">
 											<option>France</option>
 											<option>England</option>
 											<option>Deutschland</option>
@@ -84,7 +84,7 @@
 								<div class="form-group marge-bas">
 									<label for = "typeVIP" class="col-lg-4 control-label">Type VIP</label>
 									<div class="col-lg-8">
-										<select name="typeVIP" id="typeVIP">
+										<select name="typeVIP" id="typeVIP" class="form-control">
 											<option>Journaliste</option>
 											<option>Comédien</option>
 											<option>Réalisateur</option>
@@ -113,6 +113,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
   </body>
 </html>
