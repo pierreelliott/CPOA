@@ -18,14 +18,17 @@
 		<div id="couleurform">
 			<h1>Connexion - Gestion des VIP</h1>
 			
-			<form method="post" action="Vue/acceuil.php" id="formulaire">
+			<form method="post" action="index.php" id="formulaire">
 				
-					<p>Pseudo : <input type="text" name="prenom" /></p>
-					<p>Mot de passe :<input name="mdp" type="password"/></p>
+					<p>Pseudo : <input type="text" name="pseudo" value ="<?php if(isset($_COOKIE['pseudo']) ) echo $_COOKIE['pseudo'];?>" /></p>
+					<p>Mot de passe :<input name="mdp" type="password" value ="<?php if(isset($_COOKIE['mdp']) ) echo $_COOKIE['mdp'];?>"/></p>
+									 <input type="checkbox" name="souvenir" id="case"/> <label for="case">Se souvenir de moi</label>
 					
 			   <p style="text-align: center;"><input type="submit" value="Se connecter" /></p>
 				
 			</form>
+			<?php if(isset($req) && $req==false ){
+				echo' Merci de rentrer un identifiant ou mot de passe correct ! Il se peut que vous n\'ayez pas d\'accès à cette page.'; }  ?>
 		</div>	
 			
 	</div>

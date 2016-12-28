@@ -8,8 +8,8 @@
 		<title>Gestion VIP</title>
 
 		<!-- Bootstrap -->
-		<link href="../css/bootstrap.min.css" rel="stylesheet">
-		<link href="css.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="Vue/css.css" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,6 +20,7 @@
 	</head>
     <body>
     
+		<p> Utilisateur connecté : <?php echo $_SESSION['pseudo'];?> </p>
 
 		<div class="container-fluid">
 			<div class="row">
@@ -31,13 +32,13 @@
 				<div class="col-lg-6">
 					<div class="row">
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="../Controleur/controleurAjoutVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Ajouter VIP</a>
+							<a href="Controleur/controleurAjoutVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Ajouter VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="../Vue/modificationVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Modifier VIP</a>
+							<a href="Vue/modificationVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Modifier VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="../Vue/suppressionVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Supprimer VIP</a>
+							<a href="Vue/suppressionVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Supprimer VIP</a>
 						</div>
 					<!--<span class="bouton"> <a href="">Modifier VIP</a></span>
 					<span class="bouton"> <a href="">Supprimer VIP</a></span>-->
