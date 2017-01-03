@@ -20,7 +20,7 @@
 	</head>
     <body>
     
-		<p> Utilisateur connecté : <?php echo $_SESSION['pseudo'];?> </p>
+		<p><?php if(isset($_SESSION['pseudo'])) echo "Utilisateur connecté : ".$_SESSION['pseudo'];?></p>
 
 		<div class="container-fluid">
 			<div class="row">
@@ -32,10 +32,10 @@
 				<div class="col-lg-6">
 					<div class="row">
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="Controleur/controleurAjoutVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Ajouter VIP</a>
+							<a href="index.php?page=ajoutVIP" class="btn btn-lg btn-primary btn-block marge-bouton">Ajouter VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="Vue/modificationVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Modifier VIP</a>
+							<a href="index.php?page=modificationVIP" class="btn btn-lg btn-primary btn-block marge-bouton">Modifier VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
 							<a href="Vue/suppressionVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Supprimer VIP</a>

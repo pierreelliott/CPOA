@@ -2,14 +2,11 @@
 class Utilisateur{
 	
 	
-	
 	function connexion($login, $mdp){
 		global $bdd;
 		$bool = true;
- 	 
-		$util = new Utilisateur();
 		
-		$resultat = $util->getId($login, $mdp);
+		$resultat = $this->getId($login, $mdp);
 
 		if (!$resultat)
 		{
@@ -26,7 +23,7 @@ class Utilisateur{
 	
 	function getId($login, $mdp){
 		global $bdd;
-		$req = $bdd->prepare('SELECT id FROM utilisateurs WHERE login = :login AND mdp = :mdp');
+		$req = $bdd->prepare('SELECT id FROM Utilisateurs WHERE login = :login AND mdp = :mdp');
 		$req->execute(array(
 			'login' => $login,
 			'mdp' => $mdp));

@@ -8,8 +8,8 @@
 		<title>Gestion VIP</title>
 
 		<!-- Bootstrap -->
-		<link href="../css/bootstrap.min.css" rel="stylesheet">
-		<link href="css.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="Vue/css.css" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,13 +28,20 @@
 					</div>
 					<ul class="nav nav-pills nav-stacked">
 						<!-- Les noms seront ceux des différents VIP de la bdd affichés avec PHP (l'attribut href : # + initiales du prénom puis nom, mettre un 2 si il y a plusieurs fois le même) -->
-						<li class="active"><a href="#ab" data-toggle="tab">Axel BERTRAND</a></li>
-						<li><a href="#pt" data-toggle="tab">Pierre-Elliott THIBOUD</a></li>
-						<li><a href="#mb" data-toggle="tab">Maxime BOREL</a></li>
+						<?php
+							foreach($vips as $key => $vip) {
+						?>
+						
+						<li <?php if($key == 0) echo 'class="active"'; ?>><a href="#<?php echo $vip["numVIP"]; ?> data-toggle="tab"><?php echo $vip["prenom"].' '.$vip["nom"]; ?></a></li>
+						<?php } ?>
 					</ul>
 					<div class="tab-content">
 						<!-- Ces valeurs seront récupérées dans la bdd et écrite sous ce format pour faire de l'autocomplétion quand on clique sur un vip, l'atribut id pareil que href sans le # (il y a peut-être mieux mais j'ai pas trouver) -->
-						<div class="tab-pane fade in active hidden" id="ab">nom:bertrand;prenom:axel;priorite:1;datenaissance:1998-02-22;nationalite:france;typeVIP:journaliste;</div>
+						<?php
+							foreach($vips as $key => $vip) {
+						?>
+						<div class="tab-pane fade in active hidden" id="<?php echo $vip["numVIP"]; ?>">nom:bertrand;prenom:axel;priorite:1;datenaissance:1998-02-22;nationalite:france;typeVIP:journaliste;</div>
+						<?php } ?>
 						<div class="tab-pane fade hidden" id="pt">nom:thiboud;prenom:pe;priorite:2;datenaissance:1996-05-17;nationalite:deutschland;typeVIP:comédien;</div>
 						<div class="tab-pane fade hidden" id="mb">nom:borel;prenom:maxime;priorite:3;datenaissance:1997-10-23;nationalite:spain;typeVIP:journaliste;</div>
 					</div>
@@ -118,7 +125,7 @@
 										<button type="submit" class="btn btn-lg btn-primary btn-block">Modifier VIP</button>
 									</div>
 									<div class="col-xs-offset-2 col-xs-3">
-										<a href="../Vue/accueil.php" class="btn btn-lg btn-primary btn-block">Retour</a>
+										<a href="index.php?page=accueil" class="btn btn-lg btn-primary btn-block">Retour</a>
 									</div>
 								</div>
 							</form>
