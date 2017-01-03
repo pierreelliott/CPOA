@@ -8,8 +8,8 @@
 		<title>Gestion VIP</title>
 
 		<!-- Bootstrap -->
-		<link href="../css/bootstrap.min.css" rel="stylesheet">
-		<link href="css.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="Vue/css.css" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,7 +29,7 @@
 			</div>
 			<div class="row marge-haut">
 				<div class="col-lg-offset-2 col-lg-8">
-					<form method="post" action="../Controleur/controleurAjoutVIP.php" class="form-horizontal">
+					<form method="post" action="index.php?page=ajoutVIP" class="form-horizontal">
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form-group">
@@ -101,7 +101,7 @@
 								<button type="submit" class="btn btn-lg btn-primary btn-block">Ajouter VIP</button>
 							</div>
 							<div class="col-lg-offset-2 col-lg-3">
-								<a href="../Vue/accueil.php" class="btn btn-lg btn-primary btn-block">Retour</a>
+								<a href="index.php?page=accueil" class="btn btn-lg btn-primary btn-block">Retour</a>
 							</div>
 						</div>
 					</form>

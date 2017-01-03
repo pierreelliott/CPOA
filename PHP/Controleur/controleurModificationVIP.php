@@ -27,8 +27,10 @@
 						$_POST["nationalite"],
 						$_POST["typeVIP"]
 					);
-		
-		ajouterVIP($vip);
+	}
+	else
+	{
+		$vips = getVIPs();
 	}
 	
-	include("Vue/ajoutVIP.php");
+	include("Vue/modificationVIP.php");

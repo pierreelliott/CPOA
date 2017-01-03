@@ -18,7 +18,7 @@
 		<div id="couleurform">
 			<h1>Connexion - Gestion des VIP</h1>
 			
-			<form method="post" action="index.php" id="formulaire">
+			<form method="post" action="index.php?page=connexion" id="formulaire">
 				
 					<p>Pseudo : <input type="text" name="pseudo" value ="<?php if(isset($_COOKIE['pseudo']) ) echo $_COOKIE['pseudo'];?>" /></p>
 					<p>Mot de passe :<input name="mdp" type="password" value ="<?php if(isset($_COOKIE['mdp']) ) echo $_COOKIE['mdp'];?>"/></p>
