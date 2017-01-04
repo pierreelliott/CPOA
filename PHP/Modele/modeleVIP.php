@@ -51,3 +51,15 @@
 		$resultat = $resultat->fetchAll();
 		return $resultat;
 	}
+	
+	function toString(array $vip)
+	{
+		$stringVIP = "nom:".strtolower($vip["nom"]).";";
+		$stringVIP .= "prenom:".strtolower($vip["prenom"]).";";
+		$stringVIP .= "priorite:".$vip["priorite"].";";
+		$stringVIP .= "datenaissance:".$vip["dateNaissance"].";";
+		$stringVIP .= "nationalite:".strtolower($vip["nationalite"]).";";
+		$stringVIP .= "typeVIP:".strtolower($vip["typeVIP"]).";";
+		
+		return $stringVIP;
+	}

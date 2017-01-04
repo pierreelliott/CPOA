@@ -48,7 +48,7 @@
 									<div class="row pointille">
 										<div class="col-lg-8">
 											<label for="photo" class="col-lg-4 control-label">Photo</label>
-											<input type="file" name="photo" id="photo">
+											<input type="file" name="photo" id="photo"  accept="image/*">
 										</div>
 										<div class="col-lg-4">
 											<img src="../images/avatar.png" alt="avatar">

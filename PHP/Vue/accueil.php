@@ -38,7 +38,7 @@
 							<a href="index.php?page=modificationVIP" class="btn btn-lg btn-primary btn-block marge-bouton">Modifier VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="Vue/suppressionVIP.php" class="btn btn-lg btn-primary btn-block marge-bouton">Supprimer VIP</a>
+							<a href="index.php?page=suppressionVIP" class="btn btn-lg btn-primary btn-block marge-bouton">Supprimer VIP</a>
 						</div>
 					<!--<span class="bouton"> <a href="">Modifier VIP</a></span>
 					<span class="bouton"> <a href="">Supprimer VIP</a></span>-->

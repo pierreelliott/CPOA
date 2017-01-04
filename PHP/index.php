@@ -22,6 +22,9 @@
 		case "modificationVIP" :
 			require("Controleur/controleurModificationVIP.php");
 		break;
+		case "suppressionVIP" :
+			require("Controleur/controleurSuppressionVIP.php");
+		break;
 		default :
 			require("Vue/404.php");
 	}
