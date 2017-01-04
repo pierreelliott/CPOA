@@ -10,7 +10,7 @@ package Modele.DAO;
  * @author p1402690
  */
 import java.sql.*;
-import org.mariadb.jdbc.jdbc2.optional.MariaDbDataSource; // pour le dataSource
+import org.mariadb.jdbc.MariaDbDataSource; // pour le dataSource
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -23,14 +23,13 @@ public class Connexion {
     public Connexion() {
     }
 
-    public Connection Connecter() throws SQLException {
+    public static Connection Connecter() throws SQLException {
         FileInputStream fichier = null;
         try {
             Properties props = new Properties();
-            fichier = new FileInputStream("connexion.properties");
+            fichier = new FileInputStream(".\\src\\Modele\\DAO\\connexion.properties");
             props.load(fichier);
             MariaDbDataSource ds = new MariaDbDataSource();
-            ds.setDriverType(props.getProperty("pilote"));
             ds.setPortNumber(new Integer(props.getProperty("port")));
             ds.setServerName(props.getProperty("serveur"));
             ds.setDatabaseName(props.getProperty("service"));
@@ -50,5 +49,67 @@ public class Connexion {
                 Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        return null;
+    }
+    
+    public static ResultSet executerRequete(String requete, String colonnes[], String parametres[]) {
+        try {
+            Connection connec = Connexion.Connecter();
+            PreparedStatement sql = connec.prepareStatement(requete);
+            
+            int i = 0;
+            for(String type : colonnes)
+            {
+                switch(type)
+                {
+                    case "String":
+                    case "string":
+                        sql.setString(i, parametres[i]);
+                        break;
+                    
+                    case "int":
+                        sql.setInt(i, Integer.valueOf(parametres[i]) );
+                        break;
+                    
+                    case "Date":
+                    case "date":
+                        if(parametres[i].equals("current"))
+                            sql.setString(i, "CURRENT_DATE()");
+                        else
+                            sql.setString(i, parametres[i]);
+                        break;
+                    
+                    case "datetime":
+                    case "Datetime":
+                        if(parametres[i].equals("current"))
+                            sql.setString(i, "NOW()");
+                        else
+                            sql.setString(i, parametres[i]);
+                        break;
+                    
+                    case "null":
+                    case "nul":
+                    default:
+                        sql.setString(i, "null");
+                        break;
+                }
+                i += 1;
+            }
+            sql.executeUpdate();
+            Connexion.fermer(connec);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    public static boolean fermer(Connection co) {
+        try {
+            co.close();
+        } catch (SQLException ex) {
+            return false;
+        }
+        return true;
     }
 }
