@@ -6,7 +6,7 @@ class Utilisateur{
 		global $bdd;
 		$bool = true;
 		
-		$resultat = $this->getId($login, $mdp);
+		$resultat = $this->getUtil($login, $mdp);
 
 		if (!$resultat)
 		{
@@ -21,9 +21,9 @@ class Utilisateur{
 		
 	}
 	
-	function getId($login, $mdp){
+	function getUtil($login, $mdp){
 		global $bdd;
-		$req = $bdd->prepare('SELECT id FROM Utilisateurs WHERE login = :login AND mdp = :mdp');
+		$req = $bdd->prepare('SELECT login, mdp FROM Utilisateurs WHERE login = :login AND mdp = :mdp');
 		$req->execute(array(
 			'login' => $login,
 			'mdp' => $mdp));

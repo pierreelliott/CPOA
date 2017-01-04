@@ -15,8 +15,7 @@
 		if($req==true)
 		{
 			session_start();
-			$resultat = $utilisateur->getId($_POST['pseudo'], $_POST['mdp']);
-			$_SESSION['id'] = $resultat['id'];
+			$resultat = $utilisateur->getUtil($_POST['pseudo'], $_POST['mdp']);
 			$_SESSION['pseudo'] = $_POST['pseudo'];
 			$_SESSION['mdp'] = $_POST['mdp'];
 			

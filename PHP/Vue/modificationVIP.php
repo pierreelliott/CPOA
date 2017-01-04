@@ -28,24 +28,21 @@
 					</div>
 					<ul class="nav nav-pills nav-stacked">
 						<!-- Les noms seront ceux des différents VIP de la bdd affichés avec PHP (l'attribut href : # + initiales du prénom puis nom, mettre un 2 si il y a plusieurs fois le même) -->
-						<?php
-							foreach($vips as $key => $vip) {
-						?>
+						<?php foreach($vips as $key => $vip) { ?>
 						
-						<li <?php if($key == 0) echo 'class="active"'; ?>><a href="#<?php echo $vip["numVIP"]; ?> data-toggle="tab"><?php echo $vip["prenom"].' '.$vip["nom"]; ?></a></li>
+						<li<?php if($key == 0) echo ' class="active"'; ?>><a href="#<?php echo $vip["numVIP"]; ?>" data-toggle="tab"><?php echo $vip["prenom"].' '.$vip["nom"]; ?></a></li>
+						
 						<?php } ?>
 					</ul>
 					<div class="tab-content">
 						<!-- Ces valeurs seront récupérées dans la bdd et écrite sous ce format pour faire de l'autocomplétion quand on clique sur un vip, l'atribut id pareil que href sans le # (il y a peut-être mieux mais j'ai pas trouver) -->
-						<?php
-							foreach($vips as $key => $vip) {
-						?>
-						<div class="tab-pane fade in active hidden" id="<?php echo $vip["numVIP"]; ?>">nom:bertrand;prenom:axel;priorite:1;datenaissance:1998-02-22;nationalite:france;typeVIP:journaliste;</div>
+						<?php foreach($vips as $key => $vip) { ?>
+						
+						<div class="tab-pane fade <?php if($key == 0) echo 'in active '; ?>hidden" id="<?php echo $vip["numVIP"]; ?>"><?php echo toString($vip); ?></div>
+						
 						<?php } ?>
-						<div class="tab-pane fade hidden" id="pt">nom:thiboud;prenom:pe;priorite:2;datenaissance:1996-05-17;nationalite:deutschland;typeVIP:comédien;</div>
-						<div class="tab-pane fade hidden" id="mb">nom:borel;prenom:maxime;priorite:3;datenaissance:1997-10-23;nationalite:spain;typeVIP:journaliste;</div>
 					</div>
-					<a href="../Controleur/controleurAjoutVIP.php" class="btn btn-primary btn-block">Ajouter un VIP</a>
+					<a href="index.php?page=ajoutVIP" class="btn btn-primary btn-block">Ajouter un VIP</a>
 				</div>
 				<div class="col-xs-offset-1 col-xs-7 contour">
 					<div class="row">
@@ -74,10 +71,10 @@
 											<div class="row pointille">
 												<div class="col-xs-8">
 													<label for="photo" class="col-xs-4 control-label">Photo</label>
-													<input type="file" name="photo" id="photo">
+													<input type="file" name="photo" id="photo" accept="image/*">
 												</div>
 												<div class="col-xs-4">
-													<img src="../images/avatar.png" alt="avatar">
+													<img src="images/avatar.png" alt="avatar">
 												</div>
 											</div>
 										</div>
@@ -103,6 +100,7 @@
 													<option value="england">England</option>
 													<option value="deutschland">Deutschland</option>
 													<option value="spain">Spain</option>
+													<option value="usa">USA</option>
 												</select>
 											</div>
 										</div>
@@ -115,16 +113,18 @@
 													<option value="réalisateur">Réalisateur</option>
 													<option value="scénariste">Scénariste</option>
 													<option value="photographe">Photographe</option>
+													<option value="acteur">Acteur</option>
+													<option value="producteur">Producteur</option>
 												</select>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-xs-offset-2 col-xs-3">
+									<div class="col-xs-offset-1 col-xs-4">
 										<button type="submit" class="btn btn-lg btn-primary btn-block">Modifier VIP</button>
 									</div>
-									<div class="col-xs-offset-2 col-xs-3">
+									<div class="col-xs-offset-1 col-xs-4">
 										<a href="index.php?page=accueil" class="btn btn-lg btn-primary btn-block">Retour</a>
 									</div>
 								</div>
@@ -138,23 +138,26 @@
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="../js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 		<script>
 			$(function()
 			{	
 				$('li a').click(function (e) {
 					var donneesVIP = $($(this).attr('href')).text();
+					console.log(donneesVIP);
 					
 					while(donneesVIP.length != 0)
 					{
 						// On récupère la position du caractère ':'
-						var pos = donneesVIP.indexOf(':')
+						var pos = donneesVIP.indexOf(':');
+						if(pos < 0) break;
 						// On récupère l'identifiant du champ
 						var id = donneesVIP.substring(0, pos);
 						// On supprime ce qu'on a récupérer dans la chaine 'donneesVIP'
 						donneesVIP = donneesVIP.substring(pos + 1, donneesVIP.length);
 						// On récupère la position du caractère ';'
 						pos = donneesVIP.indexOf(';');
+						if(pos < 0) break;
 						// On récupère la valeur du champ qui possède l'identifiant obtenu
 						var value = donneesVIP.substring(0, pos);
 						// On supprime ce qu'on a récupérer dans la chaine 'donneesVIP'

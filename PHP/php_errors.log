@@ -381,3 +381,85 @@
 [03-Jan-2017 09:46:27 Europe/Paris] PHP Notice:  Undefined variable: dateNaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Classes/VIP.php on line 20
 [03-Jan-2017 09:46:27 Europe/Paris] PHP Notice:  Undefined variable: nationalite in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Classes/VIP.php on line 21
 [03-Jan-2017 09:46:27 Europe/Paris] PHP Notice:  Undefined variable: typeVIP in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Classes/VIP.php on line 22
+[04-Jan-2017 16:22:28 Europe/Paris] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 20
+[04-Jan-2017 16:23:34 Europe/Paris] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 20
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant bertrand - assumed 'bertrand' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant axel - assumed 'axel' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant france - assumed 'france' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant journaliste - assumed 'journaliste' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 58
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 61
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant bertrand - assumed 'bertrand' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant axel - assumed 'axel' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant france - assumed 'france' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant journaliste - assumed 'journaliste' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 58
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 61
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant bertrand - assumed 'bertrand' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant axel - assumed 'axel' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant france - assumed 'france' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant journaliste - assumed 'journaliste' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 58
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 61
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant bertrand - assumed 'bertrand' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant axel - assumed 'axel' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant france - assumed 'france' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant journaliste - assumed 'journaliste' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 58
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 61
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant bertrand - assumed 'bertrand' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant axel - assumed 'axel' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant france - assumed 'france' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant journaliste - assumed 'journaliste' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 58
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 61
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant bertrand - assumed 'bertrand' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant axel - assumed 'axel' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant france - assumed 'france' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant journaliste - assumed 'journaliste' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 58
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 61
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant bertrand - assumed 'bertrand' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant axel - assumed 'axel' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant france - assumed 'france' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant journaliste - assumed 'journaliste' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 58
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 61
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant bertrand - assumed 'bertrand' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant axel - assumed 'axel' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant france - assumed 'france' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant journaliste - assumed 'journaliste' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 58
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 61
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant bertrand - assumed 'bertrand' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant axel - assumed 'axel' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant france - assumed 'france' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant journaliste - assumed 'journaliste' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 58
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 61
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant bertrand - assumed 'bertrand' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant axel - assumed 'axel' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant france - assumed 'france' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Use of undefined constant journaliste - assumed 'journaliste' in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 58
+[04-Jan-2017 16:49:24 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 61
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 60
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 60
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 60
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 60
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 60
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 60
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 60
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 60
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 60
+[04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
+[04-Jan-2017 16:50:09 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 60

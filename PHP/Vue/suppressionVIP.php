@@ -8,8 +8,8 @@
 		<title>Gestion VIP</title>
 
 		<!-- Bootstrap -->
-		<link href="../css/bootstrap.min.css" rel="stylesheet">
-		<link href="css.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="Vue/css.css" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,7 +28,7 @@
 						<input type="search" name="recherche" class="form-control" placeholder="Recherche">
 					</div>
 					<ul class="nav nav-pills nav-stacked">
-						<!-- Les noms seront ceux des différents VIP de la bdd affichés avec PHP (l'attribut href : # + initiales du prénom puis nom, mettre un 2 si il y a plusieurs fois le même) -->
+						<!-- Les noms seront ceux des différents VIP de la bdd affichés avec PHP (l'attribut href : # + numVIP) -->
 						<li class="active"><a href="#ab" data-toggle="tab">Axel BERTRAND</a></li>
 						<li><a href="#pt" data-toggle="tab">Pierre-Elliott THIBOUD</a></li>
 						<li><a href="#mb" data-toggle="tab">Maxime BOREL</a></li>
@@ -69,7 +69,7 @@
 														</div>
 														<div class="form-group">
 															<div class="col-xs-offset-8 col-xs-4">
-																<img src="../images/avatar.png" alt="avatar">
+																<img src="images/avatar.png" alt="avatar">
 															</div>
 														</div>
 														<div class="form-group">
@@ -126,7 +126,7 @@
 							</div>
 						</div>
 						<div class="col-xs-6">
-							<a href="../Vue/accueil.php" class="btn btn-primary btn-block">Annuler</a>
+							<a href="index.php?page=accueil" class="btn btn-primary btn-block">Annuler</a>
 						</div>
 					</div>
 				</div>	
@@ -136,7 +136,7 @@
 	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="../js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 		<script>
 			$(function()
 			{	
