@@ -3,6 +3,7 @@
 	
 	if
 	(
+		isset($_POST["id"]) and
 		isset($_POST["nom"]) and isset($_POST["prenom"]) and
 		isset($_POST["photo"]) and isset($_POST["priorite"]) and
 		isset($_POST["datenaissance"]) and isset($_POST["nationalite"]) and
@@ -19,6 +20,7 @@
 		
 		$vip = new VIP
 					(
+						$_POST["id"],
 						$_POST["nom"],
 						$_POST["prenom"],
 						$_POST["photo"],

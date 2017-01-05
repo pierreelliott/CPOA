@@ -19,6 +19,7 @@
 		
 		$vip = new VIP
 					(
+						null,
 						$_POST["nom"],
 						$_POST["prenom"],
 						$_POST["photo"],

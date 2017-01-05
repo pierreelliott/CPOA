@@ -27,7 +27,7 @@
 						<input type="search" name="recherche" class="form-control" placeholder="Recherche">
 					</div>
 					<ul class="nav nav-pills nav-stacked">
-						<!-- Les noms seront ceux des différents VIP de la bdd affichés avec PHP (l'attribut href : # + initiales du prénom puis nom, mettre un 2 si il y a plusieurs fois le même) -->
+						<!-- Les noms seront ceux des différents VIP de la bdd affichés avec PHP (l'attribut href : # + numVIP) -->
 						<?php foreach($vips as $key => $vip) { ?>
 						
 						<li<?php if($key == 0) echo ' class="active"'; ?>><a href="#<?php echo $vip["numVIP"]; ?>" data-toggle="tab"><?php echo $vip["prenom"].' '.$vip["nom"]; ?></a></li>
@@ -52,19 +52,20 @@
 					</div>
 					<div class="row marge-haut">
 						<div class="col-xs-offset-2 col-xs-8">
-							<form method="post" action="../Controleur/controleurModificationVIP.php" class="form-horizontal">
+							<form method="post" action="index.php?page=modificationVIP" class="form-horizontal">
 								<div class="row">
 									<div class="col-xs-6">
+										<input type="hidden" name="id" value="<?php echo $vip["numVIP"]; ?>">
 										<div class="form-group">
 											<label for="nom" class="col-xs-4 control-label">Nom</label>
 											<div class="col-xs-8">
-												<input type="text" name="nom" id="nom" value="bertrand" class="form-control">
+												<input type="text" name="nom" id="nom" class="form-control">
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="prenom" class="col-xs-4 control-label">Prenom</label>
 											<div class="col-xs-8">
-												<input type="text" name="prenom" id="prenom" value="axel" class="form-control">
+												<input type="text" name="prenom" id="prenom" class="form-control">
 											</div>
 										</div>
 										<div class="form-group">
@@ -81,13 +82,13 @@
 										<div class="form-group">
 											<label for="priorite" class="col-xs-4 control-label">Priorité</label>
 											<div class="col-xs-8">
-												<input type="number" name="priorite" min="0" max="10" id="priorite" value="1" class="form-control">
+												<input type="number" name="priorite" min="0" max="10" id="priorite" class="form-control">
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="datenaissance" class="col-xs-4 control-label">Date de naissance</label>
 											<div class="col-xs-8">
-												<input type="date" name="datenaissance" id="datenaissance" value="1998-02-22" class="form-control">
+												<input type="date" name="datenaissance" id="datenaissance" class="form-control">
 											</div>
 										</div>
 									</div>
@@ -142,10 +143,8 @@
 		<script>
 			$(function()
 			{	
-				$('li a').click(function (e) {
-					var donneesVIP = $($(this).attr('href')).text();
-					console.log(donneesVIP);
-					
+				function setInput(donneesVIP)
+				{
 					while(donneesVIP.length != 0)
 					{
 						// On récupère la position du caractère ':'
@@ -165,6 +164,18 @@
 						// On donne la valeur trouvée au champ correspondant
 						$('#' + id).val(value);
 					}
+				}
+			
+				$(document).ready(function(e) {
+					var donneesVIP = $('div[class~=active]').text();
+					
+					setInput(donneesVIP);
+				});
+			
+				$('li a').click(function(e) {
+					var donneesVIP = $($(this).attr('href')).text();
+					
+					setInput(donneesVIP);
 				});
 			});
 		</script>
