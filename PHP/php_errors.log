@@ -463,3 +463,15 @@
 [04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 60
 [04-Jan-2017 16:50:08 Europe/Paris] PHP Notice:  Undefined index: name in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 57
 [04-Jan-2017 16:50:09 Europe/Paris] PHP Notice:  Undefined index: datenaissance in /home/UNIV-LYON1/p1506593/public_html/CPOA/PHP/Modele/modeleVIP.php on line 60
+[05-Jan-2017 10:34:31 Europe/Paris] PHP Parse error:  syntax error, unexpected 'require' (T_REQUIRE), expecting ',' or ';' in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Controleur/controleurModificationVIP.php on line 3
+[05-Jan-2017 10:36:02 Europe/Paris] PHP Notice:  Undefined variable: vips in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 31
+[05-Jan-2017 10:36:02 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 31
+[05-Jan-2017 10:36:02 Europe/Paris] PHP Notice:  Undefined variable: vips in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 39
+[05-Jan-2017 10:36:02 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 39
+[05-Jan-2017 10:50:41 Europe/Paris] PHP Warning:  Missing argument 8 for VIP::__construct(), called in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Controleur/controleurAjoutVIP.php on line 29 and defined in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Classes/VIP.php on line 13
+[05-Jan-2017 10:50:41 Europe/Paris] PHP Notice:  Undefined variable: typeVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Classes/VIP.php on line 22
+[05-Jan-2017 10:50:41 Europe/Paris] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 20
+[05-Jan-2017 10:51:18 Europe/Paris] PHP Warning:  Missing argument 8 for VIP::__construct(), called in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Controleur/controleurAjoutVIP.php on line 29 and defined in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Classes/VIP.php on line 13
+[05-Jan-2017 10:51:18 Europe/Paris] PHP Notice:  Undefined variable: typeVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Classes/VIP.php on line 22
+[05-Jan-2017 10:51:18 Europe/Paris] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 20
+[05-Jan-2017 10:51:53 Europe/Paris] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 20

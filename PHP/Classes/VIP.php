@@ -1,6 +1,7 @@
 <?php
 	class VIP
 	{
+		private $numVIP;
 		private $nom;
 		private $prenom;
 		private $photo;
@@ -9,8 +10,9 @@
 		private $nationalite;
 		private $typeVIP;
 		
-		public function __construct($nom, $prenom, $photo, $priorite, $dateNaissance, $nationalite, $typeVIP)
+		public function __construct($numVIP, $nom, $prenom, $photo, $priorite, $dateNaissance, $nationalite, $typeVIP)
 		{
+			$this->numVIP = $numVIP;
 			$this->nom = $nom;
 			$this->prenom = $prenom;
 			$this->photo = $photo;
@@ -18,6 +20,11 @@
 			$this->dateNaissance = $dateNaissance;
 			$this->nationalite = $nationalite;
 			$this->typeVIP = $typeVIP;
+		}
+		
+		public function getNumVIP()
+		{
+			return $this->numVIP;
 		}
 		
 		public function setNom($nom)

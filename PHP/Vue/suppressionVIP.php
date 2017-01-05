@@ -19,7 +19,6 @@
 		<![endif]-->
 	</head>
     <body>
-	
 		<div class="container-fluid">
 			<div class="row marge-haut">
 				<div class="col-xs-offset-4 col-xs-4">
@@ -29,6 +28,11 @@
 					</div>
 					<ul class="nav nav-pills nav-stacked">
 						<!-- Les noms seront ceux des différents VIP de la bdd affichés avec PHP (l'attribut href : # + numVIP) -->
+						<?php foreach($vips as $key => $vip) { ?>
+						
+						<li<?php if($key == 0) echo ' class="active"'; ?>><a href="#<?php echo $vip["numVIP"]; ?>" data-toggle="tab"><?php echo $vip["prenom"].' '.$vip["nom"]; ?></a></li>
+						
+						<?php } ?>
 						<li class="active"><a href="#ab" data-toggle="tab">Axel BERTRAND</a></li>
 						<li><a href="#pt" data-toggle="tab">Pierre-Elliott THIBOUD</a></li>
 						<li><a href="#mb" data-toggle="tab">Maxime BOREL</a></li>
@@ -52,7 +56,7 @@
 											<h4 class="modal-title">Voulez-vous suppimer ce VIP ?</h4>
 										</div>
 										<div class="modal-body">
-											<form method="post" action="../Controleur/controleurSuppressionVIP.php" class="form-horizontal">
+											<form method="post" action="index.php?page=suppressionVIP" class="form-horizontal">
 												<div class="row">
 													<div class="col-xs-6">
 														<div class="form-group">

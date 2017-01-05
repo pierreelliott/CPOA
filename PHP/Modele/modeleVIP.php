@@ -25,7 +25,7 @@
 	function modifierVIP(VIP $vip)
 	{
 		global $bdd;
-		$requete = "UPDATE VIP SET nom = :nom, prenom = :prenom, photo = :photo, priorite = :priorite, dateNaissance = :dateNaissance, nationalite = :nationalite, typeVIP = :typeVIP WHERE id = :id";
+		$requete = "UPDATE VIP SET nom = :nom, prenom = :prenom, photo = :photo, priorite = :priorite, dateNaissance = :dateNaissance, nationalite = :nationalite, typeVIP = :typeVIP WHERE numVIP = :numVIP";
 		
 		$resultat = $bdd->prepare($requete);
 		$resultat->execute(array(
@@ -36,7 +36,7 @@
 				"dateNaissance" => $vip->getDateNaissance(),
 				"nationalite" => $vip->getNationalite(),
 				"typeVIP" => $vip->getTypeVIP(),
-				"id" => 1
+				"numVIP" => $vip->getnumVIP()
 		));
 		
 		return $resultat;
