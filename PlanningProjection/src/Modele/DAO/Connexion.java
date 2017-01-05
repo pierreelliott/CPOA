@@ -32,7 +32,7 @@ public class Connexion {
             MariaDbDataSource ds = new MariaDbDataSource();
             ds.setPortNumber(new Integer(props.getProperty("port")));
             ds.setServerName(props.getProperty("serveur"));
-            ds.setDatabaseName(props.getProperty("service"));
+            ds.setDatabaseName(props.getProperty("user"));
             ds.setUser(props.getProperty("user"));
             ds.setPassword(props.getProperty("pwd"));
             
@@ -52,10 +52,44 @@ public class Connexion {
         return null;
     }
     
-    public static ResultSet executerRequete(String requete, String colonnes[], String parametres[]) {
+    public static ResultSet test() throws SQLException {
+        Connection connec = Connexion.Connecter();
+        Statement stat = connec.createStatement();
+        return stat.executeQuery("select 1");
+    }
+    
+    
+    
+    public static ResultSet executerUpdate(String requete, String colonnes[], String parametres[]) {
+        Connection connec;
+        PreparedStatement sql;
+        try {
+            connec = Connexion.Connecter();
+            sql = connec.prepareStatement(requete);
+        } catch (SQLException ex) {
+            Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        return executer(sql,colonnes,parametres);
+    }
+    
+    public static ResultSet executerRequete(String requete) {
+        Connection connec;
+        Statement sql;
+        ResultSet result = null;
+        try {
+            connec = Connecter();
+            sql = connec.createStatement();
+            result = sql.executeQuery(requete);
+        } catch (SQLException ex) {
+            Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return result;
+    }
+    
+    public static ResultSet executer(PreparedStatement sql, String colonnes[], String parametres[]) {
         try {
             Connection connec = Connexion.Connecter();
-            PreparedStatement sql = connec.prepareStatement(requete);
             
             int i = 0;
             for(String type : colonnes)
