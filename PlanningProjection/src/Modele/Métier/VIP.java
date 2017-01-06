@@ -12,6 +12,21 @@ import java.util.*;
 
 /** @pdOid 2bcfeb83-59e6-41ee-a03f-00ff1fb7fbf7 */
 public class VIP {
+    /* ======== Statique ======= */
+    private static List<VIP> vips;
+    
+    public static List<VIP> getVIPs() { return vips; }
+    public static VIP getVIP(int num) {
+        Iterator ite = vips.iterator();
+        while(ite.hasNext())
+        {
+            VIP tmp = (VIP)ite.next();
+            if(tmp.getNum() == num) return tmp;
+        }
+        return null;
+    }
+    
+    /* ========Instance ========= */
    /** @pdOid 90553faf-7449-4e0f-abac-d14a11a7c436 */
    private int numVIP;
    /** @pdOid 4816e4ad-3014-42be-ab61-4e83abb64823 */
@@ -45,6 +60,9 @@ public class VIP {
    /** @pdOid be957fa9-f32f-4c60-8072-85450b5ecc66 */
    public int getNom() {
       return nom;
+   }
+   public int getNum() {
+      return numVIP;
    }
    
    /** @param newNom

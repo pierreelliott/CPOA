@@ -20,20 +20,18 @@ public class BDD {
     public static boolean chargee = false;
     public static boolean estChargee(){return chargee;}
     
-    public static void chargerBDD() {
+    public static void chargerBDD() throws SQLException {
         // Chaque classe métier comporte un tableau
         // contenant toutes les instances de la classe.
-        try {
-            //chargerVIP();
-            chargerSalles();
-            //chargerMembreJury();
-            chargerFilms();
-            chargerProjections();
-            //chargerPalmares();
-        } catch (SQLException ex) {
-            Logger.getLogger(BDD.class.getName()).log(Level.SEVERE, null, ex);
-            // To Do : lever une exception pour gérer le "problème d'import de la BDD"
-        }
+        //chargerVIP();
+        chargerSalles();
+        //chargerMembreJury();
+        chargerFilms();
+        chargerProjections();
+        chargerPalmares();
+        
+        // Penser à vérifier s'il y a une erreur lors de l'import
+        // Erreur => msg : "Erreur dans l'import de la BDD, veuillez..."
     }
     
     // <editor-fold defaultstate="collapsed" desc="Méthodes de chargement des éléments">
@@ -55,11 +53,12 @@ public class BDD {
         result = Connexion.executerRequete("select * from Palmares");
         while(result.next())
         {
-            int numP = result.getInt("numProjection");
-            int numF = result.getInt("numFilm");
-            int numS = result.getInt("numSalle");
-            Date date = result.getTimestamp("dateProjection");
-            Projection tmp = new Projection(numP, numF, numS, date);
+            String type = result.getString("typePalmares");
+            int numFilm = result.getInt("numFilm");
+            int numVIP = result.getInt("numVIP");
+            if(numFilm != 0) new Palmares(type, numFilm, "film");
+            else if(numVIP != 0) new Palmares(type, numVIP, "vip");
+            else new Palmares(type);
         }
     }
     
