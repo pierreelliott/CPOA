@@ -498,3 +498,20 @@
 [06-Jan-2017 16:14:24 Europe/Paris] PHP Notice:  Undefined variable: typeVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Classes/VIP.php on line 22
 [06-Jan-2017 16:14:24 Europe/Paris] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 20
 [06-Jan-2017 16:23:05 Europe/Paris] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 20
+[06-Jan-2017 16:32:34 Europe/Paris] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 20
+[06-Jan-2017 17:03:26 Europe/Paris] PHP Notice:  Undefined variable: vips in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 31
+[06-Jan-2017 17:03:26 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 31
+[06-Jan-2017 17:03:26 Europe/Paris] PHP Notice:  Undefined variable: vips in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 39
+[06-Jan-2017 17:03:26 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 39
+[06-Jan-2017 17:03:26 Europe/Paris] PHP Notice:  Undefined variable: vip in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 58
+[06-Jan-2017 17:04:18 Europe/Paris] PHP Notice:  Undefined variable: vips in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 31
+[06-Jan-2017 17:04:18 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 31
+[06-Jan-2017 17:04:18 Europe/Paris] PHP Notice:  Undefined variable: vips in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 39
+[06-Jan-2017 17:04:18 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 39
+[06-Jan-2017 17:04:18 Europe/Paris] PHP Notice:  Undefined variable: vip in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationVIP.php on line 58
+[06-Jan-2017 17:07:59 Europe/Paris] PHP Notice:  Undefined variable: prirote in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 8
+[06-Jan-2017 17:07:59 Europe/Paris] PHP Warning:  print_r() expects at most 2 parameters, 7 given in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 8
+[06-Jan-2017 17:25:56 Europe/Paris] PHP Parse error:  syntax error, unexpected '$photo' (T_VARIABLE) in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Controleur/controleurModificationVIP.php on line 47
+[06-Jan-2017 17:26:20 Europe/Paris] PHP Parse error:  syntax error, unexpected '$vip' (T_VARIABLE) in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 53
+[06-Jan-2017 17:26:24 Europe/Paris] PHP Parse error:  syntax error, unexpected '$vip' (T_VARIABLE) in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 53
+[06-Jan-2017 17:26:28 Europe/Paris] PHP Parse error:  syntax error, unexpected '$vip' (T_VARIABLE) in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 53

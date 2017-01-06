@@ -2,28 +2,25 @@
 	require("Modele/modeleVIP.php");
 	$message = null;
 	
-if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
-{
-        
-        if ($_FILES['photo']['size'] <= 1000000)
-        {
-               
-                $infosfichier = pathinfo($_FILES['photo']['name']);
-                $extension_upload = $infosfichier['extension'];
-                $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
-                if (in_array($extension_upload, $extensions_autorisees))
-                {
-                       
-                        move_uploaded_file($_FILES['photo']['tmp_name'], 'img/' . basename($_FILES['photo']['name']));
-                        
-                }
-        }
-}
+	if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
+	{
+		if ($_FILES['photo']['size'] <= 1000000)
+		{
+			   
+			$infosfichier = pathinfo($_FILES['photo']['name']);
+			$extension_upload = $infosfichier['extension'];
+			$extensions_autorisees = array('jpg', 'jpeg', 'png');
+			if (in_array($extension_upload, $extensions_autorisees))
+			{   
+				move_uploaded_file($_FILES['photo']['tmp_name'], 'img/' . basename($_FILES['photo']['name']));	
+			}
+		}
+	}
 	
 	if
 	(
 		isset($_POST["nom"]) and isset($_POST["prenom"]) and
-		 isset($_POST["priorite"]) and
+		isset($_POST["priorite"]) and
 		isset($_POST["datenaissance"]) and isset($_POST["nationalite"]) and
 		isset($_POST["typeVIP"])
 	)
@@ -42,7 +39,7 @@ if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0)
 			$_POST["datenaissance"] = htmlspecialchars($_POST["datenaissance"]);
 			$_POST["nationalite"] = htmlspecialchars($_POST["nationalite"]);
 			$_POST["typeVIP"] = htmlspecialchars($_POST["typeVIP"]);
-			$photo = 'img/'.$_FILES["photo"]['name'];
+			$photo = 'img/'.basename($_FILES["photo"]['name']);
 			
 			$res = ajouterVIP(
 				$_POST["nom"],

@@ -6,10 +6,10 @@
 	{
 		global $bdd;
 		$requete = "insert into VIP(nom, prenom, photo, priorite, dateNaissance, nationalite, typeVIP)".
-									"(:nom, :prenom, :photo, :priorite, :dateNaissance, :nationalite, :typVIP)";
+									"(:nom, :prenom, :photo, :priorite, str_to_date(:dateNaissance, '%Y-%m-%d'), :nationalite, :typeVIP)";
 		
 		$resultat = $bdd->prepare($requete);
-		$resultat->execute(array(
+		return $resultat->execute(array(
 				"nom" => $nom,
 				"prenom" => $prenom,
 				"photo" => $photo,
@@ -18,8 +18,6 @@
 				"nationalite" => $nationalite,
 				"typeVIP" => $typeVIP
 		));
-		
-		return $resultat;
 	}
 	
 	function modifierVIP($numVIP, $nom, $prenom, $photo, $priorite, $dateNaissance, $nationalite, $typeVIP)
@@ -28,7 +26,7 @@
 		$requete = "UPDATE VIP SET nom = :nom, prenom = :prenom, photo = :photo, priorite = :priorite, dateNaissance = :dateNaissance, nationalite = :nationalite, typeVIP = :typeVIP WHERE numVIP = :numVIP";
 		
 		$resultat = $bdd->prepare($requete);
-		$resultat->execute(array(
+		return $resultat->execute(array(
 				"nom" => $nom,
 				"prenom" => $prenom,
 				"photo" => $photo,
@@ -38,8 +36,6 @@
 				"typeVIP" => $typeVIP,
 				"numVIP" => $numVIP
 		));
-		
-		return $resultat;
 	}
 	
 	function getVIPs()
@@ -54,12 +50,13 @@
 	
 	function toString(array $vip)
 	{
-		$stringVIP = "nom:".strtolower($vip["nom"]).";";
-		$stringVIP .= "prenom:".strtolower($vip["prenom"]).";";
+		$stringVIP = "numVIP:".$vip["numVIP"].";";
+		$stringVIP .= "nom:".$vip["nom"].";";
+		$stringVIP .= "prenom:".$vip["prenom"].";";
 		$stringVIP .= "priorite:".$vip["priorite"].";";
 		$stringVIP .= "datenaissance:".$vip["dateNaissance"].";";
-		$stringVIP .= "nationalite:".strtolower($vip["nationalite"]).";";
-		$stringVIP .= "typeVIP:".strtolower($vip["typeVIP"]).";";
+		$stringVIP .= "nationalite:".$vip["nationalite"].";";
+		$stringVIP .= "typeVIP:".$vip["typeVIP"].";";
 		
 		return $stringVIP;
 	}

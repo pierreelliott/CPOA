@@ -72,7 +72,7 @@
 														</div>
 														<div class="form-group">
 															<div class="col-xs-offset-8 col-xs-4">
-																<img src="images/avatar.png" alt="avatar">
+																<img src="img/avatar.png" alt="avatar">
 															</div>
 														</div>
 														<div class="form-group">

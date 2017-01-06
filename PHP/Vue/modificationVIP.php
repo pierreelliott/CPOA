@@ -55,7 +55,7 @@
 							<form method="post" action="index.php?page=modificationVIP" class="form-horizontal">
 								<div class="row">
 									<div class="col-xs-6">
-										<input type="hidden" name="numVIP" value="<?php echo $vip["numVIP"]; ?>">
+										<input type="hidden" name="numVIP" id="numVIP">
 										<div class="form-group">
 											<label for="nom" class="col-xs-4 control-label">Nom</label>
 											<div class="col-xs-8">
@@ -75,7 +75,7 @@
 													<input type="file" name="photo" id="photo" accept="image/*">
 												</div>
 												<div class="col-xs-4">
-													<img src="images/avatar.png" alt="avatar">
+													<img src="img/avatar.png" alt="avatar">
 												</div>
 											</div>
 										</div>
@@ -97,11 +97,11 @@
 											<label for="nationalite" class="col-xs-4 control-label">Nationalité</label>
 											<div class="col-xs-8">
 												<select name="nationalite" id="nationalite" class="form-control">
-													<option value="france" selected>France</option>
-													<option value="england">England</option>
-													<option value="deutschland">Deutschland</option>
-													<option value="spain">Spain</option>
-													<option value="usa">USA</option>
+													<option value="France" selected>France</option>
+													<option value="England">England</option>
+													<option value="Deutschland">Deutschland</option>
+													<option value="Spain">Spain</option>
+													<option value="USA">USA</option>
 												</select>
 											</div>
 										</div>
@@ -109,13 +109,13 @@
 											<label for="typeVIP" class="col-xs-4 control-label">Type VIP</label>
 											<div class="col-xs-8">
 												<select name="typeVIP" id="typeVIP" class="form-control">
-													<option value="journaliste" selected>Journaliste</option>
-													<option value="comédien">Comédien</option>
-													<option value="réalisateur">Réalisateur</option>
-													<option value="scénariste">Scénariste</option>
-													<option value="photographe">Photographe</option>
-													<option value="acteur">Acteur</option>
-													<option value="producteur">Producteur</option>
+													<option value="Journaliste" selected>Journaliste</option>
+													<option value="Comédien">Comédien</option>
+													<option value="Réalisateur">Réalisateur</option>
+													<option value="Scénariste">Scénariste</option>
+													<option value="Photographe">Photographe</option>
+													<option value="Acteur">Acteur</option>
+													<option value="Producteur">Producteur</option>
 												</select>
 											</div>
 										</div>
@@ -159,6 +159,7 @@
 						if(pos < 0) break;
 						// On récupère la valeur du champ qui possède l'identifiant obtenu
 						var value = donneesVIP.substring(0, pos);
+						console.log(value);
 						// On supprime ce qu'on a récupérer dans la chaine 'donneesVIP'
 						donneesVIP = donneesVIP.substring(pos + 1, donneesVIP.length);
 						// On donne la valeur trouvée au champ correspondant

@@ -51,7 +51,7 @@
 											<input type="file" name="photo" id="photo"  accept="image/*">
 										</div>
 										<div class="col-lg-4">
-											<img src="../images/avatar.png" alt="avatar">
+											<img src="img/avatar.png" alt="avatar">
 										</div>
 									</div>
 								</div>
