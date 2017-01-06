@@ -28,7 +28,7 @@ public class BDD {
             chargerSalles();
             //chargerMembreJury();
             chargerFilms();
-            //chargerProjections();
+            chargerProjections();
             //chargerPalmares();
         } catch (SQLException ex) {
             Logger.getLogger(BDD.class.getName()).log(Level.SEVERE, null, ex);
@@ -47,6 +47,19 @@ public class BDD {
             String titre = result.getString("titreFilm");
             int duree = result.getInt("duree");
             Film tmp = new Film(num, type, titre, duree);
+        }
+    }
+    
+    protected static void chargerPalmares() throws SQLException {
+        ResultSet result;
+        result = Connexion.executerRequete("select * from Palmares");
+        while(result.next())
+        {
+            int numP = result.getInt("numProjection");
+            int numF = result.getInt("numFilm");
+            int numS = result.getInt("numSalle");
+            Date date = result.getTimestamp("dateProjection");
+            Projection tmp = new Projection(numP, numF, numS, date);
         }
     }
     

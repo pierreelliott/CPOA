@@ -14,19 +14,21 @@ public class Membre_Jury {
    /** @pdOid a1b9461a-b577-4cff-ab24-1b17700e5eab */
    private int numJury;
    /** @pdOid 8ac97f20-7a9d-44f3-9aec-f7df9d7eadea */
-   private int typeJury;
+   private String typeJury;
    /** @pdOid cc2e44e1-faeb-4fa2-9d6e-e8475ea2f4bb */
    private int numPresident;
+   /** @pdRoleInfo migr=no name=Projection assc=association3 coll=java.util.Collection impl=java.util.HashSet mult=0..* */
+   public java.util.Collection<Projection> projection;
+   /** @pdRoleInfo migr=no name=VIP assc=association4 mult=1..* */
+   public VIP[] Juré;
+   
    
    /** @pdOid b33dde06-f69c-4cef-a2b3-d0da58326987 */
    protected void finalize() {
       // TODO: implement
    }
    
-   /** @pdRoleInfo migr=no name=Projection assc=association3 coll=java.util.Collection impl=java.util.HashSet mult=0..* */
-   public java.util.Collection<Projection> projection;
-   /** @pdRoleInfo migr=no name=VIP assc=association4 mult=1..* */
-   public VIP[] Juré;
+   
    
    /** @pdOid 1d88a8b8-32e2-4af7-a181-f00896360ab5 */
    public int verifierNationalite() {
@@ -35,13 +37,13 @@ public class Membre_Jury {
    }
    
    /** @pdOid d5304638-8534-4537-9133-9237ed08061c */
-   public int getTypeJury() {
+   public String getTypeJury() {
       return typeJury;
    }
    
    /** @param newTypeJury
     * @pdOid f8e82b51-1b22-45b6-8c3d-2c35d36c1881 */
-   public void setTypeJury(int newTypeJury) {
+   public void setTypeJury(String newTypeJury) {
       typeJury = newTypeJury;
    }
    

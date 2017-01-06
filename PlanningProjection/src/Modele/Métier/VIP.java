@@ -28,14 +28,16 @@ public class VIP {
    private int priorite;
    /** @pdOid c58551ef-634d-4d0c-943b-8572b2940ecd */
    private Date dateNaissance;
+   /** @pdRoleInfo migr=no name=VIP assc=aPourCompagnon_compagne mult=0..1 */
+   public VIP compagnon;
+   
    
    /** @pdOid 2892d0b3-b8c0-412b-be25-153f4ea276f7 */
    protected void finalize() {
       // TODO: implement
    }
    
-   /** @pdRoleInfo migr=no name=VIP assc=aPourCompagnon_compagne mult=0..1 */
-   public VIP compagnon;
+   
    public java.util.Collection association2;
    /** @pdRoleInfo migr=no name=Film assc=association8 coll=java.util.Collection impl=java.util.HashSet mult=0..* */
    public java.util.Collection<Film> film;
