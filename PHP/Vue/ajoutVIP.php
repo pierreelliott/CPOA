@@ -29,7 +29,7 @@
 			</div>
 			<div class="row marge-haut">
 				<div class="col-lg-offset-2 col-lg-8">
-					<form method="post" action="index.php?page=ajoutVIP" class="form-horizontal">
+					<form method="post" action="index.php?page=ajoutVIP" class="form-horizontal"  enctype="multipart/form-data">
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form-group">
@@ -65,7 +65,10 @@
 									<label for = "datenaissance" class="col-lg-4 control-label">Date de naissance</label>
 									<div class="col-lg-8">
 										<input type="date" name="datenaissance" id="datenaissance">
-									</div>
+										</div>
+										<?php if($message != null){
+											echo '<p class="text-danger"><strong>'.$message.'</strong></p>';
+										} ?>
 								</div>
 							</div>
 							<div class="col-lg-6">

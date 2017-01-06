@@ -28,5 +28,9 @@
 						$_POST["typeVIP"]
 					);
 	}
+	else
+	{
+		$vips = getVIPs();
+	}
 	
 	include("Vue/suppressionVIP.php");

@@ -55,7 +55,7 @@
 							<form method="post" action="index.php?page=modificationVIP" class="form-horizontal">
 								<div class="row">
 									<div class="col-xs-6">
-										<input type="hidden" name="id" value="<?php echo $vip["numVIP"]; ?>">
+										<input type="hidden" name="numVIP" value="<?php echo $vip["numVIP"]; ?>">
 										<div class="form-group">
 											<label for="nom" class="col-xs-4 control-label">Nom</label>
 											<div class="col-xs-8">

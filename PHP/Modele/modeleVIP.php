@@ -2,7 +2,7 @@
 	require_once("bdd.php");
 	require_once("Classes/VIP.php");
 	
-	function ajouterVIP(VIP $vip)
+	function ajouterVIP($nom, $prenom, $photo, $priorite, $dateNaissance, $nationalite, $typeVIP)
 	{
 		global $bdd;
 		$requete = "insert into VIP(nom, prenom, photo, priorite, dateNaissance, nationalite, typeVIP)".
@@ -10,33 +10,33 @@
 		
 		$resultat = $bdd->prepare($requete);
 		$resultat->execute(array(
-				"nom" => $vip->getNom(),
-				"prenom" => $vip->getPrenom(),
-				"photo" => $vip->getPhoto(),
-				"priorite" => $vip->getPriorite(),
-				"dateNaissance" => $vip->getDateNaissance(),
-				"nationalite" => $vip->getNationalite(),
-				"typeVIP" => $vip->getTypeVIP()
+				"nom" => $nom,
+				"prenom" => $prenom,
+				"photo" => $photo,
+				"priorite" => $priorite,
+				"dateNaissance" => $dateNaissance,
+				"nationalite" => $nationalite,
+				"typeVIP" => $typeVIP
 		));
 		
 		return $resultat;
 	}
 	
-	function modifierVIP(VIP $vip)
+	function modifierVIP($numVIP, $nom, $prenom, $photo, $priorite, $dateNaissance, $nationalite, $typeVIP)
 	{
 		global $bdd;
 		$requete = "UPDATE VIP SET nom = :nom, prenom = :prenom, photo = :photo, priorite = :priorite, dateNaissance = :dateNaissance, nationalite = :nationalite, typeVIP = :typeVIP WHERE numVIP = :numVIP";
 		
 		$resultat = $bdd->prepare($requete);
 		$resultat->execute(array(
-				"nom" => $vip->getNom(),
-				"prenom" => $vip->getPrenom(),
-				"photo" => $vip->getPhoto(),
-				"priorite" => $vip->getPriorite(),
-				"dateNaissance" => $vip->getDateNaissance(),
-				"nationalite" => $vip->getNationalite(),
-				"typeVIP" => $vip->getTypeVIP(),
-				"numVIP" => $vip->getnumVIP()
+				"nom" => $nom,
+				"prenom" => $prenom,
+				"photo" => $photo,
+				"priorite" => $priorite,
+				"dateNaissance" => $dateNaissance,
+				"nationalite" => $nationalite,
+				"typeVIP" => $typeVIP,
+				"numVIP" => $numVIP
 		));
 		
 		return $resultat;
