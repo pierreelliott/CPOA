@@ -33,15 +33,14 @@
 						<li<?php if($key == 0) echo ' class="active"'; ?>><a href="#<?php echo $vip["numVIP"]; ?>" data-toggle="tab"><?php echo $vip["prenom"].' '.$vip["nom"]; ?></a></li>
 						
 						<?php } ?>
-						<li class="active"><a href="#ab" data-toggle="tab">Axel BERTRAND</a></li>
-						<li><a href="#pt" data-toggle="tab">Pierre-Elliott THIBOUD</a></li>
-						<li><a href="#mb" data-toggle="tab">Maxime BOREL</a></li>
 					</ul>
 					<div class="tab-content">
 						<!-- Ces valeurs seront récupérées dans la bdd et écrite sous ce format pour faire de l'autocomplétion quand on clique sur un vip, l'atribut id pareil que href sans le # (il y a peut-être mieux mais j'ai pas trouver) -->
-						<div class="tab-pane fade in active hidden" id="ab">nom:bertrand;prenom:axel;priorite:1;datenaissance:1998-02-22;nationalite:france;typeVIP:journaliste;</div>
-						<div class="tab-pane fade hidden" id="pt">nom:thiboud;prenom:pe;priorite:2;datenaissance:1996-05-17;nationalite:deutschland;typeVIP:comédien;</div>
-						<div class="tab-pane fade hidden" id="mb">nom:borel;prenom:maxime;priorite:3;datenaissance:1997-10-23;nationalite:spain;typeVIP:journaliste;</div>
+						<?php foreach($vips as $key => $vip) { ?>
+						
+						<div class="tab-pane fade <?php if($key == 0) echo 'in active '; ?>hidden" id="<?php echo $vip["numVIP"]; ?>"><?php echo toString($vip); ?></div>
+						
+						<?php } ?>
 					</div>
 					<div class="row">
 						<div class="col-xs-6">
@@ -62,13 +61,13 @@
 														<div class="form-group">
 															<label for="nom" class="col-xs-4 control-label">Nom</label>
 															<div class="col-xs-8">
-																<input type="text" name="nom" id="nom" value="bertrand" class="form-control" readonly>
+																<input type="text" name="nom" id="nom" class="form-control" readonly>
 															</div>
 														</div>
 														<div class="form-group">
 															<label for="prenom" class="col-xs-4 control-label">Prenom</label>
 															<div class="col-xs-8">
-																<input type="text" name="prenom" id="prenom" value="axel" class="form-control" readonly>
+																<input type="text" name="prenom" id="prenom" class="form-control" readonly>
 															</div>
 														</div>
 														<div class="form-group">
@@ -79,13 +78,13 @@
 														<div class="form-group">
 															<label for="priorite" class="col-xs-4 control-label">Priorité</label>
 															<div class="col-xs-8">
-																<input type="number" name="priorite" min="0" max="10" id="priorite" value="1" class="form-control" readonly>
+																<input type="number" name="priorite" min="0" max="10" id="priorite" class="form-control" readonly>
 															</div>
 														</div>
 														<div class="form-group">
 															<label for="datenaissance" class="col-xs-4 control-label">Date de naissance</label>
 															<div class="col-xs-8">
-																<input type="date" name="datenaissance" id="datenaissance" value="1998-02-22" class="form-control" readonly>
+																<input type="date" name="datenaissance" id="datenaissance" class="form-control" readonly>
 															</div>
 														</div>
 													</div>
@@ -94,10 +93,11 @@
 															<label for="nationalite" class="col-xs-4 control-label">Nationalité</label>
 															<div class="col-xs-8">
 																<select name="nationalite" id="nationalite" class="form-control" disabled>
-																	<option value="france" selected>France</option>
+																	<option value="france">France</option>
 																	<option value="england">England</option>
 																	<option value="deutschland">Deutschland</option>
 																	<option value="spain">Spain</option>
+																	<option value="usa">USA</option>
 																</select>
 															</div>
 														</div>
@@ -105,11 +105,13 @@
 															<label for="typeVIP" class="col-xs-4 control-label">Type VIP</label>
 															<div class="col-xs-8">
 																<select name="typeVIP" id="typeVIP" class="form-control" disabled>
-																	<option value="journaliste" selected>Journaliste</option>
+																	<option value="journaliste">Journaliste</option>
 																	<option value="comédien">Comédien</option>
 																	<option value="réalisateur">Réalisateur</option>
 																	<option value="scénariste">Scénariste</option>
 																	<option value="photographe">Photographe</option>
+																	<option value="acteur">Acteur</option>
+																	<option value="producteur">Producteur</option>
 																</select>
 															</div>
 														</div>

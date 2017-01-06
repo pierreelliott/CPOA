@@ -18,17 +18,16 @@
 		$_POST["nationalite"] = htmlspecialchars($_POST["nationalite"]);
 		$_POST["typeVIP"] = htmlspecialchars($_POST["typeVIP"]);
 		
-		$vip = new VIP
-					(
-						$_POST["id"],
-						$_POST["nom"],
-						$_POST["prenom"],
-						$_POST["photo"],
-						(int)$_POST["priorite"],
-						$_POST["datenaissance"],
-						$_POST["nationalite"],
-						$_POST["typeVIP"]
-					);
+		modifierVIP(
+			$_POST["numVIP"],
+			$_POST["nom"],
+			$_POST["prenom"],
+			$_POST["photo"],
+			(int)$_POST["priorite"],
+			$_POST["datenaissance"],
+			$_POST["nationalite"],
+			$_POST["typeVIP"]
+		);
 	}
 	else
 	{
