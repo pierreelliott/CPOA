@@ -42,6 +42,14 @@ public class Palmares {
       film = f;
       palmares.add(this);
    }
+   public Palmares(String type, int num, String mode) {
+      typePalmares = type;
+      if(mode.equalsIgnoreCase("film"))
+        film = Film.getFilm(num);
+      else if(mode.equalsIgnoreCase("vip"))
+          vIP = VIP.getVIP(num);
+      palmares.add(this);
+   }
    public Palmares(String type, VIP vip) {
       typePalmares = type;
       vIP = vip;
