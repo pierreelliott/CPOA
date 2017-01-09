@@ -6,12 +6,25 @@
 
 package Modele.Métier;
 
-import Modele.Métier.Invitation;
-import Modele.Métier.Film;
 import java.util.*;
 
 /** @pdOid 2bcfeb83-59e6-41ee-a03f-00ff1fb7fbf7 */
 public class VIP {
+    /* ======== Statique ======= */
+    private static List<VIP> vips = new ArrayList();
+    
+    public static List<VIP> getVIPs() { return vips; }
+    public static VIP getVIP(int num) {
+        Iterator ite = vips.iterator();
+        while(ite.hasNext())
+        {
+            VIP tmp = (VIP)ite.next();
+            if(tmp.getNum() == num) return tmp;
+        }
+        return null;
+    }
+    
+    /* ========Instance ========= */
    /** @pdOid 90553faf-7449-4e0f-abac-d14a11a7c436 */
    private int numVIP;
    /** @pdOid 4816e4ad-3014-42be-ab61-4e83abb64823 */
@@ -28,14 +41,16 @@ public class VIP {
    private int priorite;
    /** @pdOid c58551ef-634d-4d0c-943b-8572b2940ecd */
    private Date dateNaissance;
+   /** @pdRoleInfo migr=no name=VIP assc=aPourCompagnon_compagne mult=0..1 */
+   public VIP compagnon;
+   
    
    /** @pdOid 2892d0b3-b8c0-412b-be25-153f4ea276f7 */
    protected void finalize() {
       // TODO: implement
    }
    
-   /** @pdRoleInfo migr=no name=VIP assc=aPourCompagnon_compagne mult=0..1 */
-   public VIP compagnon;
+   
    public java.util.Collection association2;
    /** @pdRoleInfo migr=no name=Film assc=association8 coll=java.util.Collection impl=java.util.HashSet mult=0..* */
    public java.util.Collection<Film> film;
@@ -43,6 +58,9 @@ public class VIP {
    /** @pdOid be957fa9-f32f-4c60-8072-85450b5ecc66 */
    public int getNom() {
       return nom;
+   }
+   public int getNum() {
+      return numVIP;
    }
    
    /** @param newNom

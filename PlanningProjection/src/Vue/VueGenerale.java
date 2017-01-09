@@ -5,6 +5,8 @@
  */
 package Vue;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import lu.tudor.santec.bizcal.CalendarPanel;
 
 /**
@@ -18,7 +20,11 @@ public class VueGenerale extends javax.swing.JFrame {
      */
     public VueGenerale() {
         initComponents();
-        CalendarPanel calendrier = new CalendarPanel();
+        try {
+            GestionAffichageCalendrier vue = new GestionAffichageCalendrier();
+        } catch (Exception ex) {
+            Logger.getLogger(VueGenerale.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -30,37 +36,17 @@ public class VueGenerale extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jButton1.setText("Générer planning automatiquement");
-
-        jButton2.setText("Visualiser planning");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addComponent(jButton2)))
-                .addContainerGap(260, Short.MAX_VALUE))
+            .addGap(0, 546, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addComponent(jButton1)
-                .addGap(33, 33, 33)
-                .addComponent(jButton2)
-                .addContainerGap(220, Short.MAX_VALUE))
+            .addGap(0, 405, Short.MAX_VALUE)
         );
 
         pack();
@@ -103,7 +89,5 @@ public class VueGenerale extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
 }

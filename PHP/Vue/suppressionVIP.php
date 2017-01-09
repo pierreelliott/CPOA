@@ -62,13 +62,21 @@
 														<div class="form-group">
 															<label for="nom" class="col-xs-4 control-label">Nom</label>
 															<div class="col-xs-8">
+<<<<<<< HEAD
 																<input type="text" name="nom" id="nom" class="form-control" disabled>
+=======
+																<input type="text" name="nom" id="nom" class="form-control" readonly>
+>>>>>>> dd3128bc29d2ff31e1ee06169d8db3af962252a0
 															</div>
 														</div>
 														<div class="form-group">
 															<label for="prenom" class="col-xs-4 control-label">Prenom</label>
 															<div class="col-xs-8">
+<<<<<<< HEAD
 																<input type="text" name="prenom" id="prenom" class="form-control" disabled>
+=======
+																<input type="text" name="prenom" id="prenom" class="form-control" readonly>
+>>>>>>> dd3128bc29d2ff31e1ee06169d8db3af962252a0
 															</div>
 														</div>
 														<div class="form-group">
@@ -79,13 +87,21 @@
 														<div class="form-group">
 															<label for="priorite" class="col-xs-4 control-label">Priorité</label>
 															<div class="col-xs-8">
+<<<<<<< HEAD
 																<input type="number" name="priorite" min="0" max="10" id="priorite" class="form-control" disabled>
+=======
+																<input type="number" name="priorite" min="0" max="10" id="priorite" class="form-control" readonly>
+>>>>>>> dd3128bc29d2ff31e1ee06169d8db3af962252a0
 															</div>
 														</div>
 														<div class="form-group">
 															<label for="datenaissance" class="col-xs-4 control-label">Date de naissance</label>
 															<div class="col-xs-8">
+<<<<<<< HEAD
 																<input type="date" name="datenaissance" id="datenaissance" class="form-control" disabled>
+=======
+																<input type="date" name="datenaissance" id="datenaissance" class="form-control" readonly>
+>>>>>>> dd3128bc29d2ff31e1ee06169d8db3af962252a0
 															</div>
 														</div>
 													</div>
@@ -94,7 +110,7 @@
 															<label for="nationalite" class="col-xs-4 control-label">Nationalité</label>
 															<div class="col-xs-8">
 																<select name="nationalite" id="nationalite" class="form-control" disabled>
-																	<option value="france" selected>France</option>
+																	<option value="france">France</option>
 																	<option value="england">England</option>
 																	<option value="deutschland">Deutschland</option>
 																	<option value="spain">Spain</option>
@@ -106,7 +122,7 @@
 															<label for="typeVIP" class="col-xs-4 control-label">Type VIP</label>
 															<div class="col-xs-8">
 																<select name="typeVIP" id="typeVIP" class="form-control" disabled>
-																	<option value="journaliste" selected>Journaliste</option>
+																	<option value="journaliste">Journaliste</option>
 																	<option value="comédien">Comédien</option>
 																	<option value="réalisateur">Réalisateur</option>
 																	<option value="scénariste">Scénariste</option>

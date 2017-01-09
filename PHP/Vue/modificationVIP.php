@@ -75,7 +75,11 @@
 													<input type="file" name="photo" id="photo" class="input-file" accept="image/*">
 												</div>
 												<div class="col-xs-4">
+<<<<<<< HEAD
 													<img src="img/avatar.png" alt="avatar" class="file-return">
+=======
+													<img src="img/avatar.png" alt="avatar">
+>>>>>>> dd3128bc29d2ff31e1ee06169d8db3af962252a0
 												</div>
 											</div>
 										</div>
@@ -159,6 +163,7 @@
 						if(pos < 0) break;
 						// On récupère la valeur du champ qui possède l'identifiant obtenu
 						var value = donneesVIP.substring(0, pos);
+						console.log(value);
 						// On supprime ce qu'on a récupérer dans la chaine 'donneesVIP'
 						donneesVIP = donneesVIP.substring(pos + 1, donneesVIP.length);
 						// On donne la valeur trouvée au champ correspondant

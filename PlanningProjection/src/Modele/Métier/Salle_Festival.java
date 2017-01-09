@@ -11,9 +11,10 @@ import java.util.*;
 /** @pdOid fd9cb05d-d344-46e5-81cd-058a08ee4f81 */
 public class Salle_Festival {
     /* ======== Statique ======= */
-    private static List<Salle_Festival> salles;
+    private static List<Salle_Festival> salles = new ArrayList();
     
     public static List<Salle_Festival> getSalles() { return salles; }
+    public static void add(Salle_Festival salle) { salles.add(salle); }
     public static Salle_Festival getSalle(int num) {
         Iterator ite = salles.iterator();
         while(ite.hasNext())

@@ -11,9 +11,10 @@ import java.util.*;
 /** @pdOid d804e44e-16f2-47e5-8b57-532485f9c691 */
 public class Projection {
    /* ======== Statique ======= */
-    private static List<Projection> projections;
+    private static List<Projection> projections = new ArrayList();
     
     public static List<Projection> getProjections() { return projections; }
+    public static void add(Projection projec) { projections.add(projec); }
     
     /* ========Instance ========= */
     private int numProjection;

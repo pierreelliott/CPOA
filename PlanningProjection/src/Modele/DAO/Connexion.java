@@ -19,131 +19,93 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Connexion {
+    private static Connection connec;
 
     public Connexion() {
     }
-
-    public static Connection Connecter() throws SQLException {
-        FileInputStream fichier = null;
-        try {
-            Properties props = new Properties();
-            fichier = new FileInputStream(".\\src\\Modele\\DAO\\connexion.properties");
-            props.load(fichier);
-            MariaDbDataSource ds = new MariaDbDataSource();
-            ds.setPortNumber(new Integer(props.getProperty("port")));
-            ds.setServerName(props.getProperty("serveur"));
-            ds.setDatabaseName(props.getProperty("user"));
-            ds.setUser(props.getProperty("user"));
-            ds.setPassword(props.getProperty("pwd"));
-            
-            return ds.getConnection();
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                fichier.close();
-            } catch (IOException ex) {
-                Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return null;
-    }
     
     public static ResultSet test() throws SQLException {
-        Connection connec = Connexion.Connecter();
+        Connection connec = getConnection();
         Statement stat = connec.createStatement();
         return stat.executeQuery("select 1");
     }
     
-    
-    
-    public static ResultSet executerUpdate(String requete, String colonnes[], String parametres[]) {
-        Connection connec;
-        PreparedStatement sql;
-        try {
-            connec = Connexion.Connecter();
-            sql = connec.prepareStatement(requete);
-        } catch (SQLException ex) {
-            Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }
-        return executer(sql,colonnes,parametres);
+    public static Connection getConnection() throws SQLException{
+        return MariaDBDriverManager.creerConnexion();
     }
     
-    public static ResultSet executerRequete(String requete) {
+    /* ====================================================== */
+    
+    public static ResultSet executerUpdate(String requete, String colonnes[], String parametres[]) throws SQLException {
         Connection connec;
-        Statement sql;
-        ResultSet result = null;
-        try {
-            connec = Connecter();
-            sql = connec.createStatement();
-            result = sql.executeQuery(requete);
-        } catch (SQLException ex) {
-            Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        PreparedStatement sql;
+        ResultSet result;
+        
+        connec = getConnection();
+        sql = connec.prepareStatement(requete);
+        result = executer(sql,colonnes,parametres);
+        
         return result;
     }
     
-    public static ResultSet executer(PreparedStatement sql, String colonnes[], String parametres[]) {
-        try {
-            Connection connec = Connexion.Connecter();
+    public static ResultSet executerRequete(String requete) throws SQLException {
+        Statement sql;
+        ResultSet result;
+        
+        connec = getConnection();
+        sql = connec.createStatement();
+        result = sql.executeQuery(requete);
+        
+        return result;
+    }
+    
+    public static ResultSet executer(PreparedStatement sql, String colonnes[], String parametres[]) throws SQLException {
+        Connection connec = getConnection();
             
-            int i = 0;
-            for(String type : colonnes)
+        int i = 0;
+        for(String type : colonnes)
+        {
+            switch(type)
             {
-                switch(type)
-                {
-                    case "String":
-                    case "string":
+                case "String":
+                case "string":
+                    sql.setString(i, parametres[i]);
+                    break;
+
+                case "int":
+                    sql.setInt(i, Integer.valueOf(parametres[i]) );
+                    break;
+
+                case "Date":
+                case "date":
+                    if(parametres[i].equals("current"))
+                        sql.setString(i, "CURRENT_DATE()");
+                    else
                         sql.setString(i, parametres[i]);
-                        break;
-                    
-                    case "int":
-                        sql.setInt(i, Integer.valueOf(parametres[i]) );
-                        break;
-                    
-                    case "Date":
-                    case "date":
-                        if(parametres[i].equals("current"))
-                            sql.setString(i, "CURRENT_DATE()");
-                        else
-                            sql.setString(i, parametres[i]);
-                        break;
-                    
-                    case "datetime":
-                    case "Datetime":
-                        if(parametres[i].equals("current"))
-                            sql.setString(i, "NOW()");
-                        else
-                            sql.setString(i, parametres[i]);
-                        break;
-                    
-                    case "null":
-                    case "nul":
-                    default:
-                        sql.setString(i, "null");
-                        break;
-                }
-                i += 1;
+                    break;
+
+                case "datetime":
+                case "Datetime":
+                    if(parametres[i].equals("current"))
+                        sql.setString(i, "NOW()");
+                    else
+                        sql.setString(i, parametres[i]);
+                    break;
+
+                case "null":
+                case "nul":
+                default:
+                    sql.setString(i, "null");
+                    break;
             }
-            sql.executeUpdate();
-            Connexion.fermer(connec);
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
+            i += 1;
         }
+        sql.executeUpdate();
+        
         return null;
     }
     
-    public static boolean fermer(Connection co) {
-        try {
-            co.close();
-        } catch (SQLException ex) {
-            return false;
-        }
-        return true;
+    public static void fermer() throws SQLException{
+        connec.close();
     }
 }

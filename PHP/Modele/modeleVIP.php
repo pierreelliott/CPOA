@@ -36,6 +36,7 @@
 				"typeVIP" => $typeVIP,
 				"numVIP" => $numVIP
 		));
+<<<<<<< HEAD
 	}
 	
 	function supprimerVIP($numVIP)
@@ -45,6 +46,8 @@
 		
 		$resultat = $bdd->query($requete);
 		return $resultat;
+=======
+>>>>>>> dd3128bc29d2ff31e1ee06169d8db3af962252a0
 	}
 	
 	function getVIPs()

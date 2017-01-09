@@ -20,33 +20,51 @@ public class BDD {
     public static boolean chargee = false;
     public static boolean estChargee(){return chargee;}
     
-    public static void chargerBDD() {
+    public static void chargerBDD() throws SQLException {
         // Chaque classe métier comporte un tableau
         // contenant toutes les instances de la classe.
-        try {
-            //chargerVIP();
-            chargerSalles();
-            //chargerMembreJury();
-            chargerFilms();
-            //chargerProjections();
-            //chargerPalmares();
-        } catch (SQLException ex) {
-            Logger.getLogger(BDD.class.getName()).log(Level.SEVERE, null, ex);
-            // To Do : lever une exception pour gérer le "problème d'import de la BDD"
-        }
+        //chargerVIP();
+        //chargerSalles();
+        //chargerMembreJury();
+        chargerFilms();
+        //chargerProjections();
+        chargerPalmares();
+        
+        // Penser à vérifier s'il y a une erreur lors de l'import
+        // Erreur => msg : "Erreur dans l'import de la BDD, veuillez..."
     }
     
     // <editor-fold defaultstate="collapsed" desc="Méthodes de chargement des éléments">
     protected static void chargerFilms() throws SQLException {
         ResultSet result;
-        result = Connexion.executerRequete("select * from Film");
+        System.out.println("coucou1");
+        result = Connexion.executerRequete("select numFilm, typeFilm, titreFilm, duree from Film");
+        System.out.println("coucou2");
         while(result.next())
         {
             int num = result.getInt("numFilm");
             String type = result.getString("typeFilm");
             String titre = result.getString("titreFilm");
             int duree = result.getInt("duree");
-            Film tmp = new Film(num, type, titre, duree);
+            
+            System.out.println(num+" ; "+type+" ; "+titre+" ; "+duree);
+            
+            Film.add(new Film(num, type, titre, duree));
+        }
+        Connexion.fermer();
+    }
+    
+    protected static void chargerPalmares() throws SQLException {
+        ResultSet result;
+        result = Connexion.executerRequete("select * from Palmares");
+        while(result.next())
+        {
+            String type = result.getString("typePalmares");
+            int numFilm = result.getInt("numFilm");
+            int numVIP = result.getInt("numVIP");
+            if(numFilm != 0) Palmares.add(new Palmares(type, numFilm, "film"));
+            else if(numVIP != 0) Palmares.add(new Palmares(type, numVIP, "vip"));
+            else Palmares.add(new Palmares(type));
         }
     }
     
@@ -59,7 +77,7 @@ public class BDD {
             int numF = result.getInt("numFilm");
             int numS = result.getInt("numSalle");
             Date date = result.getTimestamp("dateProjection");
-            Projection tmp = new Projection(numP, numF, numS, date);
+            Projection.add(new Projection(numP, numF, numS, date));
         }
     }
     
