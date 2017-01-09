@@ -33,20 +33,19 @@
 						<li<?php if($key == 0) echo ' class="active"'; ?>><a href="#<?php echo $vip["numVIP"]; ?>" data-toggle="tab"><?php echo $vip["prenom"].' '.$vip["nom"]; ?></a></li>
 						
 						<?php } ?>
-						<li class="active"><a href="#ab" data-toggle="tab">Axel BERTRAND</a></li>
-						<li><a href="#pt" data-toggle="tab">Pierre-Elliott THIBOUD</a></li>
-						<li><a href="#mb" data-toggle="tab">Maxime BOREL</a></li>
 					</ul>
 					<div class="tab-content">
 						<!-- Ces valeurs seront récupérées dans la bdd et écrite sous ce format pour faire de l'autocomplétion quand on clique sur un vip, l'atribut id pareil que href sans le # (il y a peut-être mieux mais j'ai pas trouver) -->
-						<div class="tab-pane fade in active hidden" id="ab">nom:bertrand;prenom:axel;priorite:1;datenaissance:1998-02-22;nationalite:france;typeVIP:journaliste;</div>
-						<div class="tab-pane fade hidden" id="pt">nom:thiboud;prenom:pe;priorite:2;datenaissance:1996-05-17;nationalite:deutschland;typeVIP:comédien;</div>
-						<div class="tab-pane fade hidden" id="mb">nom:borel;prenom:maxime;priorite:3;datenaissance:1997-10-23;nationalite:spain;typeVIP:journaliste;</div>
+						<?php foreach($vips as $key => $vip) { ?>
+						
+						<div class="tab-pane fade <?php if($key == 0) echo 'in active '; ?>hidden" id="<?php echo $vip["numVIP"]; ?>"><?php echo toString($vip); ?></div>
+						
+						<?php } ?>
 					</div>
 					<div class="row">
 						<div class="col-xs-6">
 							<!-- Bouton d'activation de la fenêtre modale -->
-							<button href="#modalevip" class="btn btn-danger btn-block">Supprimer</button>
+							<button href="#modalevip" id="modalevip" class="btn btn-danger btn-block">Supprimer</button>
 							<!-- Fenêtre modale -->
 							<div class="modal fade" id="modalevip">
 								<div class="modal-dialog modal-lg">
@@ -59,33 +58,34 @@
 											<form method="post" action="index.php?page=suppressionVIP" class="form-horizontal">
 												<div class="row">
 													<div class="col-xs-6">
+														<input type="hidden" name="numVIP" id="numVIP">
 														<div class="form-group">
 															<label for="nom" class="col-xs-4 control-label">Nom</label>
 															<div class="col-xs-8">
-																<input type="text" name="nom" id="nom" value="bertrand" class="form-control" readonly>
+																<input type="text" name="nom" id="nom" class="form-control" disabled>
 															</div>
 														</div>
 														<div class="form-group">
 															<label for="prenom" class="col-xs-4 control-label">Prenom</label>
 															<div class="col-xs-8">
-																<input type="text" name="prenom" id="prenom" value="axel" class="form-control" readonly>
+																<input type="text" name="prenom" id="prenom" class="form-control" disabled>
 															</div>
 														</div>
 														<div class="form-group">
 															<div class="col-xs-offset-8 col-xs-4">
-																<img src="images/avatar.png" alt="avatar">
+																<img src="img/avatar.png" alt="avatar">
 															</div>
 														</div>
 														<div class="form-group">
 															<label for="priorite" class="col-xs-4 control-label">Priorité</label>
 															<div class="col-xs-8">
-																<input type="number" name="priorite" min="0" max="10" id="priorite" value="1" class="form-control" readonly>
+																<input type="number" name="priorite" min="0" max="10" id="priorite" class="form-control" disabled>
 															</div>
 														</div>
 														<div class="form-group">
 															<label for="datenaissance" class="col-xs-4 control-label">Date de naissance</label>
 															<div class="col-xs-8">
-																<input type="date" name="datenaissance" id="datenaissance" value="1998-02-22" class="form-control" readonly>
+																<input type="date" name="datenaissance" id="datenaissance" class="form-control" disabled>
 															</div>
 														</div>
 													</div>
@@ -98,6 +98,7 @@
 																	<option value="england">England</option>
 																	<option value="deutschland">Deutschland</option>
 																	<option value="spain">Spain</option>
+																	<option value="usa">USA</option>
 																</select>
 															</div>
 														</div>
@@ -110,6 +111,8 @@
 																	<option value="réalisateur">Réalisateur</option>
 																	<option value="scénariste">Scénariste</option>
 																	<option value="photographe">Photographe</option>
+																	<option value="acteur">Acteur</option>
+																	<option value="producteur">Producteur</option>
 																</select>
 															</div>
 														</div>
@@ -144,20 +147,22 @@
 		<script>
 			$(function()
 			{	
-				$('button').click(function (e) {
+				$('button#modalevip').click(function (e) {
 					var ref = $('li[class=active] a').attr('href');
 					var donneesVIP = $(ref).text();
 					
 					while(donneesVIP.length != 0)
 					{
 						// On récupère la position du caractère ':'
-						var pos = donneesVIP.indexOf(':')
+						var pos = donneesVIP.indexOf(':');
+						if(pos < 0) break;
 						// On récupère l'identifiant du champ
 						var id = donneesVIP.substring(0, pos);
 						// On supprime ce qu'on a récupérer dans la chaine 'donneesVIP'
 						donneesVIP = donneesVIP.substring(pos + 1, donneesVIP.length);
 						// On récupère la position du caractère ';'
 						pos = donneesVIP.indexOf(';');
+						if(pos < 0) break;
 						// On récupère la valeur du champ qui possède l'identifiant obtenu
 						var value = donneesVIP.substring(0, pos);
 						// On supprime ce qu'on a récupérer dans la chaine 'donneesVIP'

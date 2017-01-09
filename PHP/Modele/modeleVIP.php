@@ -2,43 +2,48 @@
 	require_once("bdd.php");
 	require_once("Classes/VIP.php");
 	
-	function ajouterVIP(VIP $vip)
+	function ajouterVIP($nom, $prenom, $photo, $priorite, $dateNaissance, $nationalite, $typeVIP)
 	{
 		global $bdd;
 		$requete = "insert into VIP(nom, prenom, photo, priorite, dateNaissance, nationalite, typeVIP)".
-									"(:nom, :prenom, :photo, :priorite, :dateNaissance, :nationalite, :typVIP)";
+									"(:nom, :prenom, :photo, :priorite, str_to_date(:dateNaissance, '%Y-%m-%d'), :nationalite, :typeVIP)";
 		
 		$resultat = $bdd->prepare($requete);
-		$resultat->execute(array(
-				"nom" => $vip->getNom(),
-				"prenom" => $vip->getPrenom(),
-				"photo" => $vip->getPhoto(),
-				"priorite" => $vip->getPriorite(),
-				"dateNaissance" => $vip->getDateNaissance(),
-				"nationalite" => $vip->getNationalite(),
-				"typeVIP" => $vip->getTypeVIP()
+		return $resultat->execute(array(
+				"nom" => $nom,
+				"prenom" => $prenom,
+				"photo" => $photo,
+				"priorite" => $priorite,
+				"dateNaissance" => $dateNaissance,
+				"nationalite" => $nationalite,
+				"typeVIP" => $typeVIP
 		));
-		
-		return $resultat;
 	}
 	
-	function modifierVIP(VIP $vip)
+	function modifierVIP($numVIP, $nom, $prenom, $photo, $priorite, $dateNaissance, $nationalite, $typeVIP)
 	{
 		global $bdd;
 		$requete = "UPDATE VIP SET nom = :nom, prenom = :prenom, photo = :photo, priorite = :priorite, dateNaissance = :dateNaissance, nationalite = :nationalite, typeVIP = :typeVIP WHERE numVIP = :numVIP";
 		
 		$resultat = $bdd->prepare($requete);
-		$resultat->execute(array(
-				"nom" => $vip->getNom(),
-				"prenom" => $vip->getPrenom(),
-				"photo" => $vip->getPhoto(),
-				"priorite" => $vip->getPriorite(),
-				"dateNaissance" => $vip->getDateNaissance(),
-				"nationalite" => $vip->getNationalite(),
-				"typeVIP" => $vip->getTypeVIP(),
-				"numVIP" => $vip->getnumVIP()
+		return $resultat->execute(array(
+				"nom" => $nom,
+				"prenom" => $prenom,
+				"photo" => $photo,
+				"priorite" => $priorite,
+				"dateNaissance" => $dateNaissance,
+				"nationalite" => $nationalite,
+				"typeVIP" => $typeVIP,
+				"numVIP" => $numVIP
 		));
+	}
+	
+	function supprimerVIP($numVIP)
+	{
+		global $bdd;
+		$requete = "DELETE FROM VIP WHERE numVIP = ".$numVIP;
 		
+		$resultat = $bdd->query($requete);
 		return $resultat;
 	}
 	
@@ -54,12 +59,13 @@
 	
 	function toString(array $vip)
 	{
-		$stringVIP = "nom:".strtolower($vip["nom"]).";";
-		$stringVIP .= "prenom:".strtolower($vip["prenom"]).";";
+		$stringVIP = "numVIP:".$vip["numVIP"].";";
+		$stringVIP .= "nom:".$vip["nom"].";";
+		$stringVIP .= "prenom:".$vip["prenom"].";";
 		$stringVIP .= "priorite:".$vip["priorite"].";";
 		$stringVIP .= "datenaissance:".$vip["dateNaissance"].";";
-		$stringVIP .= "nationalite:".strtolower($vip["nationalite"]).";";
-		$stringVIP .= "typeVIP:".strtolower($vip["typeVIP"]).";";
+		$stringVIP .= "nationalite:".$vip["nationalite"].";";
+		$stringVIP .= "typeVIP:".$vip["typeVIP"].";";
 		
 		return $stringVIP;
 	}

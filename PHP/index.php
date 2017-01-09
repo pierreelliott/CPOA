@@ -1,4 +1,7 @@
 <?php 
+	session_name('p1402690');
+	session_start();
+
 	if(isset($_GET["page"]))
 	{
 		$page = $_GET["page"];

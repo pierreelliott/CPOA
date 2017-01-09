@@ -88,17 +88,17 @@ insert into Salle_Festival (nomSalle, nbPlaces) VALUES
 /*==============================================================*/
 insert into VIP (nom, prenom, nationalite, photo, typeVIP,
 priorite, dateNaissance, numCompagnon, numJury, numFilm) VALUES
-("Scorecese","Martin","Américain","img/martinscorcese.png","Réalisateur",9,"1943-01-03",null,null,4),
-("Tarantino","Quentin","Américain","img/quentintarantino.png","Réalisateur",8,"1967-08-15",null,null,23),
-("Spielberg","Steven","Américain","img/stevenspielberg.png","Réalisateur",10,"1939-04-02",null,null,6),
-("Thiboud","Pierre-Elliott","Français","img/pierreelliottthiboud.png","Journaliste",3,"1996-07-23",null,null,32),
-("Borel","Maxime","Stéphanois","img/maximeborel.png","Acteur",5,"1993-10-01",null,null,31),
+("Scorecese","Martin","USA","img/martinscorcese.png","Réalisateur",9,"1943-01-03",null,null,4),
+("Tarantino","Quentin","USA","img/quentintarantino.png","Réalisateur",8,"1967-08-15",null,null,23),
+("Spielberg","Steven","USA","img/stevenspielberg.png","Réalisateur",10,"1939-04-02",null,null,6),
+("Thiboud","Pierre-Elliott","France","img/pierreelliottthiboud.png","Journaliste",3,"1996-07-23",null,null,32),
+("Borel","Maxime","France","img/maximeborel.png","Acteur",5,"1993-10-01",null,null,31),
 
-("Pietrac","Nicolas","INSAis","img/nicolaspietrac.png","Producteur",1,"2002-01-01",null,null,29),
-("Cotillard","Marion","Française","img/marioncotillard.png","Actrice",2,"1978-05-25",null,null,45),
-("Roumanov","Natasha","Russe","img/natasharoumanov.png","Actrice",7,"1973-06-22",null,null,18),
-("Cumberbatch","Benedict","Anglais","img/benedictcumberbatch.png","Acteur",4,"1972-04-16",null,null,42),
-("Ropert","Axelle","Française","img/axelleropert","Réalisatrice",6,"1983-03-28",null,null,49);
+("Pietrac","Nicolas","France","img/nicolaspietrac.png","Producteur",1,"2002-01-01",null,null,29),
+("Cotillard","Marion","France","img/marioncotillard.png","Acteur",2,"1978-05-25",null,null,45),
+("Roumanov","Natasha","Deutschland","img/natasharoumanov.png","Acteur",7,"1973-06-22",null,null,18),
+("Cumberbatch","Benedict","England","img/benedictcumberbatch.png","Acteur",4,"1972-04-16",null,null,42),
+("Ropert","Axelle","France","img/axelleropert","Réalisateur",6,"1983-03-28",null,null,49);
 
 /* Quand il y aura le courage...
 ("","","","","",,"",null,null,null),

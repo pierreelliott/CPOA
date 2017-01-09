@@ -55,7 +55,7 @@
 							<form method="post" action="index.php?page=modificationVIP" class="form-horizontal">
 								<div class="row">
 									<div class="col-xs-6">
-										<input type="hidden" name="id" value="<?php echo $vip["numVIP"]; ?>">
+										<input type="hidden" name="numVIP" id="numVIP">
 										<div class="form-group">
 											<label for="nom" class="col-xs-4 control-label">Nom</label>
 											<div class="col-xs-8">
@@ -70,12 +70,12 @@
 										</div>
 										<div class="form-group">
 											<div class="row pointille">
-												<div class="col-xs-8">
-													<label for="photo" class="col-xs-4 control-label">Photo</label>
-													<input type="file" name="photo" id="photo" accept="image/*">
+												<div class="col-xs-8 input-file-container">
+													<label for="photo" class="input-file-trigger">Parcourir...</label>
+													<input type="file" name="photo" id="photo" class="input-file" accept="image/*">
 												</div>
 												<div class="col-xs-4">
-													<img src="images/avatar.png" alt="avatar">
+													<img src="img/avatar.png" alt="avatar" class="file-return">
 												</div>
 											</div>
 										</div>
@@ -97,11 +97,11 @@
 											<label for="nationalite" class="col-xs-4 control-label">Nationalité</label>
 											<div class="col-xs-8">
 												<select name="nationalite" id="nationalite" class="form-control">
-													<option value="france" selected>France</option>
-													<option value="england">England</option>
-													<option value="deutschland">Deutschland</option>
-													<option value="spain">Spain</option>
-													<option value="usa">USA</option>
+													<option value="France" selected>France</option>
+													<option value="England">England</option>
+													<option value="Deutschland">Deutschland</option>
+													<option value="Spain">Spain</option>
+													<option value="USA">USA</option>
 												</select>
 											</div>
 										</div>
@@ -109,13 +109,13 @@
 											<label for="typeVIP" class="col-xs-4 control-label">Type VIP</label>
 											<div class="col-xs-8">
 												<select name="typeVIP" id="typeVIP" class="form-control">
-													<option value="journaliste" selected>Journaliste</option>
-													<option value="comédien">Comédien</option>
-													<option value="réalisateur">Réalisateur</option>
-													<option value="scénariste">Scénariste</option>
-													<option value="photographe">Photographe</option>
-													<option value="acteur">Acteur</option>
-													<option value="producteur">Producteur</option>
+													<option value="Journaliste" selected>Journaliste</option>
+													<option value="Comédien">Comédien</option>
+													<option value="Réalisateur">Réalisateur</option>
+													<option value="Scénariste">Scénariste</option>
+													<option value="Photographe">Photographe</option>
+													<option value="Acteur">Acteur</option>
+													<option value="Producteur">Producteur</option>
 												</select>
 											</div>
 										</div>
@@ -176,6 +176,16 @@
 					var donneesVIP = $($(this).attr('href')).text();
 					
 					setInput(donneesVIP);
+				});
+				
+				
+				
+				$('.input-file').change(function(e)
+				{
+					console.log($(this).prop('files')[0]);
+					console.log(this.value);
+					$('.return-file').attr('src', this.value);  
+					console.log($('.return-file').attr('src'));
 				});
 			});
 		</script>

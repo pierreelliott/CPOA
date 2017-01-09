@@ -2,31 +2,22 @@
 	require("Modele/modeleVIP.php");
 	
 	if
-	(
-		isset($_POST["nom"]) and isset($_POST["prenom"]) and
-		isset($_POST["priorite"]) and
-		isset($_POST["datenaissance"]) and isset($_POST["nationalite"]) and
-		isset($_POST["typeVIP"])
-	)
+	(isset($_POST["numVIP"]))
 	{
-		$_POST["nom"] = htmlspecialchars($_POST["nom"]);
-		$_POST["prenom"] = htmlspecialchars($_POST["prenom"]);
-		$_POST["photo"] = htmlspecialchars($_POST["photo"]);
-		$_POST["priorite"] = htmlspecialchars($_POST["priorite"]);
-		$_POST["datenaissance"] = htmlspecialchars($_POST["datenaissance"]);
-		$_POST["nationalite"] = htmlspecialchars($_POST["nationalite"]);
-		$_POST["typeVIP"] = htmlspecialchars($_POST["typeVIP"]);
+		$_POST["numVIP"] = (int)$_POST["numVIP"];
 		
-		$vip = new VIP
-					(
-						$_POST["nom"],
-						$_POST["prenom"],
-						$_POST["photo"],
-						(int)$_POST["priorite"],
-						$_POST["datenaissance"],
-						$_POST["nationalite"],
-						$_POST["typeVIP"]
-					);
+		//echo $_POST["numVIP"];
+		
+		$res = supprimerVIP($_POST["numVIP"]);
+		
+		if($res){
+			echo 'true';
+		}
+		else{
+			echo 'false';
+		}
 	}
+
+	$vips = getVIPs();
 	
 	include("Vue/suppressionVIP.php");
