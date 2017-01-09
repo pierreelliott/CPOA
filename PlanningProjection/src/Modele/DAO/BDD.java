@@ -24,10 +24,10 @@ public class BDD {
         // Chaque classe métier comporte un tableau
         // contenant toutes les instances de la classe.
         //chargerVIP();
-        chargerSalles();
+        //chargerSalles();
         //chargerMembreJury();
         chargerFilms();
-        chargerProjections();
+        //chargerProjections();
         chargerPalmares();
         
         // Penser à vérifier s'il y a une erreur lors de l'import
@@ -44,7 +44,7 @@ public class BDD {
             String type = result.getString("typeFilm");
             String titre = result.getString("titreFilm");
             int duree = result.getInt("duree");
-            Film tmp = new Film(num, type, titre, duree);
+            Film.add(new Film(num, type, titre, duree));
         }
     }
     
@@ -56,9 +56,9 @@ public class BDD {
             String type = result.getString("typePalmares");
             int numFilm = result.getInt("numFilm");
             int numVIP = result.getInt("numVIP");
-            if(numFilm != 0) new Palmares(type, numFilm, "film");
-            else if(numVIP != 0) new Palmares(type, numVIP, "vip");
-            else new Palmares(type);
+            if(numFilm != 0) Palmares.add(new Palmares(type, numFilm, "film"));
+            else if(numVIP != 0) Palmares.add(new Palmares(type, numVIP, "vip"));
+            else Palmares.add(new Palmares(type));
         }
     }
     
@@ -71,7 +71,7 @@ public class BDD {
             int numF = result.getInt("numFilm");
             int numS = result.getInt("numSalle");
             Date date = result.getTimestamp("dateProjection");
-            Projection tmp = new Projection(numP, numF, numS, date);
+            Projection.add(new Projection(numP, numF, numS, date));
         }
     }
     

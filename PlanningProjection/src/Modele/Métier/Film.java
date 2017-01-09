@@ -11,9 +11,10 @@ import java.util.*;
 /** @pdOid 553dc7d9-52a8-4a46-a271-2d62027c4b63 */
 public class Film {
     /* ======== Statique ======= */
-    private static List<Film> films;
+    private static List<Film> films = new ArrayList();
     
     public static List<Film> getFilms() { return films; }
+    public static void add(Film film) { films.add(film); }
     public static Film getFilm(int num) {
         Iterator ite = films.iterator();
         while(ite.hasNext())
@@ -26,7 +27,7 @@ public class Film {
     
     /* ========Instance ========= */
    /** @pdOid 8b03540e-e921-4e0e-b1a2-fe5433d97dbf */
-   private final int numFilm;
+   private int numFilm;
    /** @pdOid 7ea5227a-9556-4e56-a4a2-9a00a3f02f4d */
    private String typeFilm;
    /** @pdOid befe2300-0697-4f4b-8304-d679ca2b2769 */
@@ -34,13 +35,16 @@ public class Film {
    /** @pdOid e45e96e0-2cd2-4a39-936a-ecbc095d88ec */
    private int duree;
    
-   /** @pdOid cf4a8d54-3920-45b0-ade7-0b1ce2c92f34 */
+   /**
+     * @param num *  @pdOid cf4a8d54-3920-45b0-ade7-0b1ce2c92f34
+     * @param type
+     * @param titre
+     * @param dur */
    public Film(int num, String type, String titre, int dur) {
       numFilm = num;
       typeFilm = type;
       titreFilm = titre;
       duree = dur;
-      films.add(this);
    }
    
    /** @pdOid 71508e9e-4192-48bc-aafd-6f22e8f5d3b1 */

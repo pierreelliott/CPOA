@@ -6,23 +6,25 @@
 
 package Modele.Métier;
 
-import Modele.Métier.VIP;
+
 import java.util.*;
 
 /** @pdOid b98beedd-b294-45d8-9db8-cd0db3c91e77 */
 public class Palmares {
     /* ======== Statique ======= */
-    private static List<Palmares> palmares;
+    private static List<Palmares> palmares = new ArrayList();
     
     public static List<Palmares> getPalmares() { return palmares; }
+    public static void add(Palmares palm) { palmares.add(palm); }
     public static Palmares getPalmares(String type) {
-        Iterator ite = palmares.iterator();
-        while(ite.hasNext())
-        {
-            Palmares tmp = (Palmares)ite.next();
+        for (Palmares tmp : palmares) {
             if(tmp.getTypePalmares().equals(type)) return tmp;
         }
         return null;
+    }
+    
+    public static void ajouterPalmares(Palmares pal) {
+        palmares.add(pal);
     }
     
     /* ========Instance ========= */
@@ -63,6 +65,10 @@ public class Palmares {
    
    public void setFilm(Film f) {
        film = f;
+       
+   }
+   public void setFilm(int num) {
+       film = Film.getFilm(num);
    }
    public Film getFilm() {
        return film;
@@ -70,6 +76,9 @@ public class Palmares {
    
    public void setVIP(VIP vip) {
        vIP = vip;
+   }
+   public void setVIP(int num) {
+       vIP = VIP.getVIP(num);
    }
    public VIP getVIP() {
        return vIP;

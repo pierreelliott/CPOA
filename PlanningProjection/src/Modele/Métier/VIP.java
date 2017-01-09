@@ -6,14 +6,12 @@
 
 package Modele.Métier;
 
-import Modele.Métier.Invitation;
-import Modele.Métier.Film;
 import java.util.*;
 
 /** @pdOid 2bcfeb83-59e6-41ee-a03f-00ff1fb7fbf7 */
 public class VIP {
     /* ======== Statique ======= */
-    private static List<VIP> vips;
+    private static List<VIP> vips = new ArrayList();
     
     public static List<VIP> getVIPs() { return vips; }
     public static VIP getVIP(int num) {
