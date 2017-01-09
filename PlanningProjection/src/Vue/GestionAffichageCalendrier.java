@@ -49,7 +49,7 @@ import javax.swing.JPopupMenu;
 public class GestionAffichageCalendrier {
 
     private static int DAYS_TO_SHOW = 7;
-    private static List<Film> listFilm;
+    private static List<Film> listFilm = new ArrayList();
     
     private JMenu jMenu1;
     private JMenu jMenu2;

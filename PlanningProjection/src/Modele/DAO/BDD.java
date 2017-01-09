@@ -37,15 +37,21 @@ public class BDD {
     // <editor-fold defaultstate="collapsed" desc="Méthodes de chargement des éléments">
     protected static void chargerFilms() throws SQLException {
         ResultSet result;
-        result = Connexion.executerRequete("select * from Film");
+        System.out.println("coucou1");
+        result = Connexion.executerRequete("select numFilm, typeFilm, titreFilm, duree from Film");
+        System.out.println("coucou2");
         while(result.next())
         {
             int num = result.getInt("numFilm");
             String type = result.getString("typeFilm");
             String titre = result.getString("titreFilm");
             int duree = result.getInt("duree");
+            
+            System.out.println(num+" ; "+type+" ; "+titre+" ; "+duree);
+            
             Film.add(new Film(num, type, titre, duree));
         }
+        Connexion.fermer();
     }
     
     protected static void chargerPalmares() throws SQLException {

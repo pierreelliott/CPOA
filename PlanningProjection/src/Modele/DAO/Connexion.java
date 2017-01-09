@@ -19,6 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Connexion {
+    private static Connection connec;
 
     public Connexion() {
     }
@@ -30,7 +31,7 @@ public class Connexion {
     }
     
     public static Connection getConnection() throws SQLException{
-        return MariaDBDataSource.Connecter();
+        return MariaDBDriverManager.creerConnexion();
     }
     
     /* ====================================================== */
@@ -44,19 +45,16 @@ public class Connexion {
         sql = connec.prepareStatement(requete);
         result = executer(sql,colonnes,parametres);
         
-        fermer(connec);
         return result;
     }
     
     public static ResultSet executerRequete(String requete) throws SQLException {
-        Connection connec;
         Statement sql;
         ResultSet result;
         
         connec = getConnection();
         sql = connec.createStatement();
         result = sql.executeQuery(requete);
-        fermer(connec);
         
         return result;
     }
@@ -103,12 +101,11 @@ public class Connexion {
             i += 1;
         }
         sql.executeUpdate();
-        fermer(connec);
         
         return null;
     }
     
-    public static void fermer(Connection co) throws SQLException{
-        co.close();
+    public static void fermer() throws SQLException{
+        connec.close();
     }
 }
