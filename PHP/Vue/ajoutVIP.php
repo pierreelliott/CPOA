@@ -51,7 +51,7 @@
 											<input type="file" name="photo" id="photo"  accept="image/*">
 										</div>
 										<div class="col-lg-4">
-											<img src="img/avatar.png" alt="avatar">
+											<img src="img/avatar.png" alt="avatar" id="apercuPhoto" class="img-responsive">
 										</div>
 									</div>
 								</div>
@@ -118,5 +118,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
+	<script>
+			$(function()
+			{	
+				// Lorsqu'on choisi une image dans l'input file
+				$('#photo').change(function (e1) {
+					var filename = e1.target.files[0]; 
+					var fr = new FileReader();
+					fr.onload = function (e2) { 
+						$('img').attr('src', e2.target.result);
+					};  
+					fr.readAsDataURL(filename); 
+				});
+			});
+		</script>
   </body>
 </html>

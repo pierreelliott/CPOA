@@ -72,8 +72,8 @@
 															</div>
 														</div>
 														<div class="form-group">
-															<div class="col-xs-offset-8 col-xs-4">
-																<img src="img/avatar.png" alt="avatar">
+															<div class="col-xs-offset-6 col-xs-4">
+																<img src="img/avatar.png" alt="avatar" class="img-responsive">
 															</div>
 														</div>
 														<div class="form-group">
@@ -169,8 +169,18 @@
 						var value = donneesVIP.substring(0, pos);
 						// On supprime ce qu'on a récupérer dans la chaine 'donneesVIP'
 						donneesVIP = donneesVIP.substring(pos + 1, donneesVIP.length);
-						// On donne la valeur trouvée au champ correspondant
-						$('#' + id).val(value);
+						
+						// Si c'est le champ photo
+						if(id === "photo")
+						{
+							// On change l'image source
+							$('img').attr('src', value);
+						}
+						else
+						{
+							// Sinon On donne la valeur trouvée au champ correspondant
+							$('#' + id).val(value);
+						}
 					}
 					
 					// On active la fenêtre modale
