@@ -29,7 +29,7 @@
 			</div>
 			<div class="row marge-haut">
 				<div class="col-lg-offset-2 col-lg-8">
-					<form method="post" action="index.php?page=ajoutVIP" class="form-horizontal"  enctype="multipart/form-data">
+					<form method="post" action="index.php?page=ajoutVIP" class="form-horizontal" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form-group">
@@ -76,11 +76,11 @@
 									<label for = "nationalite" class="col-lg-4 control-label">Nationalité</label>
 									<div class="col-lg-8">
 										<select name="nationalite" id="nationalite" class="form-control">
-											<option>France</option>
-											<option>England</option>
-											<option>Deutschland</option>
-											<option>Spain</option>
-											<option>...</option>
+											<option value="France" selected>France</option>
+											<option value="England">England</option>
+											<option value="Deutschland">Deutschland</option>
+											<option value="Spain">Spain</option>
+											<option value="USA">USA</option>
 										</select>
 									</div>
 								</div>
@@ -88,12 +88,13 @@
 									<label for = "typeVIP" class="col-lg-4 control-label">Type VIP</label>
 									<div class="col-lg-8">
 										<select name="typeVIP" id="typeVIP" class="form-control">
-											<option>Journaliste</option>
-											<option>Comédien</option>
-											<option>Réalisateur</option>
-											<option>Scénariste</option>
-											<option>Photographe</option>
-											<option>...</option>
+											<option value="Journaliste" selected>Journaliste</option>
+											<option value="Comédien">Comédien</option>
+											<option value="Réalisateur">Réalisateur</option>
+											<option value="Scénariste">Scénariste</option>
+											<option value="Photographe">Photographe</option>
+											<option value="Acteur">Acteur</option>
+											<option value="Producteur">Producteur</option>
 										</select>
 									</div>
 								</div>

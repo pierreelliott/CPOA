@@ -12,7 +12,7 @@
 			$extensions_autorisees = array('jpg', 'jpeg', 'png');
 			if (in_array($extension_upload, $extensions_autorisees))
 			{   
-				move_uploaded_file($_FILES['photo']['tmp_name'], 'img/' . basename($_FILES['photo']['name']));	
+				move_uploaded_file($_FILES['photo']['tmp_name'], 'img/photos/' . basename($_FILES['photo']['name']));	
 			}
 		}
 	}
@@ -39,7 +39,7 @@
 			$_POST["datenaissance"] = htmlspecialchars($_POST["datenaissance"]);
 			$_POST["nationalite"] = htmlspecialchars($_POST["nationalite"]);
 			$_POST["typeVIP"] = htmlspecialchars($_POST["typeVIP"]);
-			$photo = 'img/'.basename($_FILES["photo"]['name']);
+			$photo = 'img/photos/'.basename($_FILES["photo"]['name']);
 			
 			$res = ajouterVIP(
 				$_POST["nom"],

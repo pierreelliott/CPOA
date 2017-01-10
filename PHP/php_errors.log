@@ -526,3 +526,5 @@
 [09-Jan-2017 08:49:33 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/suppressionVIP.php on line 45
 =======
 >>>>>>> dd3128bc29d2ff31e1ee06169d8db3af962252a0
+[10-Jan-2017 13:16:29 Europe/Paris] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 39
+[10-Jan-2017 13:19:50 Europe/Paris] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Controleur/controleurSuppressionVIP.php on line 20
