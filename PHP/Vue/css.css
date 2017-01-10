@@ -79,6 +79,15 @@ a.marge-bouton
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
+
+.block-vip
+{
+	margin: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: rgb(200, 200, 200);
+}
+
 /*
 .input-file-container {
   position: relative;
