@@ -80,6 +80,15 @@ a.marge-bouton
 	margin-bottom: 25px;
 }
 
+.block-vip
+{
+	margin: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: rgb(200, 200, 200);
+}
+
+/*
 .input-file-container {
   position: relative;
   width: 225px;
@@ -102,7 +111,7 @@ a.marge-bouton
   cursor: pointer;
 }
  
-/* quelques styles d'interactions */
+/* quelques styles d'interactions
 .input-file:hover + .input-file-trigger,
 .input-file:focus + .input-file-trigger,
 .input-file-trigger:hover,
@@ -111,7 +120,7 @@ a.marge-bouton
   color: #39D2B4;
 }
  
-/* styles du retour visuel */
+/* styles du retour visuel
 .file-return {
   margin: 0;
 }
@@ -124,9 +133,9 @@ a.marge-bouton
   font-weight: bold;
 }
 /* on complète l'information d'un contenu textuel
-   uniquement lorsque le paragraphe n'est pas vide */
+   uniquement lorsque le paragraphe n'est pas vide
 .file-return:not(:empty):before {
   content: "Selected file: ";
   font-style: normal;
   font-weight: normal;
-}
+}*/

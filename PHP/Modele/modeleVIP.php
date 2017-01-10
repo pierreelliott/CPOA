@@ -23,19 +23,26 @@
 	function modifierVIP($numVIP, $nom, $prenom, $photo, $priorite, $dateNaissance, $nationalite, $typeVIP)
 	{
 		global $bdd;
-		$requete = "UPDATE VIP SET nom = :nom, prenom = :prenom, photo = :photo, priorite = :priorite, dateNaissance = :dateNaissance, nationalite = :nationalite, typeVIP = :typeVIP WHERE numVIP = :numVIP";
+		$requete = "UPDATE VIP SET nom = :nom, prenom = :prenom, ";
+		$params = array(
+			"nom" => $nom,
+			"prenom" => $prenom,
+			"priorite" => $priorite,
+			"dateNaissance" => $dateNaissance,
+			"nationalite" => $nationalite,
+			"typeVIP" => $typeVIP,
+			"numVIP" => $numVIP
+		);
+		// Si une photo a été envoyée on l'ajoute à la requête et à la liste des paramètres
+		if($photo != "")
+		{
+			$requete .= "photo = :photo, ";
+			$params["photo"] = $photo;
+		}
+		$requete .= "priorite = :priorite, dateNaissance = :dateNaissance, nationalite = :nationalite, typeVIP = :typeVIP WHERE numVIP = :numVIP";
 		
 		$resultat = $bdd->prepare($requete);
-		return $resultat->execute(array(
-				"nom" => $nom,
-				"prenom" => $prenom,
-				"photo" => $photo,
-				"priorite" => $priorite,
-				"dateNaissance" => $dateNaissance,
-				"nationalite" => $nationalite,
-				"typeVIP" => $typeVIP,
-				"numVIP" => $numVIP
-		));
+		return $resultat->execute($params);
 	}
 	
 	function supprimerVIP($numVIP)

@@ -72,8 +72,8 @@
 															</div>
 														</div>
 														<div class="form-group">
-															<div class="col-xs-offset-8 col-xs-4">
-																<img src="img/avatar.png" alt="avatar">
+															<div class="col-xs-offset-6 col-xs-4">
+																<img src="img/avatar.png" alt="avatar" class="img-responsive">
 															</div>
 														</div>
 														<div class="form-group">
@@ -93,28 +93,12 @@
 														<div class="form-group marge-bas">
 															<label for="nationalite" class="col-xs-4 control-label">Nationalité</label>
 															<div class="col-xs-8">
-																<!--<select name="nationalite" id="nationalite" class="form-control" disabled>
-																	<option value="france">France</option>
-																	<option value="england">England</option>
-																	<option value="deutschland">Deutschland</option>
-																	<option value="spain">Spain</option>
-																	<option value="usa">USA</option>
-																</select>-->
 																<input type="text" name="nationalite" id="nationalite" class="form-control" disabled>
 															</div>
 														</div>
 														<div class="form-group marge-bas">
 															<label for="typeVIP" class="col-xs-4 control-label">Type VIP</label>
 															<div class="col-xs-8">
-																<!--<select name="typeVIP" id="typeVIP" class="form-control" disabled>
-																	<option value="journaliste">Journaliste</option>
-																	<option value="comédien">Comédien</option>
-																	<option value="réalisateur">Réalisateur</option>
-																	<option value="scénariste">Scénariste</option>
-																	<option value="photographe">Photographe</option>
-																	<option value="acteur">Acteur</option>
-																	<option value="producteur">Producteur</option>
-																</select>-->
 																<input type="text" name="typeVIP" id="typeVIP" class="form-control" disabled>
 															</div>
 														</div>
@@ -133,6 +117,7 @@
 									</div>
 								</div>
 							</div>
+							<!-- Fin fenêtre modale -->
 						</div>
 						<div class="col-xs-6">
 							<a href="index.php?page=accueil" class="btn btn-primary btn-block">Annuler</a>
@@ -169,8 +154,18 @@
 						var value = donneesVIP.substring(0, pos);
 						// On supprime ce qu'on a récupérer dans la chaine 'donneesVIP'
 						donneesVIP = donneesVIP.substring(pos + 1, donneesVIP.length);
-						// On donne la valeur trouvée au champ correspondant
-						$('#' + id).val(value);
+						
+						// Si c'est le champ photo
+						if(id === "photo")
+						{
+							// On change l'image source
+							$('img').attr('src', value);
+						}
+						else
+						{
+							// Sinon On donne la valeur trouvée au champ correspondant
+							$('#' + id).val(value);
+						}
 					}
 					
 					// On active la fenêtre modale
