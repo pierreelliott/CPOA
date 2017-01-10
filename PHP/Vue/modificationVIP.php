@@ -72,10 +72,10 @@
 											<div class="row pointille">
 												<div class="col-xs-8 input-file-container">
 													<label for="photo" class="input-file-trigger">Parcourir...</label>
-													<input type="file" name="photo" id="photo" class="input-file" accept="image/*">
+													<input type="file" name="photo" id="photo" class="btn btn-lg btn-primary btn-block" accept="image/*">
 												</div>
 												<div class="col-xs-4">
-													<img src="img/avatar.png" alt="avatar" width="150px" height="auto" class="file-return">
+													<img src="img/avatar.png" alt="avatar" id="apercuPhoto" class="file-return img-responsive">
 												</div>
 											</div>
 										</div>
@@ -167,11 +167,10 @@
 						{
 							// On change l'image source
 							$('img').attr('src', value);
-							console.log($('img').attr('src'));
 						}
 						else
 						{
-							// On donne la valeur trouvée au champ correspondant
+							// Sinon On donne la valeur trouvée au champ correspondant
 							$('#' + id).val(value);
 						}
 					}
@@ -192,10 +191,13 @@
 				});
 				
 				// Lorsqu'on choisi une image dans l'input file
-				$('.input-file').change(function(e)
-				{
-					$.ajax()
-					$('img').attr('src', 'img/photos/' + this.value);  
+				$('#photo').change(function (e1) {
+					var filename = e1.target.files[0]; 
+					var fr = new FileReader();
+					fr.onload = function (e2) { 
+						$('img').attr('src', e2.target.result);
+					};  
+					fr.readAsDataURL(filename); 
 				});
 			});
 		</script>

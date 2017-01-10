@@ -28,6 +28,12 @@
 		case "suppressionVIP" :
 			require("Controleur/controleurSuppressionVIP.php");
 		break;
+		case "accueilAjoutEchangeVIP" :
+			require("Controleur/controleurAccueilAjoutEchangeVIP.php");
+		break;
+		case "ajoutEchangeVIP" :
+			require("Controleur/controleurAjoutEchangeVIP.php");
+		break;
 		default :
 			require("Vue/404.php");
 	}

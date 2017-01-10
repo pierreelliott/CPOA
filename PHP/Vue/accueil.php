@@ -47,10 +47,10 @@
 				<div class="col-lg-6 bordered-left">
 					<div class="row">
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="" class="btn btn-lg btn-primary btn-block marge-bouton">Ajouter échange VIP</a>
+							<a href="index.php?page=accueilAjoutEchangeVIP" class="btn btn-lg btn-primary btn-block marge-bouton">Ajouter échange VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
-							<a href="" class="btn btn-lg btn-primary btn-block marge-bouton">Modifier échange VIP</a>
+							<a href="index.php?page=ajoutEchangeVIP" class="btn btn-lg btn-primary btn-block marge-bouton">Modifier échange VIP</a>
 						</div>
 						<div class="col-lg-offset-3 col-lg-6">
 							<a href="" class="btn btn-lg btn-primary btn-block marge-bouton">Supprimer échange VIP</a>
