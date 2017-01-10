@@ -5,8 +5,8 @@
 	function ajouterVIP($nom, $prenom, $photo, $priorite, $dateNaissance, $nationalite, $typeVIP)
 	{
 		global $bdd;
-		$requete = "insert into VIP(nom, prenom, photo, priorite, dateNaissance, nationalite, typeVIP)".
-									"(:nom, :prenom, :photo, :priorite, str_to_date(:dateNaissance, '%Y-%m-%d'), :nationalite, :typeVIP)";
+		$requete = "insert into VIP(nom, prenom, photo, priorite, dateNaissance, nationalite, typeVIP)
+					values(:nom, :prenom, :photo, :priorite, str_to_date(:dateNaissance, '%Y-%m-%d'), :nationalite, :typeVIP)";
 		
 		$resultat = $bdd->prepare($requete);
 		return $resultat->execute(array(
@@ -36,7 +36,6 @@
 				"typeVIP" => $typeVIP,
 				"numVIP" => $numVIP
 		));
-<<<<<<< HEAD
 	}
 	
 	function supprimerVIP($numVIP)
@@ -46,8 +45,6 @@
 		
 		$resultat = $bdd->query($requete);
 		return $resultat;
-=======
->>>>>>> dd3128bc29d2ff31e1ee06169d8db3af962252a0
 	}
 	
 	function getVIPs()
@@ -69,6 +66,7 @@
 		$stringVIP .= "datenaissance:".$vip["dateNaissance"].";";
 		$stringVIP .= "nationalite:".$vip["nationalite"].";";
 		$stringVIP .= "typeVIP:".$vip["typeVIP"].";";
+		$stringVIP .= "photo:".$vip["photo"].";";
 		
 		return $stringVIP;
 	}

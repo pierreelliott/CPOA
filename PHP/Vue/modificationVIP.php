@@ -52,7 +52,7 @@
 					</div>
 					<div class="row marge-haut">
 						<div class="col-xs-offset-2 col-xs-8">
-							<form method="post" action="index.php?page=modificationVIP" class="form-horizontal">
+							<form method="post" action="index.php?page=modificationVIP" class="form-horizontal" enctype="multipart/form-data">
 								<div class="row">
 									<div class="col-xs-6">
 										<input type="hidden" name="numVIP" id="numVIP">
@@ -75,11 +75,7 @@
 													<input type="file" name="photo" id="photo" class="input-file" accept="image/*">
 												</div>
 												<div class="col-xs-4">
-<<<<<<< HEAD
-													<img src="img/avatar.png" alt="avatar" class="file-return">
-=======
-													<img src="img/avatar.png" alt="avatar">
->>>>>>> dd3128bc29d2ff31e1ee06169d8db3af962252a0
+													<img src="img/avatar.png" alt="avatar" width="150px" height="auto" class="file-return">
 												</div>
 											</div>
 										</div>
@@ -163,34 +159,43 @@
 						if(pos < 0) break;
 						// On récupère la valeur du champ qui possède l'identifiant obtenu
 						var value = donneesVIP.substring(0, pos);
-						console.log(value);
 						// On supprime ce qu'on a récupérer dans la chaine 'donneesVIP'
 						donneesVIP = donneesVIP.substring(pos + 1, donneesVIP.length);
-						// On donne la valeur trouvée au champ correspondant
-						$('#' + id).val(value);
+						
+						// Si c'est le champ photo
+						if(id === "photo")
+						{
+							// On change l'image source
+							$('img').attr('src', value);
+							console.log($('img').attr('src'));
+						}
+						else
+						{
+							// On donne la valeur trouvée au champ correspondant
+							$('#' + id).val(value);
+						}
 					}
 				}
 			
+				// Dès que la page est chargée
 				$(document).ready(function(e) {
 					var donneesVIP = $('div[class~=active]').text();
 					
 					setInput(donneesVIP);
 				});
 			
+				// Lors d'un clic sur un élément de la liste de VIPs
 				$('li a').click(function(e) {
 					var donneesVIP = $($(this).attr('href')).text();
 					
 					setInput(donneesVIP);
 				});
 				
-				
-				
+				// Lorsqu'on choisi une image dans l'input file
 				$('.input-file').change(function(e)
 				{
-					console.log($(this).prop('files')[0]);
-					console.log(this.value);
-					$('.return-file').attr('src', this.value);  
-					console.log($('.return-file').attr('src'));
+					$.ajax()
+					$('img').attr('src', 'img/photos/' + this.value);  
 				});
 			});
 		</script>
