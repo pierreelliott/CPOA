@@ -6,7 +6,6 @@
 package Vue;
 
 import Modele.DAO.BDD;
-import Modele.DAO.Connexion;
 import bizcal.common.Calendar;
 import bizcal.common.CalendarModel;
 import bizcal.common.DayViewConfig;
@@ -25,7 +24,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -59,14 +57,14 @@ public class GestionAffichageCalendrier {
 
     public static void main(String[] args)
             throws Exception {
-        //new GestionAffichageCalendrier();
+        new GestionAffichageCalendrier();
     }
 
     public GestionAffichageCalendrier() throws Exception{
-        jMenuBar = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuBar = new JMenuBar();
+        jMenu1 = new JMenu();
+        jMenu2 = new JMenu();
+        jMenuItem1 = new JMenuItem();
 
         jMenu1.setText("Fichier");
         jMenuItem1.setText("Se déconnecter");
@@ -197,7 +195,8 @@ public class GestionAffichageCalendrier {
         button1.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent arg0) {
-                button2.setVisible(false);
+                button1.setVisible(false);
+                button2.setVisible(true);
                 Date end = model.interval.getStartDate();
                 Date start = DateUtil.getDiffDay(end, -DAYS_TO_SHOW);
 
@@ -215,6 +214,7 @@ public class GestionAffichageCalendrier {
 
         // Next week button
         button2 = new JButton("Semaine suivante");
+        button2.setVisible(true);
         button2.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent arg0) {
@@ -245,18 +245,27 @@ public class GestionAffichageCalendrier {
                     throws Exception {
                 JPopupMenu popup = new JPopupMenu();
 
-                // Item "Schnitzel"
-                JMenuItem item1 = new JMenuItem("Schnitzel");
+                // Item "Afficher les détails"
+                JMenuItem item1 = new JMenuItem("Afficher les détails");
                 item1.addActionListener(new ActionListener() {
+
+                    public void actionPerformed(ActionEvent e) {
+                        System.out.println("Afficher les détails : "+e.paramString());
+                    }
+                });
+
+                // Item "Modifier"
+                JMenuItem item2 = new JMenuItem("Modifier");
+                item2.addActionListener(new ActionListener() {
 
                     public void actionPerformed(ActionEvent e) {
                         System.out.println(e.paramString());
                     }
                 });
-
-                // Item "Invitatio ad offendum"
-                JMenuItem item2 = new JMenuItem("Invitatio ad offerendum");
-                item2.addActionListener(new ActionListener() {
+                
+                // Item "Supprimer"
+                JMenuItem item3 = new JMenuItem("Supprimer");
+                item3.addActionListener(new ActionListener() {
 
                     public void actionPerformed(ActionEvent e) {
                         System.out.println(e.paramString());
@@ -265,6 +274,7 @@ public class GestionAffichageCalendrier {
 
                 popup.add(item1);
                 popup.add(item2);
+                popup.add(item3);
                 return popup;
             }
         });
@@ -278,7 +288,7 @@ public class GestionAffichageCalendrier {
         private Calendar cal;
         String currentDate = 2017 + "/" + 05 + "/" + 17;
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
-        java.util.Date utilDate = formatter.parse(currentDate);
+        Date utilDate = formatter.parse(currentDate);
 
         public MyEventModel()
                 throws Exception {
@@ -287,15 +297,30 @@ public class GestionAffichageCalendrier {
 
             int i = 0;
             for (Film film : listFilm) {
+                if(film.getTypeFilm().equals("LM"))
+                {
+                    Event event = new Event();
+                    event.setStart(date);
+                    event.setEnd(new Date(film.getDuree()));
+                    event.setSummary(film.getTitreFilm());
+                    event.setDescription(film.getTitreFilm());
+                    event.setToolTip(this.refactorer(film.getTypeFilm()));
+                    event.setColor(this.getColorCategorie(film.getTypeFilm()));
+                }
                 Event event = new Event();
                 event.setStart(date);
-                event.setEnd(new Date(date.getTime() + 90 * 60 * 1000));
+                event.setEnd(new Date(film.getDuree()));
                 event.setSummary(film.getTitreFilm());
                 event.setDescription(film.getTitreFilm());
                 event.setToolTip(this.refactorer(film.getTypeFilm()));
                 event.setColor(this.getColorCategorie(film.getTypeFilm()));
 
                 events.add(event);
+                if(film.getTypeFilm().equals("LM")) 
+                {
+                    Event event2 = event.copy();
+                    event2.setColor(this.getColorCategorie("LM2"));
+                }
                 if (i % 2 == 0) {
                     // Add the event again to show how multiple events at the
                     // same time look like.
@@ -335,14 +360,18 @@ public class GestionAffichageCalendrier {
         private Color getColorCategorie(String typ) {
             switch (typ) {
                 case "LM":
-                    return Color.YELLOW; //long metrage
+                    return Color.BLUE; //long metrage
+                case "LM2":
+                    return Color.CYAN;
                 case "CM":
                     return Color.RED; //court metrage
                 case "HC":
                     return Color.LIGHT_GRAY; //Hors-compétiton
                 case "UCR":
+                    return Color.ORANGE; //Un certain regard
+                case "UCR2":
                 default:
-                    return Color.MAGENTA; //Un certain regard
+                    return Color.YELLOW; //Un certain regard
             }
         }
         
