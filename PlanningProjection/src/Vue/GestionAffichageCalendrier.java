@@ -37,6 +37,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 
@@ -44,7 +45,7 @@ import javax.swing.JPopupMenu;
  *
  * @author p1402690
  */
-public class GestionAffichageCalendrier {
+public class GestionAffichageCalendrier{
 
     private static int DAYS_TO_SHOW = 7;
     private static List<Film> listFilm = new ArrayList();
@@ -53,6 +54,8 @@ public class GestionAffichageCalendrier {
     private JMenu jMenu2;
     private JMenuItem jMenuItem1;
     private JMenuBar jMenuBar;
+   
+     
     
 
     public static void main(String[] args)
@@ -74,6 +77,7 @@ public class GestionAffichageCalendrier {
 
         jMenu2.setText("Edition");
         jMenuBar.add(jMenu2);
+        
 
         try {
             BDD.chargerBDD();
@@ -191,6 +195,7 @@ public class GestionAffichageCalendrier {
 
         // Previous week button
         button1 = new JButton("Semaine précédente");
+        buttonGeneration = new JButton("Génération du planning");
         button1.setVisible(false);
         button1.addActionListener(new ActionListener() {
 
@@ -210,7 +215,19 @@ public class GestionAffichageCalendrier {
                 }
             }
         });
+        
+        buttonGeneration.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent arg0) {
+                JOptionPane option = new JOptionPane();
+                option.showMessageDialog(null, "Message informatif", "Information", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+        
+        
+        
         buttonPanel.add(button1, BorderLayout.LINE_START);
+        buttonPanel.add(buttonGeneration, BorderLayout.CENTER);
 
         // Next week button
         button2 = new JButton("Semaine suivante");
@@ -309,7 +326,8 @@ public class GestionAffichageCalendrier {
                 }
                 Event event = new Event();
                 event.setStart(date);
-                event.setEnd(new Date(film.getDuree()));
+                int duree = film.getDuree();
+                event.setEnd(new Date(date.getTime() + duree * 60 * 1000));
                 event.setSummary(film.getTitreFilm());
                 event.setDescription(film.getTitreFilm());
                 event.setToolTip(this.refactorer(film.getTypeFilm()));
@@ -320,6 +338,7 @@ public class GestionAffichageCalendrier {
                 {
                     Event event2 = event.copy();
                     event2.setColor(this.getColorCategorie("LM2"));
+                    events.add(event2);
                 }
                 if (i % 2 == 0) {
                     // Add the event again to show how multiple events at the
@@ -392,5 +411,7 @@ public class GestionAffichageCalendrier {
     }
     private static JButton button1;
     private static JButton button2;
+    private static JButton buttonGeneration;
+    
 }
 
