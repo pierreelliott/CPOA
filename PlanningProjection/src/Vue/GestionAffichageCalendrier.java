@@ -6,7 +6,6 @@
 package Vue;
 
 import Modele.DAO.BDD;
-import Modele.DAO.Connexion;
 import bizcal.common.Calendar;
 import bizcal.common.CalendarModel;
 import bizcal.common.DayViewConfig;
@@ -25,7 +24,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -59,7 +57,7 @@ public class GestionAffichageCalendrier {
 
     public static void main(String[] args)
             throws Exception {
-        //new GestionAffichageCalendrier();
+        new GestionAffichageCalendrier();
     }
 
     public GestionAffichageCalendrier() throws Exception{

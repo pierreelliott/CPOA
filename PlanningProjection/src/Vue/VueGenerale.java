@@ -7,7 +7,6 @@ package Vue;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import lu.tudor.santec.bizcal.CalendarPanel;
 
 /**
  *
@@ -19,7 +18,7 @@ public class VueGenerale extends javax.swing.JFrame {
      * Creates new form VuePlanning
      */
     public VueGenerale() {
-        initComponents();
+        //initComponents();
         try {
             GestionAffichageCalendrier vue = new GestionAffichageCalendrier();
         } catch (Exception ex) {
