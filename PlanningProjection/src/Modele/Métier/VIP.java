@@ -14,6 +14,7 @@ public class VIP {
     private static List<VIP> vips = new ArrayList();
     
     public static List<VIP> getVIPs() { return vips; }
+    public static void add(VIP vip) { vips.add(vip); }
     public static VIP getVIP(int num) {
         Iterator ite = vips.iterator();
         while(ite.hasNext())
@@ -28,13 +29,13 @@ public class VIP {
    /** @pdOid 90553faf-7449-4e0f-abac-d14a11a7c436 */
    private int numVIP;
    /** @pdOid 4816e4ad-3014-42be-ab61-4e83abb64823 */
-   private int nom;
+   private String nom;
    /** @pdOid dd2104f7-3444-4660-bd9a-cf5265ce9e7b */
-   private int prenom;
+   private String prenom;
    /** @pdOid bd9176b5-32b3-462a-b67d-37b45c860830 */
-   private int nationalite;
+   private String nationalite;
    /** @pdOid 7a31e263-b1b9-4613-b63c-80c0cab5747e */
-   private int photo;
+   private String photo;
    /** @pdOid b03cdfeb-ca93-4d18-91c9-767cd5a20f44 */
    private String typeVIP;
    /** @pdOid e4983287-9298-478a-ac65-66850fe1d258 */
@@ -42,13 +43,52 @@ public class VIP {
    /** @pdOid c58551ef-634d-4d0c-943b-8572b2940ecd */
    private Date dateNaissance;
    /** @pdRoleInfo migr=no name=VIP assc=aPourCompagnon_compagne mult=0..1 */
-   public VIP compagnon;
+   private VIP compagnon;
+   private Jury jure;
    
-   
+   /** @pdOid c9e67928-5b1f-495d-88ad-0f687d4e9359 */
+   public VIP(int num, String nom, String pnom, String natio, String photo, String typeV, int prio, Date dnaissance, VIP compag) {
+      this(num, nom, pnom, natio, photo, typeV, prio, dnaissance);
+   }
+   public VIP(int num, String nom, String pnom, String natio, String photo, String typeV, int prio, Date dnaissance) {
+      numVIP = num;
+      this.nom = nom;
+      prenom = pnom;
+      nationalite = natio;
+      this.photo = photo;
+      typeVIP = typeV;
+      priorite = prio;
+      dateNaissance = dnaissance;
+   }
+           
    /** @pdOid 2892d0b3-b8c0-412b-be25-153f4ea276f7 */
    protected void finalize() {
       // TODO: implement
    }
+
+    public int getNumVIP() {
+        return numVIP;
+    }
+
+    public void setNumVIP(int numVIP) {
+        this.numVIP = numVIP;
+    }
+
+    public VIP getCompagnon() {
+        return compagnon;
+    }
+
+    public void setCompagnon(VIP compagnon) {
+        this.compagnon = compagnon;
+    }
+
+    public Jury getJure() {
+        return jure;
+    }
+
+    public void setJure(Jury jure) {
+        this.jure = jure;
+    }
    
    
    public java.util.Collection association2;
@@ -56,7 +96,7 @@ public class VIP {
    public java.util.Collection<Film> film;
    
    /** @pdOid be957fa9-f32f-4c60-8072-85450b5ecc66 */
-   public int getNom() {
+   public String getNom() {
       return nom;
    }
    public int getNum() {
@@ -65,40 +105,40 @@ public class VIP {
    
    /** @param newNom
     * @pdOid 93c7c5f0-98c9-4fe2-a63c-dc484c02da78 */
-   public void setNom(int newNom) {
+   public void setNom(String newNom) {
       nom = newNom;
    }
    
    /** @pdOid ee613e16-5919-45b8-a481-3a0c7279a0d2 */
-   public int getPrenom() {
+   public String getPrenom() {
       return prenom;
    }
    
    /** @param newPrenom
     * @pdOid aa674502-9619-4079-8b84-69ef763b0673 */
-   public void setPrenom(int newPrenom) {
+   public void setPrenom(String newPrenom) {
       prenom = newPrenom;
    }
    
    /** @pdOid 63f33e7c-1c85-4661-ac82-620cee881592 */
-   public int getNationalite() {
+   public String getNationalite() {
       return nationalite;
    }
    
    /** @param newNationalite
     * @pdOid 596f4165-83ce-4138-8960-1aa87a1d0446 */
-   public void setNationalite(int newNationalite) {
+   public void setNationalite(String newNationalite) {
       nationalite = newNationalite;
    }
    
    /** @pdOid 81475858-6b3a-4614-9ec3-47c0f3572d71 */
-   public int getPhoto() {
+   public String getPhoto() {
       return photo;
    }
    
    /** @param newPhoto
     * @pdOid 52bfb925-6b81-4284-bbbb-71117621a133 */
-   public void setPhoto(int newPhoto) {
+   public void setPhoto(String newPhoto) {
       photo = newPhoto;
    }
    
@@ -135,10 +175,7 @@ public class VIP {
       dateNaissance = newDateNaissance;
    }
    
-   /** @pdOid c9e67928-5b1f-495d-88ad-0f687d4e9359 */
-   public VIP() {
-      // TODO: implement
-   }
+   
    
    
    /** @pdGenerated default getter */

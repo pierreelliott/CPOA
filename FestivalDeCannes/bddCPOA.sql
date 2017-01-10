@@ -103,6 +103,7 @@ create table Projection
    numProjection		int AUTO_INCREMENT,
    numFilm 				int,
    numSalle				int,
+   numJury				int,
    dateProjection	    datetime,
    CONSTRAINT PK_Projection PRIMARY KEY (numProjection)
 );
@@ -176,6 +177,7 @@ ALTER TABLE Palmares ADD CONSTRAINT FK_Palmares_Film FOREIGN KEY (numFilm) REFER
 
 ALTER TABLE Projection ADD CONSTRAINT FK_Projection_Film FOREIGN KEY (numFilm) REFERENCES Film(numFilm) ON DELETE CASCADE;
 ALTER TABLE Projection ADD CONSTRAINT FK_Projection_Salle FOREIGN KEY (numSalle) REFERENCES Salle_Festival(numSalle) ON DELETE CASCADE;
+ALTER TABLE Projection ADD CONSTRAINT FK_Projection_Jury FOREIGN KEY (numJury) REFERENCES Jury(numJury) ON DELETE CASCADE;
 
 ALTER TABLE VIP ADD CONSTRAINT FK_VIP_Compagnon FOREIGN KEY (numCompagnon) REFERENCES VIP(numVIP) ON DELETE CASCADE;
 ALTER TABLE VIP ADD CONSTRAINT FK_VIP_Jury FOREIGN KEY (numJury) REFERENCES Jury(numJury) ON DELETE CASCADE;

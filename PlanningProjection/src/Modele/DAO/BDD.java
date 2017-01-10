@@ -8,9 +8,10 @@ package Modele.DAO;
 import Modele.Métier.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  *
@@ -23,11 +24,11 @@ public class BDD {
     public static void chargerBDD() throws SQLException {
         // Chaque classe métier comporte un tableau
         // contenant toutes les instances de la classe.
-        //chargerVIP();
-        //chargerSalles();
-        //chargerMembreJury();
+        chargerVIP();
+        chargerSalles();
+        chargerMembreJury();
         chargerFilms();
-        //chargerProjections();
+        chargerProjections();
         chargerPalmares();
         
         // Penser à vérifier s'il y a une erreur lors de l'import
@@ -37,9 +38,7 @@ public class BDD {
     // <editor-fold defaultstate="collapsed" desc="Méthodes de chargement des éléments">
     protected static void chargerFilms() throws SQLException {
         ResultSet result;
-        System.out.println("coucou1");
         result = Connexion.executerRequete("select numFilm, typeFilm, titreFilm, duree from Film");
-        System.out.println("coucou2");
         while(result.next())
         {
             int num = result.getInt("numFilm");
@@ -47,9 +46,47 @@ public class BDD {
             String titre = result.getString("titreFilm");
             int duree = result.getInt("duree");
             
-            System.out.println(num+" ; "+type+" ; "+titre+" ; "+duree);
-            
             Film.add(new Film(num, type, titre, duree));
+        }
+        Connexion.fermer();
+    }
+    
+    protected static void chargerVIP() throws SQLException{
+        ResultSet result;
+        result = Connexion.executerRequete("select * from VIP");
+        while(result.next())
+        {
+            int num = result.getInt("numVIP");
+            String nom = result.getString("nom");
+            String prenom = result.getString("prenom");
+            String nationalite = result.getString("nationalite");
+            String photo = result.getString("photo");
+            String type = result.getString("typeVIP");
+            int prio = result.getInt("priorite");
+            Date date = result.getTimestamp("dateNaissance");
+            
+            VIP.add(new VIP(num,nom,prenom,nationalite,photo,type,prio,date));
+        }
+    }
+    
+    protected static void chargerMembreJury() throws SQLException {
+        ResultSet result;
+        result = Connexion.executerRequete("select numJury, typeJury, numPresident from Jury");
+        while(result.next())
+        {
+            int num = result.getInt("numJury");
+            String type = result.getString("typeJury");
+            int numP = result.getInt("numPresident");
+            
+            List<VIP> vips = new ArrayList();
+            Iterator ite = VIP.getVIPs().iterator();
+            while(ite.hasNext())
+            {
+                VIP tmp = (VIP)ite.next();
+                if(tmp.getJure().getNumJury() == num) vips.add(tmp);
+            }
+            
+            Jury.add(new Jury(num, type, numP, vips));
         }
         Connexion.fermer();
     }
@@ -93,19 +130,7 @@ public class BDD {
         }
     }
     
-    /* Pour l'instant ça ne sert à rien... */
-    protected static void chargerVIP() throws SQLException{
-        ResultSet result;
-        result = Connexion.executerRequete("select * from VIP");
-        while(result.next())
-        {
-            int num = result.getInt("numVIP");
-            String nom = result.getString("nom");
-            String prenom = result.getString("prenom");
-            String nationalite = result.getString("nationalite");
-            String photo = result.getString("photo");
-        }
-    }
+    
     // </editor-fold>
     
 }
