@@ -63,6 +63,17 @@
 		return $resultat;
 	}
 	
+	function getVIP($numVIP)
+	{
+		global $bdd;
+		$requete = "SELECT numVIP, nom, prenom, photo, priorite, dateNaissance, nationalite, typeVIP
+					FROM VIP WHERE numVIP = ".$numVIP;
+		
+		$resultat = $bdd->query($requete);
+		$resultat = $resultat->fetchAll()[0];
+		return $resultat;
+	}
+	
 	function toString(array $vip)
 	{
 		$stringVIP = "numVIP:".$vip["numVIP"].";";

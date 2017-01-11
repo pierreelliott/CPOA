@@ -535,3 +535,7 @@
 [10-Jan-2017 15:23:04 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/accueilAjoutEchangeVIP.php on line 39
 [11-Jan-2017 11:17:29 Europe/Paris] PHP Parse error:  syntax error, unexpected '$bdd' (T_VARIABLE) in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleEchangeVIP.php on line 6
 [11-Jan-2017 11:17:43 Europe/Paris] PHP Fatal error:  Call to undefined function getVIPs() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Controleur/controleurAjoutEchangeVIP.php on line 22
+[11-Jan-2017 11:58:21 Europe/Paris] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutEchangeVIP.php on line 39
+[11-Jan-2017 11:59:18 Europe/Paris] PHP Notice:  Undefined index: nom in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutEchangeVIP.php on line 39
+[11-Jan-2017 11:59:18 Europe/Paris] PHP Notice:  Undefined index: prenom in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutEchangeVIP.php on line 40
+[11-Jan-2017 11:59:18 Europe/Paris] PHP Notice:  Undefined index: nationalite in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutEchangeVIP.php on line 41

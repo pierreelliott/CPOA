@@ -1,5 +1,6 @@
 <?php
 	require("Modele/modeleEchangeVIP.php");
+	require("Modele/modeleVIP.php");
 	
 	if(isset($_POST["dateEchange"]) and isset($_POST["commentaire"]) and isset($_POST["numVIP"]))
 	{
@@ -10,7 +11,7 @@
 		$res = ajouterEchangeVIP($_POST["dateEchange"], $_POST["commentaire"], $_POST["numVIP"]);
 	}
 	
-	//$vips = getVIPs();
+	$vip = getVIP($_POST["numVIP"]);
 	
 	include("Vue/ajoutEchangeVIP.php");
 ?>

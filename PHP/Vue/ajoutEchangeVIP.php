@@ -36,9 +36,9 @@
 									</div>
 									<div class="col-xs-8">
 										<dl class="dl-horizontal">
-											<dt>Nom : </dt><dd>Menvu</dd>
-											<dt>Prénom : </dt><dd>Gérard</dd>
-											<dt>Nationalité : </dt><dd>France</dd>
+											<dt>Nom : </dt><dd><?php echo $vip["nom"]; ?></dd>
+											<dt>Prénom : </dt><dd><?php echo $vip["prenom"]; ?></dd>
+											<dt>Nationalité : </dt><dd><?php echo $vip["nationalite"]; ?></dd>
 										</dl>
 									</div>
 								</div>
@@ -61,7 +61,7 @@
 								</div>
 								<div class="col-xs-8">
 									<form method="post" action="index.php?page=ajoutEchangeVIP">
-										<input type="hidden" name="numVIP" value="82">
+										<input type="hidden" name="numVIP" value="<?php echo $_POST["numVIP"]; ?>">
 										<div class="form-group">
 											<label for="dateEchange" class="label-form">Date : </label>
 											<input type="date" name="dateEchange" id="dateEchange" class="form-control">

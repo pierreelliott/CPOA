@@ -34,21 +34,16 @@
 						
 						<?php } ?>
 					</ul>
-					<div class="tab-content">
-						<!-- Ces valeurs seront récupérées dans la bdd et écrite sous ce format pour faire de l'autocomplétion quand on clique sur un vip, l'atribut id pareil que href sans le # (il y a peut-être mieux mais j'ai pas trouver) -->
-						<?php foreach($vips as $key => $vip) { ?>
-						
-						<div class="tab-pane fade <?php if($key == 0) echo 'in active '; ?>hidden" id="<?php echo $vip["numVIP"]; ?>"><?php echo toString($vip); ?></div>
-						
-						<?php } ?>
-					</div>
 					<div class="row">
-						<div class="col-xs-6">
-							<a href="index.php?page=ajoutEchangeVIP" class="btn btn-success btn-block">Ajout échange VIP</a>
-						</div>
-						<div class="col-xs-6">
-							<a href="index.php?page=accueil" class="btn btn-primary btn-block">Annuler</a>
-						</div>
+						<form method="post" action="index.php?page=ajoutEchangeVIP">
+							<input type="hidden" name="numVIP" id="numVIP">
+							<div class="col-xs-6">
+								<button type="submit" class="btn btn-success btn-block">Ajout échange VIP</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="index.php?page=accueil" class="btn btn-primary btn-block">Annuler</a>
+							</div>
+						</form>
 					</div>
 				</div>	
 			</div>
@@ -58,5 +53,17 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(function()
+			{
+				$('button').click(function(e) {
+					e.preventDefault();
+					var ref = $('li[class=active] a').attr('href');
+					ref = ref.substr(1, ref.length);
+					$('#numVIP').val(ref);
+					$('form').submit();
+				});
+			});
+		</script>
 	</body>
 </html>
