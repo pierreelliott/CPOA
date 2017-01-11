@@ -44,8 +44,7 @@
 					</div>
 					<div class="row">
 						<div class="col-xs-6">
-							<!-- Bouton d'activation de la fenêtre modale -->
-							<button href="#modalevip" id="modalevip" class="btn btn-danger btn-block">Ajout échange VIP</button>
+							<a href="index.php?page=ajoutEchangeVIP" class="btn btn-success btn-block">Ajout échange VIP</a>
 						</div>
 						<div class="col-xs-6">
 							<a href="index.php?page=accueil" class="btn btn-primary btn-block">Annuler</a>

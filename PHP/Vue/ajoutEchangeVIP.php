@@ -23,25 +23,24 @@
 			<div class="row">
 				<div class="col-xs-8">
 					<div class="row">
-						<div class="col-xs-12 block-vip">
-							<div class="row">
-								<div class="col-xs-12">
-									<h1 class="center-block">VIP</h1>
+						<div class="col-xs-12">
+							<div class="block-vip">
+								<div class="row">
+									<div class="col-xs-12">
+										<h1 class="center-block">VIP</h1>
+									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-4">
-									<img src="img/avatar.png" alt="avatar" class="img-responsive">
-								</div>
-								<div class="col-xs-8">
-									<dl class="dl-horizontal">
-										<dt>Nom : </dt>
-										<dd>Menvu</dd>
-										<dt>Prénom : </dt>
-										<dd>Gérard</dd>
-										<dt>Nationalité : </dt>
-										<dd>France</dd>
-									</dl>
+								<div class="row">
+									<div class="col-xs-4">
+										<img src="img/avatar.png" alt="avatar" class="img-responsive">
+									</div>
+									<div class="col-xs-8">
+										<dl class="dl-horizontal">
+											<dt>Nom : </dt><dd>Menvu</dd>
+											<dt>Prénom : </dt><dd>Gérard</dd>
+											<dt>Nationalité : </dt><dd>France</dd>
+										</dl>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -50,17 +49,49 @@
 						<div class="col-xs-12">
 							<div class="row">
 								<div class="col-xs-4">
-									
+									<button type="button" class="btn btn-success btn-block">Ajouter action</button>
+									<button type="button" class="btn btn-danger btn-block">Supprimer action</button>
+									<div class="block-vip">
+										<ul class="nav nav-pills nav-stacked">					
+											<li class="active"><a href="#action1" data-toggle="tab">Action 1</a></li>
+											<li><a href="#action2" data-toggle="tab">Action 2</a></li>
+											<li><a href="#action3" data-toggle="tab">Action 3</a></li>
+										</ul>
+									</div>
 								</div>
 								<div class="col-xs-8">
-									
+									<form method="post" action="index.php?page=ajoutEchangeVIP">
+										<input type="hidden" name="numVIP" value="82">
+										<div class="form-group">
+											<label for="dateEchange" class="label-form">Date : </label>
+											<input type="date" name="dateEchange" id="dateEchange" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="commentaire" class="label-form">Commentaire : </label>
+											<textarea name="commentaire" id="commentaire" class="form-control"></textarea>
+										</div>
+										<div class="row">
+											<div class="col-xs-6">
+												<button type="submit" class="btn btn-success btn-block">Ajout échange VIP</button>
+											</div>
+											<div class="col-xs-6">
+												<a href="index.php?page=accueil" class="btn btn-primary btn-block">Annuler</a>
+											</div>
+										</div>
+									</form>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-4">
-				
+					<div class="block-vip">
+						<ul class="nav nav-pills nav-stacked">					
+							<li class="active"><a href="#echange1" data-toggle="tab">Echange 1</a></li>
+							<li><a href="#echange2" data-toggle="tab">Echange 2</a></li>
+							<li><a href="#echange3" data-toggle="tab">Echange 3</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>

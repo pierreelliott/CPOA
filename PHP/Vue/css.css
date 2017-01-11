@@ -12,6 +12,11 @@ h1{
 	text-align:center;
 }
 
+textarea
+{
+	resize: vertical;
+}
+
 #contenant{
 	margin:auto;
 	margin-top:10vh;

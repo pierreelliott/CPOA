@@ -1,12 +1,11 @@
 <?php
 	require_once("bdd.php");
-	require_once("Classes/VIP.php");
 	
 	function ajouterVIP($nom, $prenom, $photo, $priorite, $dateNaissance, $nationalite, $typeVIP)
 	{
 		global $bdd;
 		$requete = "insert into VIP(nom, prenom, photo, priorite, dateNaissance, nationalite, typeVIP)
-					values(:nom, :prenom, :photo, :priorite, str_to_date(:dateNaissance, '%Y-%m-%d'), :nationalite, :typeVIP)";
+					VALUES(:nom, :prenom, :photo, :priorite, str_to_date(:dateNaissance, '%Y-%m-%d'), :nationalite, :typeVIP)";
 		
 		$resultat = $bdd->prepare($requete);
 		return $resultat->execute(array(
