@@ -59,7 +59,7 @@
 		$requete = "SELECT numVIP, nom, prenom, photo, priorite, dateNaissance, nationalite, typeVIP FROM VIP";
 		
 		$resultat = $bdd->query($requete);
-		$resultat = $resultat->fetchAll();
+		$resultat = $resultat->fetchAll(PDO::FETCH_ASSOC);
 		return $resultat;
 	}
 	
@@ -70,7 +70,7 @@
 					FROM VIP WHERE numVIP = ".$numVIP;
 		
 		$resultat = $bdd->query($requete);
-		$resultat = $resultat->fetchAll()[0];
+		$resultat = $resultat->fetchAll(PDO::FETCH_ASSOC)[0];
 		return $resultat;
 	}
 	

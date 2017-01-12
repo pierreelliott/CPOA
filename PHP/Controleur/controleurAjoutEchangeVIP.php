@@ -11,6 +11,8 @@
 		$res = ajouterEchangeVIP($_POST["dateEchange"], $_POST["commentaire"], $_POST["numVIP"]);
 	}
 	
+	$echangesVIP = getEchangesVIP($_POST["numVIP"]);
+	
 	$vip = getVIP($_POST["numVIP"]);
 	
 	include("Vue/ajoutEchangeVIP.php");

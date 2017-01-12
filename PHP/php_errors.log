@@ -539,3 +539,74 @@
 [11-Jan-2017 11:59:18 Europe/Paris] PHP Notice:  Undefined index: nom in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutEchangeVIP.php on line 39
 [11-Jan-2017 11:59:18 Europe/Paris] PHP Notice:  Undefined index: prenom in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutEchangeVIP.php on line 40
 [11-Jan-2017 11:59:18 Europe/Paris] PHP Notice:  Undefined index: nationalite in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutEchangeVIP.php on line 41
+[12-Jan-2017 10:17:45 Europe/Paris] PHP Parse error:  syntax error, unexpected ')', expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutEchangeVIP.php on line 91
+[12-Jan-2017 10:18:39 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutEchangeVIP.php on line 91
+[12-Jan-2017 10:20:35 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Controleur/controleurAjoutEchangeVIP.php on line 14
+[12-Jan-2017 10:20:35 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Controleur/controleurAjoutEchangeVIP.php on line 16
+[12-Jan-2017 10:20:35 Europe/Paris] PHP Fatal error:  Call to a member function fetchAll() on a non-object in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 73
+[12-Jan-2017 10:21:19 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Controleur/controleurAjoutEchangeVIP.php on line 14
+[12-Jan-2017 10:21:19 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Controleur/controleurAjoutEchangeVIP.php on line 16
+[12-Jan-2017 10:21:19 Europe/Paris] PHP Fatal error:  Call to a member function fetchAll() on a non-object in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleVIP.php on line 73
+[12-Jan-2017 10:29:38 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 10:29:38 Europe/Paris] PHP Notice:  Undefined variable: echangesVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 91
+[12-Jan-2017 10:29:38 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 91
+[12-Jan-2017 10:31:22 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 10:31:22 Europe/Paris] PHP Notice:  Undefined variable: echangesVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 91
+[12-Jan-2017 10:31:22 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 91
+[12-Jan-2017 10:31:28 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 10:31:28 Europe/Paris] PHP Notice:  Undefined variable: echangesVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 91
+[12-Jan-2017 10:31:28 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 91
+[12-Jan-2017 10:41:27 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 10:41:51 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 10:42:19 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 10:42:58 Europe/Paris] PHP Parse error:  syntax error, unexpected ':' in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Modele/modeleEchangeVIP.php on line 25
+[12-Jan-2017 10:43:07 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 10:44:06 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 10:44:38 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:10:24 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:11:23 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:12:37 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:15:53 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:16:44 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:17:03 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:18:26 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:18:48 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:19:18 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:19:52 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:21:56 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:22:17 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:23:03 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:24:43 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:25:15 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:26:11 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:26:39 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:29:43 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:30:30 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:32:00 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:33:46 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:38:08 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:38:48 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:39:59 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:41:05 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:41:31 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:43:07 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:44:01 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:44:52 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:45:12 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:50:44 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:50:57 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 64
+[12-Jan-2017 11:51:02 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutAction.php on line 64
+[12-Jan-2017 11:51:02 Europe/Paris] PHP Notice:  Undefined variable: echangesVIPs in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutAction.php on line 91
+[12-Jan-2017 11:51:02 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutAction.php on line 91
+[12-Jan-2017 11:58:50 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutAction.php on line 64
+[12-Jan-2017 11:58:50 Europe/Paris] PHP Notice:  Undefined variable: echangesVIPs in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutAction.php on line 91
+[12-Jan-2017 11:58:50 Europe/Paris] PHP Warning:  Invalid argument supplied for foreach() in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/ajoutAction.php on line 91
+[12-Jan-2017 11:58:54 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 65
+[12-Jan-2017 12:07:47 Europe/Paris] PHP Parse error:  syntax error, unexpected ';' in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 55
+[12-Jan-2017 12:07:57 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 69
+[12-Jan-2017 12:09:52 Europe/Paris] PHP Notice:  Undefined variable: echange in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 55
+[12-Jan-2017 12:09:52 Europe/Paris] PHP Notice:  Undefined variable: echange in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 60
+[12-Jan-2017 12:09:52 Europe/Paris] PHP Notice:  Undefined variable: echange in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 65
+[12-Jan-2017 12:09:52 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 77
+[12-Jan-2017 12:10:18 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 77
+[12-Jan-2017 12:11:59 Europe/Paris] PHP Notice:  Undefined index: numVIP in /home/UNIV-LYON1/p1503940/public_html/CPOA/PHP/Vue/modificationEchangeVIP.php on line 77

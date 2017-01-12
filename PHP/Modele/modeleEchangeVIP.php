@@ -15,6 +15,18 @@
 		));
 	}
 	
+	function getEchangesVIPs()
+	{
+		global $bdd;
+		$requete = "SELECT numEchange, dateEchange, contenuEchange, numVIP
+					FROM EchangeVip";
+					
+		$resultat = $bdd->query($requete);
+		$resultat = $resultat->fetchAll(PDO::FETCH_ASSOC);
+		
+		return $resultat;
+	}
+	
 	function getEchangesVIP($numVIP)
 	{
 		global $bdd;
@@ -23,8 +35,10 @@
 					WHERE numVIP = :numVIP";
 					
 		$resultat = $bdd->prepare($requete);
-		return $resultat->execute(array(
+		$resultat->execute(array(
 			"numVIP" => $numVIP
 		));
+		
+		return $resultat;
 	}
 ?>
