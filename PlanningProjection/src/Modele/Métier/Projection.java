@@ -14,6 +14,7 @@ public class Projection {
     private static List<Projection> projections = new ArrayList();
     
     public static List<Projection> getProjections() { return projections; }
+    public static void setProjections(List<Projection> projec) { projections = projec; }
     public static void add(Projection projec) { projections.add(projec); }
     
     public static int getMaxNum() {
