@@ -34,6 +34,12 @@
 		case "ajoutEchangeVIP" :
 			require("Controleur/controleurAjoutEchangeVIP.php");
 		break;
+		case "modificationEchangeVIP" :
+			require("Controleur/controleurModificationEchangeVIP.php");
+		break;
+		case "ajoutAction" :
+			require("Controleur/controleurAjoutAction.php");
+		break;
 		default :
 			require("Vue/404.php");
 	}

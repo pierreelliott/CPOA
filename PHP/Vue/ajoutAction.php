@@ -36,9 +36,9 @@
 									</div>
 									<div class="col-xs-8">
 										<dl class="dl-horizontal">
-											<dt>Nom : </dt><dd><?php echo $vip["nom"]; ?></dd>
-											<dt>PrÃ©nom : </dt><dd><?php echo $vip["prenom"]; ?></dd>
-											<dt>NationalitÃ© : </dt><dd><?php echo $vip["nationalite"]; ?></dd>
+											<dt>Nom : </dt><dd id="nom"></dd>
+											<dt>Prénom : </dt><dd id="prenom"></dd>
+											<dt>Nationalité : </dt><dd id="nationalite"></dd>
 										</dl>
 									</div>
 								</div>
@@ -49,10 +49,10 @@
 						<div class="col-xs-12">
 							<div class="row">
 								<div class="col-xs-4">
-									<a href="index.php?page=ajoutAction" class="btn btn-success btn-block">Ajouter action</a>
+									<button type="button" class="btn btn-success btn-block">Ajouter action</button>
 									<button type="button" class="btn btn-danger btn-block">Supprimer action</button>
 									<div class="block-vip">
-										<ul class="nav nav-pills nav-stacked">					
+										<ul class="nav nav-pills nav-stacked action">					
 											<li class="active"><a href="#action1" data-toggle="tab">Action 1</a></li>
 											<li><a href="#action2" data-toggle="tab">Action 2</a></li>
 											<li><a href="#action3" data-toggle="tab">Action 3</a></li>
@@ -60,7 +60,7 @@
 									</div>
 								</div>
 								<div class="col-xs-8">
-									<form method="post" action="index.php?page=ajoutEchangeVIP">
+									<form method="post" action="index.php?page=modificationEchangeVIP">
 										<input type="hidden" name="numVIP" value="<?php echo $_POST["numVIP"]; ?>">
 										<div class="form-group">
 											<label for="dateEchange" class="label-form">Date : </label>
@@ -75,7 +75,7 @@
 												<a href="index.php?page=accueil" class="btn btn-primary btn-block">Annuler</a>
 											</div>
 											<div class="col-xs-6">
-												<button type="submit" class="btn btn-success btn-block">Ajout Ã©change VIP</button>
+												<button type="submit" class="btn btn-success btn-block">Modifier échange VIP</button>
 											</div>
 										</div>
 									</form>
@@ -86,11 +86,16 @@
 				</div>
 				<div class="col-xs-4">
 					<div class="block-vip">
-						<ul class="nav nav-pills nav-stacked">	
+						<ul class="nav nav-pills nav-stacked echange">	
 							
-							<?php foreach($echangesVIP as $key => $echangeVIP) { ?>
+							<?php foreach($echangesVIPs as $key => $echangeVIP) { ?>
 							
-							<li<?php if($key == 0) echo ' class="active"'; ?>><a href="#echange<?php echo $echangeVIP["numEchange"]; ?>" data-toggle="tab"><?php echo $echangeVIP["contenuEchange"]; ?></a></li>
+							<li<?php if($key == 0) echo ' class="active"'; ?>>
+								<a href="#echange<?php echo $echangeVIP["numEchange"]; ?>" data-toggle="tab"
+																						   data-numvip="<?php echo $echangeVIP["numVIP"]; ?>">
+									<?php echo $echangeVIP["contenuEchange"]; ?>
+								</a>
+							</li>
 							
 							<?php } ?>
 							
@@ -104,5 +109,39 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(function()
+			{
+				$(document).ready(function(e)
+				{
+					var numVIP = $('.echange li[class~=active] a').data('numvip');
+					
+					getVIP(numVIP);
+				});
+				
+				$('a').click(function(e)
+				{
+					var numVIP = $(this).data('numvip');
+					
+					getVIP(numVIP);
+				});
+				
+				function getVIP(numVIP)
+				{
+					$.post("Modele/getVIP.php",
+					{
+						numVIP: numVIP
+					},
+					function(data, status)
+					{
+						var vip = JSON.parse(data);
+						
+						$('#nom').text(vip.nom);
+						$('#prenom').text(vip.prenom);
+						$('#nationalite').text(vip.nationalite);
+					});
+				}
+			});
+		</script>
 	</body>
 </html>
