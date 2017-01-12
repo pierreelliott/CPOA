@@ -16,11 +16,14 @@ public class Salle_Festival {
     public static List<Salle_Festival> getSalles() { return salles; }
     public static void add(Salle_Festival salle) { salles.add(salle); }
     public static Salle_Festival getSalle(int num) {
-        Iterator ite = salles.iterator();
-        while(ite.hasNext())
-        {
-            Salle_Festival tmp = (Salle_Festival)ite.next();
+        for (Salle_Festival tmp : salles) {
             if(tmp.getNumSalle() == num) return tmp;
+        }
+        return null;
+    }
+    public static Salle_Festival getSalle(String nom) {
+        for (Salle_Festival tmp : salles) {
+            if(tmp.getNomSalle().equalsIgnoreCase(nom)) return tmp;
         }
         return null;
     }
