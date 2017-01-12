@@ -2,5 +2,7 @@
 	require("Modele/modeleEchangeVIP.php");
 	require("Modele/modeleVIP.php");
 	
-	include("Vue/ajoutAction.php");
+	ajouterAction($_POST["libelle"], $_POST["etat"], $_POST["daterealisation"], $_POST["numEchange"]);
+	
+	//include("Vue/ajoutAction.php");
 ?>

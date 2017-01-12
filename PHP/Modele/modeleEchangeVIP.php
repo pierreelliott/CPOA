@@ -41,4 +41,21 @@
 		
 		return $resultat;
 	}
+	
+	function ajouterAction($libelle, $etat, $dateRealisation, $numEchange)
+	{
+		global $bdd;
+		$requete = "INSERT INTO ActionEntreprise(libelle, etat, dateRealisation, numEchange)
+								VALUES(:libelle, :etat, :dateRealisation, :numEchange)";
+								
+		$resultat = $bdd->prepare($requete);
+		$resultat->execute(array(
+			"libelle" => $libelle,
+			"etat" => $etat,
+			"dateRealisation" => $dateRealisation,
+			"numEchange" => $numEchange
+		));
+		
+		return $resultat;
+	}
 ?>

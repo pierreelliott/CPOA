@@ -51,17 +51,17 @@
 								<div class="col-xs-4">
 									<button type="button" data-toggle="modal"
 														  data-target="#modalAction"
-														  data-action="ajout"
+														  data-action="ajouter"
 														  data-echange="<?php echo $echangesVIPs[0]["numEchange"]; ?>"
 														  class="btn btn-success btn-block">Ajouter action</button>
 									<button type="button" data-toggle="modal"
 														  data-target="#modalAction"
-														  data-action="modification"
+														  data-action="modifier"
 														  data-echange="<?php echo $echangesVIPs[0]["numEchange"]; ?>"
 														  class="btn btn-primary btn-block">Modifier action</button>
 									<button type="button" data-toggle="modal"
 														  data-target="#modalAction"
-														  data-action="suppression"
+														  data-action="supprimer"
 														  data-echange="<?php echo $echangesVIPs[0]["numEchange"]; ?>"
 														  class="btn btn-danger btn-block">Supprimer action</button>
 									<div class="block-vip">
@@ -127,7 +127,7 @@
 						<h4 class="modal-title"></h4>
 					</div>
 					<div class="modal-body">
-						<form>
+						<form id="actionForm">
 							<div class="form-group">
 								<label for="libelle" class="control-label">Libellé : </label>
 								<input type="text" class="form-control" id="libelle">
@@ -140,10 +140,7 @@
 								<label for="dateRealisation" class="control-label">Date de réalisation : </label>
 								<input type="date" class="form-control" id="dateRealisation">
 							</div>
-							<div class="form-group">
-								<label for="etat" class="control-label">Etat : </label>
-								<input type="text" class="form-control" id="etat">
-							</div>
+							<input type="hidden" class="form-control" id="numEchange">
 						</form>
 					</div>
 					<div class="modal-footer">
@@ -161,15 +158,42 @@
 		<script>
 			$(function()
 			{
-				/* A MODIFIER */
-				$('#exampleModal').on('show.bs.modal', function (event)
+				// Lors de l'affichage de la fenêtre modale on modifie son contenu pour l'adapter à l'action et à l'échange
+				$('#modalAction').on('show.bs.modal', function (event)
 				{
 					var button = $(event.relatedTarget);
-					var recipient = button.data('whatever') // Extract info from data-* attributes
+					var action = button.data('action');
+					action = action.charAt(0).toUpperCase() + action.substr(1, action.length);
+					var echange = button.data('echange');
 					var modal = $(this);
-					modal.find('.modal-title').text('New message to ' + recipient);
-					modal.find('.modal-body input').val(recipient);
-				})
+					modal.find('.modal-title').text(action + ' une action');
+					modal.find('#numEchange').val(echange);
+				});
+				
+				// Lorsque le formulaire de la fenêtre modale est envoyé
+				$('#actionForm').submit(function(e)
+				{
+					e.preventDefault();
+					
+					var page = $('.modal-title').text();
+					console.log(page);
+					
+					var values = [];
+					
+					$('#actionForm input').each(function()
+					{
+						values.push($(this).val());
+					});
+					
+					$.post("index.php?page=ajoutAction",
+					{
+						input: values
+					},
+					function(data, status)
+					{
+						$('#modalAction').modal('hide');
+					});
+				});
 				
 				$(document).ready(function(e)
 				{
