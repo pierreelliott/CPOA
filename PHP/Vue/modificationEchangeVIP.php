@@ -145,7 +145,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Valider</button>
+						<button type="submit" form="actionForm" class="btn btn-primary">Valider</button>
 					</div>
 				</div>
 			</div>
@@ -163,6 +163,7 @@
 				{
 					var button = $(event.relatedTarget);
 					var action = button.data('action');
+					$('#actionForm').data('action', action);
 					action = action.charAt(0).toUpperCase() + action.substr(1, action.length);
 					var echange = button.data('echange');
 					var modal = $(this);
@@ -175,7 +176,7 @@
 				{
 					e.preventDefault();
 					
-					var page = $('.modal-title').text();
+					var page = $(this).data('action');
 					console.log(page);
 					
 					var values = [];
@@ -185,7 +186,7 @@
 						values.push($(this).val());
 					});
 					
-					$.post("index.php?page=ajoutAction",
+					$.post('index.php?page=' + page + 'Action',
 					{
 						input: values
 					},

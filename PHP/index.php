@@ -37,7 +37,7 @@
 		case "modificationEchangeVIP" :
 			require("Controleur/controleurModificationEchangeVIP.php");
 		break;
-		case "ajoutAction" :
+		case "ajouterAction" :
 			require("Controleur/controleurAjoutAction.php");
 		break;
 		default :
