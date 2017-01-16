@@ -5,8 +5,12 @@
  */
 package Modele.Métier;
 
+import Controleur.Planning;
 import Modele.DAO.BDD;
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 
 /**
@@ -44,6 +48,15 @@ public class Test {
             {
                 Salle_Festival tmp = (Salle_Festival)ite.next();
                 System.out.println("Salle '"+tmp.getNomSalle()+" (numéro : "+tmp.getNumSalle()+")");
+            }
+            System.out.println("");
+            
+            System.out.println("======================================\nProjections :");            
+            ite = Planning.genererPlanningAutomatique(new Date()).iterator();
+            while(ite.hasNext())
+            {
+                Projection tmp = (Projection)ite.next();
+                System.out.println("Film '"+tmp.getFilm().getTitreFilm()+"', programmé le : "+tmp.getDate()+")");
             }
             System.out.println("");
             

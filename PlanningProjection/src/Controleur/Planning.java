@@ -7,7 +7,9 @@ package Controleur;
 
 import Modele.Métier.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 
@@ -33,23 +35,26 @@ public class Planning {
         Iterator ite;
         Film tmp;
         int num; // À voir si on s'en fiche pas des projections déjà enregistrées
-        Date date = new Date();
+        Date date;
         boolean seance;
         int grp;
+        GregorianCalendar cal = new GregorianCalendar();
         
         
         /* =========== Boucle sur les Hors Compétition =================== */
         ite = hc.iterator();
         salle = Salle_Festival.getSalle("Grand Théâtre Lumière");
         seance = true;
+        cal.setTime(debut);
+        cal.set(Calendar.HOUR_OF_DAY,20);
         // date doit être le premier jour, à 20h (ou 21h, à voir)
         while(ite.hasNext())
         {
             tmp = (Film)ite.next();
             if(seance)
             {
-                projec.add(new Projection(Projection.getMaxNum(),tmp,salle,date));
-                date.setTime(date.getTime()+1000*60*60*24*2); // date + 48h
+                projec.add(new Projection(Projection.getMaxNum(),tmp,salle,cal.getTime()));
+                cal.roll(Calendar.DATE, 2); //On avance de 2 jours
                 seance = !seance;
             }
             else seance = !seance;
@@ -59,6 +64,8 @@ public class Planning {
         ite = lm.iterator();
         salle = Salle_Festival.getSalle("Grand Théâtre Lumière");
         seance = true;
+        cal.setTime(debut);
+        cal.roll(Calendar.DATE, 1); //On passe au lendemain (donc le 2e jour)
         // date doit être le deuxième jour, à 14h
         while(ite.hasNext())
         {
@@ -66,13 +73,15 @@ public class Planning {
             tmp = (Film)ite.next();
             if(seance)
             {
-                projec.add(new Projection(num,tmp,salle,date));
+                cal.set(Calendar.HOUR_OF_DAY,14);
+                projec.add(new Projection(num,tmp,salle,cal.getTime()));
                 seance = !seance;
             }
             else
             {
-                projec.add(new Projection(num,tmp,salle,date.getTime()+1000*60*60*3)); // date + 3 heures (passé en long)
-                date.setTime(date.getTime()+1000*60*60*24); // date + 24h
+                cal.set(Calendar.HOUR_OF_DAY,17);
+                projec.add(new Projection(num,tmp,salle,cal.getTime()));
+                cal.roll(Calendar.DATE, 1); // date + 24h
                 seance = !seance;
             }
         }
@@ -82,37 +91,60 @@ public class Planning {
         salle = Salle_Festival.getSalle("Salle Buñuel");
         grp = 0;
         seance = false;
-        // date doit être le 10e jour, à 9h50
+        cal.setTime(debut);
+        cal.roll(Calendar.DATE, 10);
+        cal.set(Calendar.HOUR_OF_DAY,10);
+        cal.set(Calendar.MINUTE,0);
+        // date doit être le 10e jour, à 10h
         while(ite.hasNext())
         {
             tmp = (Film)ite.next();
-            projec.add(new Projection(Projection.getMaxNum(),tmp,salle,date.getTime()+1000*60*10)); // 10 min entre chaque projection
+            projec.add(new Projection(Projection.getMaxNum(),tmp,salle,cal.getTime())); // 10 min entre chaque projection
+            cal.roll(Calendar.MINUTE, 10);
             /* On groupe les CM par 5 : 5 à 10h et 5 à 14h */
             if(seance)
             {
-                // passer la date à 14h le même jour
+                cal.set(Calendar.HOUR_OF_DAY,14);
+                cal.set(Calendar.MINUTE,0);
             }
             if(grp == 0) seance = true;
             grp = (grp+1)%5;
         }
         
         /* =========== Boucle sur les Un Certain Regard =================== */
-        ite = cm.iterator();
+        ite = ucr.iterator();
         salle = Salle_Festival.getSalle("Salle Buñuel");
         grp = 0;
-        seance = false;
-        // date doit être le 10e jour, à 9h50
+        int modulo = 2;
+        seance = true;
+        cal.setTime(debut);
+        cal.roll(Calendar.DATE, 1);
+        cal.set(Calendar.MINUTE,0);
+        // date doit être le 2e jour, à 10h
         while(ite.hasNext())
         {
             tmp = (Film)ite.next();
-            projec.add(new Projection(Projection.getMaxNum(),tmp,salle,date.getTime()+1000*60*10)); // 10 min entre chaque projection
-            /* On groupe les CM par 5 : 5 à 10h et 5 à 14h */
             if(seance)
             {
-                // passer la date à 14h le même jour
+                cal.set(Calendar.HOUR_OF_DAY,10);
+                projec.add(new Projection(Projection.getMaxNum(),tmp,salle,cal.getTime()));
+                seance = !seance;
             }
-            if(grp == 0) seance = true;
-            grp = (grp+1)%5;
+            else
+            {
+                cal.set(Calendar.HOUR_OF_DAY,14);
+                projec.add(new Projection(Projection.getMaxNum(),tmp,salle,cal.getTime()));
+                seance = !seance;
+            }
+            // #### Problème : on affiche 2 fois le film avec cette méthode
+            if(grp == 0)
+            {
+                cal.set(Calendar.HOUR_OF_DAY,17);
+                projec.add(new Projection(Projection.getMaxNum(),tmp,salle,cal.getTime()));
+                modulo += 1;
+            }
+            grp = (grp+1)%modulo;
+            cal.roll(Calendar.DATE, 1);
         }
 
         return projec;

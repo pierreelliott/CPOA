@@ -5,6 +5,7 @@
  */
 package Vue;
 
+import Controleur.Planning;
 import Modele.DAO.BDD;
 import bizcal.common.Calendar;
 import bizcal.common.CalendarModel;
@@ -48,12 +49,14 @@ import javax.swing.JPopupMenu;
 public class GestionAffichageCalendrier{
 
     private static int DAYS_TO_SHOW = 7;
-    private static List<Film> listFilm = new ArrayList();
+    private static List<Projection> listProjections = new ArrayList();
     
     private JMenu jMenu1;
     private JMenu jMenu2;
     private JMenuItem jMenuItem1;
     private JMenuBar jMenuBar;
+    
+    private String ERREUR = "";
    
      
     
@@ -83,10 +86,12 @@ public class GestionAffichageCalendrier{
             BDD.chargerBDD();
         } catch (SQLException ex) {
             Logger.getLogger(GestionAffichageCalendrier.class.getName()).log(Level.SEVERE, null, ex);
-            // Ajouter variable pour message d'erreur d'accès à la BDD
+            ERREUR = "La connexion à la Base de données a échouée";
+            // Variable pour message d'erreur d'accès à la BDD
         }
 
-        listFilm = Film.getFilms();
+        Projection.setProjections(Planning.genererPlanningAutomatique(new Date()));
+        listProjections = Projection.getProjections();
 
         DayViewConfig config = new DayViewConfig();
         final DayView dayView = new DayView(config);
@@ -200,7 +205,7 @@ public class GestionAffichageCalendrier{
         button1.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent arg0) {
-                button1.setVisible(false);
+                //button1.setVisible(false);
                 button2.setVisible(true);
                 Date end = model.interval.getStartDate();
                 Date start = DateUtil.getDiffDay(end, -DAYS_TO_SHOW);
@@ -220,7 +225,18 @@ public class GestionAffichageCalendrier{
 
             public void actionPerformed(ActionEvent arg0) {
                 JOptionPane option = new JOptionPane();
-                option.showMessageDialog(null, "Message informatif", "Information", JOptionPane.INFORMATION_MESSAGE);
+                int statut = JOptionPane.showConfirmDialog(null, "La génération automatique écrase toutes les projections précédemment placées !\nCliquez sur OK pour continuer", "Attention !",JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
+                if(statut == JOptionPane.OK_OPTION)
+                {
+                    //Demander le paramétrage de la génération automatique
+                    Projection.setProjections(Planning.genererPlanningAutomatique(new Date()));
+                    listProjections = Projection.getProjections();
+                    try {
+                        dayView.refresh();
+                    } catch (Exception ex) {
+                        Logger.getLogger(GestionAffichageCalendrier.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
             }
         });
         
@@ -236,7 +252,7 @@ public class GestionAffichageCalendrier{
 
             public void actionPerformed(ActionEvent arg0) {
                 button1.setVisible(true);
-                button2.setVisible(false);
+                //button2.setVisible(false);
                 Date start = model.interval.getEndDate();
                 Date end = DateUtil.getDiffDay(start, DAYS_TO_SHOW);
 
@@ -267,7 +283,8 @@ public class GestionAffichageCalendrier{
                 item1.addActionListener(new ActionListener() {
 
                     public void actionPerformed(ActionEvent e) {
-                        System.out.println("Afficher les détails : "+e.paramString());
+                        System.out.println(e.paramString());
+                        JOptionPane.showMessageDialog(null, "Message informatif", "Film '"+"'", JOptionPane.INFORMATION_MESSAGE);
                     }
                 });
 
@@ -303,56 +320,36 @@ public class GestionAffichageCalendrier{
         private List<Event> events = new ArrayList<Event>();
         private DateInterval interval;
         private Calendar cal;
-        String currentDate = 2017 + "/" + 05 + "/" + 17;
+        String currentDate = 2017 + "/" + 01 + "/" + 12;
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
         Date utilDate = formatter.parse(currentDate);
 
         public MyEventModel()
                 throws Exception {
-            //Date date = DateUtil.round2Week(utilDate);
-            Date date = new Date(utilDate.getTime() + 8 * 60 * 60 * 1000);
 
             int i = 0;
-            for (Film film : listFilm) {
-                if(film.getTypeFilm().equals("LM"))
-                {
-                    Event event = new Event();
-                    event.setStart(date);
-                    event.setEnd(new Date(film.getDuree()));
-                    event.setSummary(film.getTitreFilm());
-                    event.setDescription(film.getTitreFilm());
-                    event.setToolTip(this.refactorer(film.getTypeFilm()));
-                    event.setColor(this.getColorCategorie(film.getTypeFilm()));
-                }
+            for (Projection film : listProjections) {
                 Event event = new Event();
-                event.setStart(date);
-                int duree = film.getDuree();
-                event.setEnd(new Date(date.getTime() + duree * 60 * 1000));
-                event.setSummary(film.getTitreFilm());
-                event.setDescription(film.getTitreFilm());
-                event.setToolTip(this.refactorer(film.getTypeFilm()));
-                event.setColor(this.getColorCategorie(film.getTypeFilm()));
+                event.setStart(new Date(film.getDate().getTime()));
+                event.setEnd(new Date(film.getDate().getTime()+film.getFilm().getDuree()));
+                event.setSummary(film.getFilm().getTitreFilm());
+                event.setDescription(film.getFilm().getTitreFilm());
+                event.setToolTip(this.refactorer(film.getFilm().getTypeFilm()));
+                event.setColor(this.getColorCategorie(film.getFilm().getTypeFilm()));
+                
 
                 events.add(event);
-                if(film.getTypeFilm().equals("LM")) 
-                {
-                    Event event2 = event.copy();
-                    event2.setColor(this.getColorCategorie("LM2"));
-                    events.add(event2);
-                }
+                
                 if (i % 2 == 0) {
                     // Add the event again to show how multiple events at the
                     // same time look like.
                     events.add(event.copy());
                 }
-
-                date = DateUtil.getDiffDay(date, +1);
-                date = new Date(date.getTime() + 60 * 60 * 1000);
                 i++;
             }
 
             // Show a full week
-            java.util.Date utilDate = formatter.parse(currentDate);
+            //utilDate = formatter.parse(currentDate);
             Date end = DateUtil.getDiffDay(utilDate, 7);
             interval = new DateInterval(utilDate, end);
 
