@@ -3,7 +3,13 @@
 	require("Modele/modeleVIP.php");
 	
 	$echangesVIPs = getEchangesVIPs();
-	print_r($echangesVIPs);
+	foreach($echangesVIPs as $key => $echangesVIP)
+	{
+		$actions[$echangesVIP["numEchange"]] = getActions($echangesVIP["numEchange"]);
+	}
+	
+	//print_r($echangesVIPs);
+	//print_r($actions);
 	
 	include("Vue/modificationEchangeVIP.php");
 ?>

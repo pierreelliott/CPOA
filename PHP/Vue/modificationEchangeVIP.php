@@ -65,10 +65,20 @@
 														  data-echange="<?php echo $echangesVIPs[0]["numEchange"]; ?>"
 														  class="btn btn-danger btn-block">Supprimer action</button>
 									<div class="block-vip">
-										<ul class="nav nav-pills nav-stacked action">					
-											<li class="active"><a href="#action1" data-toggle="tab">Action 1</a></li>
-											<li><a href="#action2" data-toggle="tab">Action 2</a></li>
-											<li><a href="#action3" data-toggle="tab">Action 3</a></li>
+										<ul class="nav nav-pills nav-stacked action">
+											<?php foreach($actions as $key => $actionsEchange) {
+												foreach($actionsEchange as $key2 => $action) { ?>
+											
+											<li<?php if($key2 == 0) echo ' class="active"'; ?>>
+												<a href="#action<?php echo $action['numAction']; ?>" data-toggle="tab"
+																									 data-date="<?php echo $action["dateRealisation"]; ?>"
+																									 data-etat="<?php echo $action["etat"]; ?>"
+																									 class="actions">
+													<?php echo $action["libelle"]; ?>
+												</a>
+											</li>
+											
+												<?php } } ?>										
 										</ul>
 									</div>
 								</div>
@@ -100,12 +110,12 @@
 				<div class="col-xs-4">
 					<div class="block-vip">
 						<ul class="nav nav-pills nav-stacked echange">	
-							
 							<?php foreach($echangesVIPs as $key => $echangeVIP) { ?>
-							
+
 							<li<?php if($key == 0) echo ' class="active"'; ?>>
 								<a href="#echange<?php echo $echangeVIP["numEchange"]; ?>" data-toggle="tab"
-																						   data-numvip="<?php echo $echangeVIP["numVIP"]; ?>">
+																						   data-numvip="<?php echo $echangeVIP["numVIP"]; ?>"
+																						   class="echanges">
 									<?php echo $echangeVIP["contenuEchange"]; ?>
 								</a>
 							</li>
@@ -161,11 +171,30 @@
 				// Lors de l'affichage de la fenêtre modale on modifie son contenu pour l'adapter à l'action et à l'échange
 				$('#modalAction').on('show.bs.modal', function (event)
 				{
+					// Récupération des attributs data
 					var button = $(event.relatedTarget);
 					var action = button.data('action');
-					$('#actionForm').data('action', action);
-					action = action.charAt(0).toUpperCase() + action.substr(1, action.length);
 					var echange = button.data('echange');
+					var boutonAction = $('li[class=active] a[class=actions]');
+					var dateRea = boutonAction.data('date');
+					var etat = boutonAction.data('etat');
+					var libelle = boutonAction.text();
+					var ref = boutonAction.attr('href');
+					var numAction = ref.substr(ref.length, 1);
+					
+					console.log(dateRea);
+					console.log(etat);
+					console.log(libelle);
+					
+					$('#libelle').val(libelle.trim());
+					$('#etat').val(etat);
+					$('#dateRealisation').val(dateRea);
+					
+					// On envoie le type d'action au formulaire (ajout, modification, suppression)
+					$('#actionForm').data('action', action);
+					
+					action = action.charAt(0).toUpperCase() + action.substr(1, action.length);
+					
 					var modal = $(this);
 					modal.find('.modal-title').text(action + ' une action');
 					modal.find('#numEchange').val(echange);
@@ -186,9 +215,15 @@
 						values.push($(this).val());
 					});
 					
+					var now = new Date();
+					values[2] = values[2] + ' ' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+					
 					$.post('index.php?page=' + page + 'Action',
 					{
-						input: values
+						libelle: values[0],
+						etat: values[1],
+						dateRealisation: values[2],
+						numEchange: values[3]
 					},
 					function(data, status)
 					{
@@ -203,9 +238,13 @@
 					getVIP(numVIP);
 				});
 				
-				$('a').click(function(e)
+				$('a[class~=echanges]').click(function(e)
 				{
 					var numVIP = $(this).data('numvip');
+					var numEchange = $(this).attr('href');
+					numEchange = numEchange.substr(numEchange.length - 1, 1);
+
+					$('button[data-toggle=modal]').data('echange', numEchange);
 					
 					getVIP(numVIP);
 				});
