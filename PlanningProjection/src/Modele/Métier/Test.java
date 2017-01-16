@@ -47,7 +47,7 @@ public class Test {
             while(ite.hasNext())
             {
                 Salle_Festival tmp = (Salle_Festival)ite.next();
-                System.out.println("Salle '"+tmp.getNomSalle()+" (numéro : "+tmp.getNumSalle()+")");
+                System.out.println("Salle '"+tmp.getNomSalle()+"' (numéro : "+tmp.getNumSalle()+")");
             }
             System.out.println("");
             

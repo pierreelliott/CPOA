@@ -87,7 +87,7 @@ public class GestionAffichageCalendrier{
         } catch (SQLException ex) {
             Logger.getLogger(GestionAffichageCalendrier.class.getName()).log(Level.SEVERE, null, ex);
             ERREUR = "La connexion à la Base de données a échouée";
-            // Variable pour message d'erreur d'accès à la BDD
+            JOptionPane.showMessageDialog(null, ERREUR, "Erreur !", JOptionPane.WARNING_MESSAGE);
         }
 
         Projection.setProjections(Planning.genererPlanningAutomatique(new Date()));
@@ -233,6 +233,7 @@ public class GestionAffichageCalendrier{
                     listProjections = Projection.getProjections();
                     try {
                         dayView.refresh();
+                        JOptionPane.showMessageDialog(null, "Planning généré", "Génération automatique", JOptionPane.INFORMATION_MESSAGE);
                     } catch (Exception ex) {
                         Logger.getLogger(GestionAffichageCalendrier.class.getName()).log(Level.SEVERE, null, ex);
                     }

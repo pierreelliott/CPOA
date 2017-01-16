@@ -35,6 +35,7 @@ public class Projection {
    private Date date;
    private Film film;
    private Salle_Festival salle;
+   private Jury jury;
    
     /**
      * @pdOid 84ae301c-cd18-4d69-a6bb-88957496b754
@@ -64,6 +65,14 @@ public class Projection {
    protected void finalize() {
       // TODO: implement
    }
+
+    public Jury getJury() {
+        return jury;
+    }
+
+    public void setJury(Jury jury) {
+        this.jury = jury;
+    }
 
     public int getNumProjection() {
         return numProjection;

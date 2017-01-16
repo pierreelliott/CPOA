@@ -59,6 +59,14 @@ public class Connexion {
         return result;
     }
     
+    public static int executerUpdate(String requete) throws SQLException {
+        Statement sql;
+        
+        connec = getConnection();
+        sql = connec.createStatement();
+        return sql.executeUpdate(requete);
+    }
+    
     public static ResultSet executer(PreparedStatement sql, String colonnes[], String parametres[]) throws SQLException {
         Connection connec = getConnection();
             

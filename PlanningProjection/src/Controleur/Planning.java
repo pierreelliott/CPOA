@@ -47,6 +47,8 @@ public class Planning {
         seance = true;
         cal.setTime(debut);
         cal.set(Calendar.HOUR_OF_DAY,20);
+        cal.set(Calendar.MINUTE,0);
+        cal.set(Calendar.SECOND,0);
         // date doit être le premier jour, à 20h (ou 21h, à voir)
         while(ite.hasNext())
         {
@@ -65,6 +67,7 @@ public class Planning {
         salle = Salle_Festival.getSalle("Grand Théâtre Lumière");
         seance = true;
         cal.setTime(debut);
+        cal.set(Calendar.SECOND,0);
         cal.roll(Calendar.DATE, 1); //On passe au lendemain (donc le 2e jour)
         // date doit être le deuxième jour, à 14h
         while(ite.hasNext())
@@ -95,6 +98,7 @@ public class Planning {
         cal.roll(Calendar.DATE, 10);
         cal.set(Calendar.HOUR_OF_DAY,10);
         cal.set(Calendar.MINUTE,0);
+        cal.set(Calendar.SECOND,0);
         // date doit être le 10e jour, à 10h
         while(ite.hasNext())
         {
@@ -120,6 +124,7 @@ public class Planning {
         cal.setTime(debut);
         cal.roll(Calendar.DATE, 1);
         cal.set(Calendar.MINUTE,0);
+        cal.set(Calendar.SECOND,0);
         // date doit être le 2e jour, à 10h
         while(ite.hasNext())
         {

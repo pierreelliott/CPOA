@@ -31,6 +31,8 @@ public class BDD {
         chargerProjections();
         chargerPalmares();
         
+        chargee = true;
+        
         // Penser à vérifier s'il y a une erreur lors de l'import
         // Erreur => msg : "Erreur dans l'import de la BDD, veuillez..."
     }
@@ -133,4 +135,19 @@ public class BDD {
     
     // </editor-fold>
     
+    
+    public static void projectionBD(Projection proj) throws SQLException {
+        String requete = "";
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String time = sdf.format(proj.getDate());
+        
+        requete = "insert into projection (numFilm, numSalle, numJury, dateProjection) "+
+            "values("+proj.getFilm().getNumFilm()+","+proj.getSalle().getNumSalle()+","+proj.getJury().getNumJury()+","+time+") on duplicate key update";
+        requete += "set numFilm = "+proj.getFilm().getNumFilm();
+        requete += "set numSalle = "+proj.getSalle().getNumSalle();
+        requete += "set numJury = "+proj.getJury().getNumJury();
+        requete += "set dateProjection = "+time;
+        
+        Connexion.executerUpdate(requete);
+    }
 }
