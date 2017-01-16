@@ -23,6 +23,13 @@ public class Film {
         }
         return null;
     }
+    public static List<Film> getFilms(String type) {
+        List<Film> ftype = new ArrayList<>();
+        for(Film f : films) {
+            if(f.getTypeFilm().equalsIgnoreCase(type)) ftype.add(f);
+        }
+        return ftype;
+    }
     
     /* ========Instance ========= */
    private int numFilm;
