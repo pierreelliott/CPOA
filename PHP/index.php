@@ -40,6 +40,12 @@
 		case "ajouterAction" :
 			require("Controleur/controleurAjoutAction.php");
 		break;
+		case "modifierAction" :
+			require("Controleur/controleurAjoutAction.php");
+		break;
+		case "supprimerAction" :
+			require("Controleur/controleurAjoutAction.php");
+		break;
 		default :
 			require("Vue/404.php");
 	}

@@ -50,6 +50,7 @@
 							<div class="row">
 								<div class="col-xs-4">
 									<a href="index.php?page=ajoutAction" class="btn btn-success btn-block">Ajouter action</a>
+									<a href="" class="btn btn-primary btn-block">Modifier action</a>
 									<button type="button" class="btn btn-danger btn-block">Supprimer action</button>
 									<div class="block-vip">
 										<ul class="nav nav-pills nav-stacked">					
@@ -87,9 +88,8 @@
 				<div class="col-xs-4">
 					<div class="block-vip">
 						<ul class="nav nav-pills nav-stacked">	
-							
 							<?php foreach($echangesVIP as $key => $echangeVIP) { ?>
-							
+
 							<li<?php if($key == 0) echo ' class="active"'; ?>><a href="#echange<?php echo $echangeVIP["numEchange"]; ?>" data-toggle="tab"><?php echo $echangeVIP["contenuEchange"]; ?></a></li>
 							
 							<?php } ?>
