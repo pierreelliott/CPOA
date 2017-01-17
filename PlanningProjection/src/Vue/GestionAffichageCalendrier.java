@@ -97,7 +97,7 @@ public class GestionAffichageCalendrier{
             JOptionPane.showMessageDialog(null, ERREUR, "Erreur !", JOptionPane.WARNING_MESSAGE);
         }*/
 
-        Projection.setProjections(Planning.genererPlanningAutomatique(new Date()));
+        //Projection.setProjections(Planning.genererPlanningAutomatique(new Date()));
         listProjections = Projection.getProjections();
 
         DayViewConfig config = new DayViewConfig();
@@ -234,16 +234,41 @@ public class GestionAffichageCalendrier{
             public void actionPerformed(ActionEvent arg0) {
                 Projection proj = null;
                 ZDialog diag = new ZDialog(null, "Ajouter une projection", true);
+<<<<<<< HEAD
                 proj = diag.showZDialog();
                 
                 if(proj != null)
+=======
+                boolean spro = diag.showZDialog();
+                
+                if(spro)
+>>>>>>> 46ee156d9649db7e56b6124e938f53f2250dd3f3
                 {
                     //Ajouter la projection dans :
                     //          - la BDD
                     //          - la liste de la classe Projection
+<<<<<<< HEAD
                     //Mettre à jour l'affichage
                     System.out.println("Ajout projection");
                 }
+=======
+                    proj = new Projection(Projection.getMaxNum(),14,3,new Date());
+                    try {
+                        System.out.println("Insertion projection pour le film : "+proj.getFilm().getTitreFilm());
+                        BDD.projectionBD(proj);
+                        Projection.add(proj);
+                        model.mettreAJour();
+                        JOptionPane.showMessageDialog(null, "Projection insérée", "Création projection", JOptionPane.INFORMATION_MESSAGE);
+                        System.out.println("Ajout projection");
+                    } catch (SQLException ex) {
+                        JOptionPane.showMessageDialog(null, "Erreur lors de l'ajout de la projection", "Création projection", JOptionPane.WARNING_MESSAGE);
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, "Erreur lors de l'ajout de la projection", "Création projection", JOptionPane.WARNING_MESSAGE);
+                    }
+                }
+                else
+                    JOptionPane.showMessageDialog(null, "Création d'un projection annulée", "Annulation", JOptionPane.INFORMATION_MESSAGE);
+>>>>>>> 46ee156d9649db7e56b6124e938f53f2250dd3f3
             }
         });
         
@@ -256,10 +281,11 @@ public class GestionAffichageCalendrier{
                 {
                     //Demander le paramétrage de la génération automatique
                     Projection.setProjections(Planning.genererPlanningAutomatique(new Date()));
-                    listProjections = Projection.getProjections();
                     try {
                         model.mettreAJour();
                         dayView.refresh();
+                        for(Projection p : listProjections)
+                            System.out.println("Projection : "+p.getFilm().getTitreFilm());
                         JOptionPane.showMessageDialog(null, "Planning généré", "Génération automatique", JOptionPane.INFORMATION_MESSAGE);
                     } catch (Exception ex) {
                         Logger.getLogger(GestionAffichageCalendrier.class.getName()).log(Level.SEVERE, null, ex);
@@ -379,7 +405,41 @@ public class GestionAffichageCalendrier{
 
             // Show a full week
             //utilDate = formatter.parse(currentDate);
-            Date end = DateUtil.getDiffDay(utilDate, 7);
+            Date end = DateUtil.getDiffDay(utilDate, DAYS_TO_SHOW);
+            interval = new DateInterval(utilDate, end);
+
+            cal = new Calendar();
+            cal.setId(1);
+            cal.setSummary("Festival de Cannes");
+        }
+        
+        public void mettreAJour() throws Exception {
+            events.clear();
+            listProjections = Projection.getProjections();
+            int i = 0;
+            for (Projection film : listProjections) {
+                Event event = new Event();
+                event.setStart(new Date(film.getDate().getTime()));
+                event.setEnd(new Date(film.getDate().getTime()+film.getFilm().getDuree()));
+                event.setSummary(film.getFilm().getTitreFilm());
+                event.setDescription(film.getFilm().getTitreFilm());
+                event.setToolTip(this.refactorer(film.getFilm().getTypeFilm()));
+                event.setColor(this.getColorCategorie(film.getFilm().getTypeFilm()));
+                
+
+                events.add(event);
+                
+                if (i % 2 == 0) {
+                    // Add the event again to show how multiple events at the
+                    // same time look like.
+                    events.add(event.copy());
+                }
+                i++;
+            }
+
+            // Show a full week
+            //utilDate = formatter.parse(currentDate);
+            Date end = DateUtil.getDiffDay(utilDate, DAYS_TO_SHOW);
             interval = new DateInterval(utilDate, end);
 
             cal = new Calendar();
@@ -421,6 +481,11 @@ public class GestionAffichageCalendrier{
         }
 
         public List<Event> getEvents(Object calId)
+                throws Exception {
+            return events;
+        }
+        
+        public List<Event> getEvents()
                 throws Exception {
             return events;
         }
