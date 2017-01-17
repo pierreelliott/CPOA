@@ -70,12 +70,12 @@
 										</div>
 										<div class="form-group">
 											<div class="row pointille">
-												<div class="col-xs-8 input-file-container">
+												<div class="col-xs-7 input-file-container">
 													<label for="photo" class="input-file-trigger">Parcourir...</label>
 													<input type="file" name="photo" id="photo" class="btn btn-lg btn-primary btn-block" accept="image/*">
 												</div>
-												<div class="col-xs-4">
-													<img src="img/avatar.png" alt="avatar" id="apercuPhoto" class="file-return img-responsive">
+												<div class="col-xs-5">
+													<img src="img/avatar.png" alt="avatar" id="apercuPhoto" class="img-responsive">
 												</div>
 											</div>
 										</div>
@@ -174,11 +174,18 @@
 							$('#' + id).val(value);
 						}
 					}
+					
+					
+					/*for(i = 0; i < document.images.length; i++){
+						if(!document.images[i].complete){
+						  document.images[i].src = "img/avatar.png";
+						}
+					}*/
 				}
 			
 				// Dès que la page est chargée
 				$(document).ready(function(e) {
-					var donneesVIP = $('div[class~=active]').text();
+					var donneesVIP = $('div.active').text();
 					
 					setInput(donneesVIP);
 				});
