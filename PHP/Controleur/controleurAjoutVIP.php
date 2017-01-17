@@ -51,13 +51,6 @@
 				$_POST["typeVIP"]
 			);
 			
-			if($res){
-				echo 'true';
-			}
-			else{
-				echo 'false';
-			}
-			
 		}else{
 			$message = 'Merci de renseigner tout les champs';
 		}

@@ -50,13 +50,6 @@
 				$_POST["nationalite"],
 				$_POST["typeVIP"]
 			);
-			
-			if($res){
-				echo 'true';
-			}
-			else{
-				echo 'false';
-			}
 		}
 	}
 		
