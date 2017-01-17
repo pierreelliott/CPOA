@@ -150,4 +150,12 @@ public class BDD {
         
         Connexion.executerUpdate(requete);
     }
+    
+    public static void MAJBD() throws SQLException {
+        List<Projection> list = Projection.getProjections();
+        
+        for(Projection p : list) {
+            projectionBD(p);
+        }
+    }
 }

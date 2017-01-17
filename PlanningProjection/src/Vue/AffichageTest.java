@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -53,6 +54,7 @@ public class AffichageTest extends javax.swing.JFrame {
         AjoutProjection = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,6 +88,7 @@ public class AffichageTest extends javax.swing.JFrame {
             }
         ));
         jTable1.setColumnSelectionAllowed(true);
+        jTable1.setMinimumSize(new java.awt.Dimension(80, 0));
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -96,6 +99,13 @@ public class AffichageTest extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(3).setResizable(false);
         }
 
+        jButton1.setText("Mettre à jour BD");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -105,7 +115,8 @@ public class AffichageTest extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(GenerationPlanning)
                     .addComponent(MAJAffichage)
-                    .addComponent(AjoutProjection))
+                    .addComponent(AjoutProjection)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
@@ -120,7 +131,9 @@ public class AffichageTest extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(GenerationPlanning)
                         .addGap(18, 18, 18)
-                        .addComponent(AjoutProjection))
+                        .addComponent(AjoutProjection)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -131,7 +144,12 @@ public class AffichageTest extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MAJAffichageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MAJAffichageActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel modele = (DefaultTableModel)jTable1.getModel();
+        
+        for(Projection p : listProjections)
+        {
+            modele.addRow(new Object[] {p.getNumProjection(), p.getFilm().getTitreFilm(), p.getDate(), p.getFilm().getDuree()});
+        }
     }//GEN-LAST:event_MAJAffichageActionPerformed
 
     private void GenerationPlanningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerationPlanningActionPerformed
@@ -140,8 +158,8 @@ public class AffichageTest extends javax.swing.JFrame {
         if (statut == JOptionPane.OK_OPTION) {
             //Demander le paramétrage de la génération automatique
             Projection.setProjections(Planning.genererPlanningAutomatique(new Date()));
+            listProjections = Projection.getProjections();
             try {
-                //model.mettreAJour();
                 for (Projection p : listProjections) {
                     System.out.println("Projection : " + p.getFilm().getTitreFilm());
                 }
@@ -150,6 +168,8 @@ public class AffichageTest extends javax.swing.JFrame {
                 Logger.getLogger(GestionAffichageCalendrier.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
+        MAJAffichageActionPerformed(evt);
     }//GEN-LAST:event_GenerationPlanningActionPerformed
 
     private void AjoutProjectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AjoutProjectionActionPerformed
@@ -175,6 +195,14 @@ public class AffichageTest extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Création d'un projection annulée", "Annulation", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_AjoutProjectionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            BDD.MAJBD();
+        } catch (SQLException ex) {
+            Logger.getLogger(AffichageTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,6 +245,7 @@ public class AffichageTest extends javax.swing.JFrame {
     private javax.swing.JButton AjoutProjection;
     private javax.swing.JButton GenerationPlanning;
     private javax.swing.JButton MAJAffichage;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
