@@ -33,29 +33,18 @@ public class ZDialog extends JDialog {
 
   public ZDialog(JFrame parent, String title, boolean modal){
     super(parent, title, modal);
-<<<<<<< HEAD
-    this.setSize(550, 270);
-=======
     this.setSize(550, 300);
->>>>>>> 46ee156d9649db7e56b6124e938f53f2250dd3f3
     this.setLocationRelativeTo(null);
     this.setResizable(false);
     this.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
     this.initComponent();
   }
 
-<<<<<<< HEAD
-  public Projection showZDialog(){
-    this.sendData = false;
-    this.setVisible(true);      
-    return this.zInfo;      
-=======
   public boolean showZDialog(){
     this.sendData = false;
     this.setVisible(true);
     return this.sendData;
     //return this.zInfo;      
->>>>>>> 46ee156d9649db7e56b6124e938f53f2250dd3f3
   }
 
   private void initComponent(){
@@ -63,11 +52,7 @@ public class ZDialog extends JDialog {
     //Le type de film
     JPanel panTypeFilm = new JPanel();
     panTypeFilm.setBackground(Color.white);
-<<<<<<< HEAD
-    panTypeFilm.setPreferredSize(new Dimension(220, 60));
-=======
     panTypeFilm.setPreferredSize(new Dimension(220, 80));
->>>>>>> 46ee156d9649db7e56b6124e938f53f2250dd3f3
     panTypeFilm.setBorder(BorderFactory.createTitledBorder("Type du film"));
     typeFilm = new JComboBox();
     typeFilm.addItem("LM");
@@ -81,11 +66,7 @@ public class ZDialog extends JDialog {
     //Le film
     JPanel panFilm = new JPanel();
     panFilm.setBackground(Color.white);
-<<<<<<< HEAD
-    panFilm.setPreferredSize(new Dimension(220, 60));
-=======
     panFilm.setPreferredSize(new Dimension(220, 100));
->>>>>>> 46ee156d9649db7e56b6124e938f53f2250dd3f3
     panFilm.setBorder(BorderFactory.createTitledBorder("Film"));
     titreFilm = new JComboBox();
     /*if(typeFilm.getSelectedItem() != null) {
@@ -105,11 +86,7 @@ public class ZDialog extends JDialog {
     //La date
     JPanel panDate = new JPanel();
     panDate.setBackground(Color.white);
-<<<<<<< HEAD
-    panDate.setPreferredSize(new Dimension(220, 60));
-=======
     panDate.setPreferredSize(new Dimension(220, 80));
->>>>>>> 46ee156d9649db7e56b6124e938f53f2250dd3f3
     panDate.setBorder(BorderFactory.createTitledBorder("Date de projection"));
     DateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm");
     date = new JFormattedTextField(format);
@@ -122,11 +99,7 @@ public class ZDialog extends JDialog {
     //La salle
     JPanel panSalle = new JPanel();
     panSalle.setBackground(Color.white);
-<<<<<<< HEAD
-    panSalle.setPreferredSize(new Dimension(220, 60));
-=======
     panSalle.setPreferredSize(new Dimension(220, 100));
->>>>>>> 46ee156d9649db7e56b6124e938f53f2250dd3f3
     panSalle.setBorder(BorderFactory.createTitledBorder("Salle"));
     salle = new JComboBox();
     for(Salle_Festival s : Salle_Festival.getSalles()) {
@@ -144,10 +117,7 @@ public class ZDialog extends JDialog {
     content.add(panTypeFilm);
     content.add(panDate);
     content.add(panSalle);
-<<<<<<< HEAD
-=======
     content.setPreferredSize(new Dimension(500, 250));
->>>>>>> 46ee156d9649db7e56b6124e938f53f2250dd3f3
 
     JPanel control = new JPanel();
     JButton okBouton = new JButton("OK");
@@ -155,10 +125,7 @@ public class ZDialog extends JDialog {
     okBouton.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent arg0) {
         Projection zInfo = new Projection(0,null,null,new Date());
-<<<<<<< HEAD
-=======
         sendData = true;
->>>>>>> 46ee156d9649db7e56b6124e938f53f2250dd3f3
         //zInfo = new ZDialogInfo(nom.getText(), (String)typeFilm.getSelectedItem(), getAge(), (String)cheveux.getSelectedItem() ,getTaille());
         setVisible(false);
       }
@@ -180,11 +147,7 @@ public class ZDialog extends JDialog {
     cancelBouton.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent arg0) {
         setVisible(false);
-<<<<<<< HEAD
-      }      
-=======
       }
->>>>>>> 46ee156d9649db7e56b6124e938f53f2250dd3f3
     });
 
     control.add(okBouton);
